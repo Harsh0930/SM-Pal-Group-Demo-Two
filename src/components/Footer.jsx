@@ -34,7 +34,6 @@ const Footer = () => {
       <div className="container footer-shell">
         <div className="footer-brand">
           <a className="footer-logo" href="/" aria-label="SM Pal Group home">
-            <img src="/assets/smpal-group-logo-white.png" alt="" className="footer-logo-mark" />
             <img src="/assets/wordmark-smpalgroup-logo.png" alt="SM Pal Group" className="footer-logo-wordmark" />
           </a>
           <p>A group of companies based in Haldwani, Uttarakhand, nurtured since 1982. Leading across stone materials, real estate, frozen foods and automobile dealerships.</p>

@@ -43,37 +43,53 @@ const ScrollCanvasHero = () => {
   const FRAME_EXT = '.jpg';
   const FRAME_PATH = '/assets/palam-view-frames/';
   const EASING = 0.08;
+  const INITIAL_FRAME_COUNT = 36;
 
-  // Preload frames
   useEffect(() => {
     const frames = [];
     let loadedCount = 0;
+    let initialLoadedCount = 0;
+    let idleHandle;
+    let batchTimer;
+    let cancelled = false;
+
+    const loadFrame = (index, isInitial) => {
+      const frameNum = String(index + 1).padStart(3, '0');
+      const img = new Image();
+      const onSettled = () => {
+        if (cancelled) return;
+        loadedCount++;
+        if (isInitial) initialLoadedCount++;
+        setLoadProgress(Math.round((loadedCount / FRAME_COUNT) * 100));
+        if (initialLoadedCount >= INITIAL_FRAME_COUNT) setLoaded(true);
+      };
+      img.onload = onSettled;
+      img.onerror = onSettled;
+      img.src = `${FRAME_PATH}${FRAME_PREFIX}${frameNum}${FRAME_EXT}`;
+      frames[index] = img;
+    };
 
     for (let i = 1; i <= FRAME_COUNT; i++) {
-      const frameNum = String(i).padStart(3, '0');
-      const img = new Image();
-      img.src = `${FRAME_PATH}${FRAME_PREFIX}${frameNum}${FRAME_EXT}`;
-
-      img.onload = () => {
-        loadedCount++;
-        setLoadProgress(Math.round((loadedCount / FRAME_COUNT) * 100));
-        if (loadedCount >= FRAME_COUNT) {
-          setLoaded(true);
-        }
-      };
-
-      img.onerror = () => {
-        loadedCount++;
-        setLoadProgress(Math.round((loadedCount / FRAME_COUNT) * 100));
-        if (loadedCount >= FRAME_COUNT) {
-          setLoaded(true);
-        }
-      };
-
-      frames.push(img);
+      if (i <= INITIAL_FRAME_COUNT) loadFrame(i - 1, true);
     }
 
     framesRef.current = frames;
+    const loadRemainingFrames = () => {
+      for (let i = INITIAL_FRAME_COUNT; i < FRAME_COUNT; i++) {
+        if (cancelled) return;
+        loadFrame(i, false);
+      }
+    };
+    if ('requestIdleCallback' in window) {
+      idleHandle = window.requestIdleCallback(loadRemainingFrames, { timeout: 1500 });
+    } else {
+      batchTimer = window.setTimeout(loadRemainingFrames, 200);
+    }
+    return () => {
+      cancelled = true;
+      if (idleHandle) window.cancelIdleCallback(idleHandle);
+      if (batchTimer) window.clearTimeout(batchTimer);
+    };
   }, []);
 
   // Setup canvas with high-quality rendering

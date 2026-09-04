@@ -4,8 +4,9 @@ import {
   ArrowRight,
   ArrowUpRight,
   ChevronDown,
-  ChevronLeft,
   ChevronRight,
+  Languages,
+  Menu,
   Play,
   X,
 } from "lucide-react";
@@ -45,10 +46,10 @@ const businesses = [
   },
 ];
 const heroImages = [
-  "/assets/pal-stone-industries-gradient.jpeg",
-  "/assets/pal-frozen-food-gradient.jpeg",
-  "/assets/pal-colonisers-gradient.jpeg",
-  "/assets/pal-skoda-gradient.jpeg",
+  "/assets/hero-gradient-images/pal-stone-industries-gradient.jpeg",
+  "/assets/hero-gradient-images/pal-frozen-food-gradient.jpeg",
+  "/assets/hero-gradient-images/pal-colonisers-gradient.jpeg",
+  "/assets/hero-gradient-images/pal-skoda-gradient.jpeg",
 ];
 
 const stories = [
@@ -61,7 +62,7 @@ const stories = [
   },
   {
     eyebrow: "Perspective",
-    title: "Building for the next 40 years.",
+    title: "Building for the next 45+ years.",
     text: "SM Pal Group began in 1982 with Pal Stone Industries at Halduchaur, Haldwani. Four decades later, that foundation of trust continues to shape every vertical.",
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85",
@@ -142,7 +143,7 @@ const videos = [
     src: demoVideoSource,
   },
 ];
-const chairmanImage = "/assets/chairman.jpg";
+const chairmanImage = "/assets/Chairman.jpg";
 const siteUrl = "https://smpalgroup.com";
 const aboutSeo = {
   title: "About SM Pal Group | Haldwani Business Group Since 1982",
@@ -358,7 +359,7 @@ function PalGroupSeo() {
           "name": "Who leads SM Pal Group and The Pal Group?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Shri Suresh Pal founded the group in 1982 and continues to lead it today, with over 40 years of business experience guiding its growth across every industry it now operates in."
+            "text": "Shri Suresh Pal founded the group in 1982 and continues to lead it today, with over 45+ years of business experience guiding its growth across every industry it now operates in."
           }
         },
         {
@@ -391,7 +392,7 @@ function OwnershipSeo() {
     const pageTitle =
       "Shri Suresh Pal | Owner and Chairman of SM Pal Group";
     const pageDescription =
-      "Meet Shri Suresh Pal, founder and chairman of SM Pal Group. Discover the vision, leadership and 40+ years journey behind Haldwani's most trusted business name.";
+      "Meet Shri Suresh Pal, founder and chairman of SM Pal Group. Discover the vision, leadership and 45+ years journey behind Haldwani's most trusted business name.";
 
     document.title = pageTitle;
     setHeadMeta("name", "description", pageDescription);
@@ -706,6 +707,31 @@ function PalFreshSeo() {
     return () => schema.remove();
   }, []);
 
+  return null;
+}
+
+function PalFreshGlobalSeo() {
+  useEffect(() => {
+    const pageTitle = "Pal Fresh Global Trading LLC | Dubai, UAE";
+    const pageDescription = "Pal Fresh Global Trading LLC is SM Pal Group's Dubai based venture, bringing Pal Fresh quality to UAE and global markets. Discover Pal Fresh Global today.";
+    const canonicalUrl = `${siteUrl}/industries/pal-fresh-global-trading`;
+    document.title = pageTitle;
+    setHeadMeta("name", "description", pageDescription);
+    setHeadMeta("name", "robots", "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1");
+    setHeadMeta("property", "og:title", pageTitle);
+    setHeadMeta("property", "og:description", pageDescription);
+    setHeadMeta("property", "og:url", canonicalUrl);
+    setHeadMeta("property", "og:type", "website");
+    setHeadMeta("property", "og:image", "/assets/pal-frozen.webp");
+    let canonical = document.head.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", canonicalUrl);
+    return () => {};
+  }, []);
   return null;
 }
 
@@ -1147,79 +1173,79 @@ const legacyMoments = [
   {
     title: "Pal Stone Industries",
     text: "Where the group story began.",
-    image: "/assets/pal-stone-industries.webp",
-    alt: "Pal Stone Industries facility",
+    image: "/assets/journeywall-images/pal-stone-industries-1982-facility.webp",
+    alt: "Pal Stone Industries facility in Halduchaur, Haldwani — the founding chapter of SM Pal Group established in 1982",
     shape: "tall",
   },
   {
     title: "Building communities",
     text: "Places shaped with purpose.",
-    image: "/assets/Ecotown 1 (2).webp",
-    alt: "Eco Town entrance",
+    image: "/assets/journeywall-images/palam-city-landmark-haldwani.webp",
+    alt: "Palam City landmark development in Haldwani, Uttarakhand — real estate venture by SM Pal Group",
   },
   {
     title: "Pal Frozen Foods",
     text: "Every achievement belongs to the team.",
-    image: "/assets/pal-frozen.webp",
-    alt: "Pal Frozen Foods facility",
+    image: "/assets/journeywall-images/pal-frozen-foods-production-facility.webp",
+    alt: "Pal Frozen Foods production facility in Haldwani — frozen foods manufacturing by SM Pal Group",
     shape: "wide",
   },
   {
     title: "Pal Skoda",
     text: "Driving new horizons.",
-    image: "/assets/pal-skoda.webp",
-    alt: "Pal Skoda dealership",
+    image: "/assets/journeywall-images/pal-skoda-dealership-showroom.webp",
+    alt: "Pal Skoda automobile dealership showroom in Haldwani — SM Pal Group automotive vertical",
   },
   {
     title: "Ford recognition",
     text: "Celebrating excellence.",
-    image: "/assets/ceo-pal-ford-nissan-girish-newalia-ford-india-md-01.webp",
-    alt: "Pal Ford team receiving recognition",
+    image: "/assets/journeywall-images/pal-group-editorial-leadership.webp",
+    alt: "SM Pal Group leadership editorial feature highlighting the Ford dealership legacy in Uttarakhand",
   },
   {
     title: "Leadership",
     text: "Guided by experience.",
-    image: "/assets/Deepak Farswan & Puneet Khanna.webp",
-    alt: "Pal Group leaders at Pal Frozen Foods",
+    image: "/assets/journeywall-images/pal-group-leadership-ceremony.webp",
+    alt: "SM Pal Group leadership ceremony honouring the founding chairman Suresh Pal Ji and senior management",
   },
   {
     title: "Production excellence",
     text: "Care at every stage.",
-    image: "/assets/IMG_9066.webp",
-    alt: "Pal Frozen Foods production facility tour",
+    image: "/assets/journeywall-images/pal-stone-industries-production.webp",
+    alt: "Pal Stone Industries production line — stone crushing and aggregate manufacturing at the Halduchaur facility",
   },
   {
     title: "A shared team",
     text: "People power every milestone.",
-    image: "/assets/IMG_5456.webp",
-    alt: "Pal Frozen Foods team gathering",
+    image: "/assets/journeywall-images/pal-frozen-foods-team-gathering.webp",
+    alt: "Pal Frozen Foods team gathering — employees who power every milestone at SM Pal Group",
   },
   {
     title: "Celebrating milestones",
     text: "Honouring the moments that matter.",
-    image: "/assets/IMG_0293.webp",
-    alt: "Pal Group ceremonial celebration",
+    image: "/assets/journeywall-images/palam-city-masterplan-design.webp",
+    alt: "Palam City masterplan design render — flagship real estate development by SM Pal Group in Devalchaur, Haldwani",
     shape: "wide",
   },
   {
     title: "Pal Ford",
     text: "Service, together.",
-    image: "/assets/DSC_9180.webp",
-    alt: "Pal Ford team outside the service facility",
+    image: "/assets/journeywall-images/pal-ford-opening-haldwani-ceremony.webp",
+    alt: "Pal Ford grand opening ceremony in Haldwani — the launch of the Ford automobile dealership in Uttarakhand",
     shape: "tall",
   },
   {
     title: "Dhak Dhak Ford",
     text: "A proud achievement.",
-    image: "/assets/Dhak Dhak Ford Event 01.webp",
-    alt: "Pal Ford team accepting awards",
+    image: "/assets/journeywall-images/pal-ford-dhak-dhak-awards-event.webp",
+    alt: "Pal Ford team accepting the Dhak Dhak award — celebrating sales excellence at the Ford dealership in Haldwani",
     shape: "tall",
   },
   {
     title: "Palam City",
     text: "A landmark built for tomorrow.",
-    image: "/assets/Palam City -1.jpg.webp",
-    alt: "Palam City corporate building",
+    image: "/assets/journeywall-images/palam-city-masterplan-design.webp",
+    alt: "Palam City corporate building in Devalchaur, Haldwani — landmark headquarters of SM Pal Group on Rampur Road",
   },
 ];
 
@@ -1302,7 +1328,7 @@ const routePages = {
     facts: [
       "Established 1982",
       "Headquartered in Haldwani",
-      "40+ years of trust",
+      "45+ years of trust",
     ],
     body: "SM Pal Group began in 1982 with a single stone supply business in Haldwani. More than four decades later, it has grown into a wide family of companies spanning real estate, car dealerships, frozen foods, healthcare, education, infrastructure, media, and more.",
   },
@@ -1350,7 +1376,7 @@ const routePages = {
     body: "Prateek Pal is a director at SM Pal Group, part of the family that has led the group since Suresh Pal founded it in 1982. He has said his approach is shaped directly by his father's people first philosophy.",
   },
   "/industries/pal-fresh-global-trading": {
-    type: "industry",
+    type: "pal-fresh-global",
     eyebrow: "Industry 01 · Trading",
     title: "Pal Fresh Global\nTrading LLC.",
     intro:
@@ -1603,9 +1629,10 @@ function Logo({ light = false }) {
   );
 }
 
-function RouteHeader() {
+function RouteHeader({ showLanguageToggle = false, language, onLanguageChange }) {
   const [openMenu, setOpenMenu] = useState(null);
   const [openIndustrySubmenu, setOpenIndustrySubmenu] = useState(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const industrySubmenus = {
     "Pal Frozen Foods": [
       { label: "Pal Fresh", href: "/industries/pal-frozen-foods/pal-fresh" },
@@ -1614,11 +1641,30 @@ function RouteHeader() {
     "Pal Colonisers": routeGroups.colonisers,
     "Car Dealerships": routeGroups.dealerships,
   };
+  useEffect(() => {
+    if (!drawerOpen) return undefined;
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setDrawerOpen(false);
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", closeOnEscape);
+      document.body.style.overflow = "";
+    };
+  }, [drawerOpen]);
+
+  const closeNavigation = () => {
+    setOpenMenu(null);
+    setOpenIndustrySubmenu(null);
+    setDrawerOpen(false);
+  };
+
   return (
     <header className="route-header">
       <div className="container route-nav">
         <Logo />
-        <nav aria-label="Primary navigation">
+        <nav className="route-desktop-nav" aria-label="Primary navigation">
           <a href="/">Home</a>
           <div className="route-nav-group">
             <button
@@ -1688,8 +1734,114 @@ function RouteHeader() {
           <a href="/contact" className="nav-cta">
             Contact Us <ArrowUpRight size={16} />
           </a>
+          {showLanguageToggle && (
+            <button
+              className="route-language-toggle"
+              type="button"
+              aria-label={language === "ar" ? "Switch to English" : "Switch to Arabic"}
+              onClick={() => onLanguageChange(language === "ar" ? "en" : "ar")}
+            >
+              <Languages size={16} /> {language === "ar" ? "EN" : "عربي"}
+            </button>
+          )}
         </nav>
+        <button
+          className="route-menu-toggle"
+          type="button"
+          aria-expanded={drawerOpen}
+          aria-controls="mobile-navigation-drawer"
+          aria-label={drawerOpen ? "Close navigation menu" : "Open navigation menu"}
+          onClick={() => setDrawerOpen(!drawerOpen)}
+        >
+          {drawerOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </div>
+      {drawerOpen && (
+        <>
+          <button
+            className="route-drawer-backdrop"
+            type="button"
+            aria-label="Close navigation menu"
+            onClick={closeNavigation}
+          />
+          <aside className="route-drawer" id="mobile-navigation-drawer" aria-label="Mobile navigation">
+            <div className="route-drawer-head">
+              <span>Explore SM Pal Group</span>
+              <button type="button" onClick={closeNavigation} aria-label="Close navigation menu">
+                <X size={20} />
+              </button>
+            </div>
+            {showLanguageToggle && (
+              <button
+                className="route-language-toggle route-drawer-language"
+                type="button"
+                onClick={() => onLanguageChange(language === "ar" ? "en" : "ar")}
+              >
+                <Languages size={16} /> {language === "ar" ? "English" : "العربية"}
+              </button>
+            )}
+            <nav className="route-drawer-links">
+              <a href="/" onClick={closeNavigation}>Home</a>
+              <button
+                type="button"
+                className="route-drawer-trigger"
+                aria-expanded={openMenu === "industries"}
+                onClick={() => setOpenMenu(openMenu === "industries" ? null : "industries")}
+              >
+                Industries <ChevronDown size={17} />
+              </button>
+              {openMenu === "industries" && (
+                <div className="route-drawer-submenu">
+                  {routeGroups.industries.map((item) => (
+                    industrySubmenus[item.label] ? (
+                      <div key={item.href}>
+                        <button
+                          type="button"
+                          className="route-drawer-subtrigger"
+                          aria-expanded={openIndustrySubmenu === item.label}
+                          onClick={() => setOpenIndustrySubmenu(openIndustrySubmenu === item.label ? null : item.label)}
+                        >
+                          {item.label} <ChevronRight size={15} />
+                        </button>
+                        {openIndustrySubmenu === item.label && (
+                          <div className="route-drawer-nested-links">
+                            {industrySubmenus[item.label].map((subItem) => (
+                              <a href={subItem.href} key={subItem.href} onClick={closeNavigation}>{subItem.label}</a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <a href={item.href} key={item.href} onClick={closeNavigation}>{item.label}</a>
+                    )
+                  ))}
+                </div>
+              )}
+              <button
+                type="button"
+                className="route-drawer-trigger"
+                aria-expanded={openMenu === "about"}
+                onClick={() => setOpenMenu(openMenu === "about" ? null : "about")}
+              >
+                About Us <ChevronDown size={17} />
+              </button>
+              {openMenu === "about" && (
+                <div className="route-drawer-submenu">
+                  <a href="/about" onClick={closeNavigation}>Our story</a>
+                  <a href="/about/the-pal-group" onClick={closeNavigation}>The Pal Group</a>
+                  <a href="/about/ownership" onClick={closeNavigation}>Owner-Chairman</a>
+                  <a href="/about/prateek-pal" onClick={closeNavigation}>Prateek Pal</a>
+                  <a href="/about/board-of-directors" onClick={closeNavigation}>Board of directors</a>
+                </div>
+              )}
+              <a href="/media" onClick={closeNavigation}>Media</a>
+              <a href="/contact" className="route-drawer-cta" onClick={closeNavigation}>
+                Contact Us <ArrowUpRight size={17} />
+              </a>
+            </nav>
+          </aside>
+        </>
+      )}
     </header>
   );
 }
@@ -1814,32 +1966,28 @@ function AboutPage({ page }) {
       category: "Stone & construction materials",
       text: "Our founding business, supplying premium stone and grit for major infrastructure projects.",
       href: "/industries/pal-stone-industries",
-      image:
-        "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1000&q=85",
+      image: "/assets/our-verticals-images/pal stone.png",
     },
     {
       name: "Pal Colonisers",
       category: "Real estate",
       text: "Modern residential projects including Pal Sumeera Residency, Palam City, Pallazio, Eco Town, Paloma Greens and Ram Ji Vihar.",
       href: "/industries/pal-colonisers/pal-sumeera-residency",
-      image:
-        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85",
+      image: "/assets/our-verticals-images/coloniser.png",
     },
     {
       name: "Pal Frozen Foods",
       category: "Food & trading",
       text: "Home to Pal Fresh frozen vegetables and Frozzo frozen snacks, with Pal Fresh Global Trading LLC extending our international reach.",
       href: "/industries/pal-frozen-foods/pal-fresh",
-      image:
-        "https://images.unsplash.com/photo-1588964895597-cfccd6e2dbf9?auto=format&fit=crop&w=1000&q=85",
+      image: "/assets/our-verticals-images/pal frozen foods.png",
     },
     {
       name: "Car Dealerships",
       category: "Automotive",
       text: "Including Pal Skoda Haldwani, Pal Nissan Haldwani and Pal Ford Haldwani.",
       href: "/industries/car-dealerships/pal-skoda-haldwani",
-      image:
-        "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1000&q=85",
+      image: "/assets/our-verticals-images/skoda.png",
     },
   ];
   const values = [
@@ -2014,14 +2162,11 @@ function AboutPage({ page }) {
             </div>
             <div className="about-community-image">
               <img
-                src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1200&q=85"
+                src="/assets/Our commitment to community.jpg"
                 alt="Students learning together"
                 loading="lazy"
               />
               <div className="about-community-stat">
-                <strong>
-                  10,000<span>+</span>
-                </strong>
                 <p>People reached every year through community programs</p>
                 <i />
                 <small>
@@ -2196,7 +2341,7 @@ function PalGroupPage({ page }) {
     ],
     [
       "Who leads SM Pal Group and The Pal Group?",
-      "Shri Suresh Pal founded the group in 1982 and continues to lead it today, with over 40 years of business experience guiding its growth across every industry it now operates in.",
+      "Shri Suresh Pal founded the group in 1982 and continues to lead it today, with over 45+ years of business experience guiding its growth across every industry it now operates in.",
     ],
     [
       "Where is SM Pal Group headquartered?",
@@ -2210,24 +2355,28 @@ function PalGroupPage({ page }) {
       category: "Stone & Construction Materials",
       text: "The founding business, supplying premium stone and grit for major infrastructure projects across the region.",
       href: "/industries/pal-stone-industries",
+      image: "/assets/our-verticals-images/pal stone.png",
     },
     {
       name: "Pal Colonisers",
       category: "Real Estate Development",
       text: "Developing residential projects including Pal Sumeera Residency, Palam City, Palam View, Pallazio, Eco Town, Paloma Greens, and Ram Ji Vihar.",
       href: "/industries/pal-colonisers/pal-sumeera-residency",
+      image: "/assets/our-verticals-images/coloniser.png",
     },
     {
       name: "Pal Frozen Foods",
       category: "Frozen Foods & Trading",
       text: "Home to Pal Fresh frozen vegetables and Frozzo frozen snacks, alongside Pal Fresh Global Trading LLC for international reach.",
       href: "/industries/pal-frozen-foods/pal-fresh",
+      image: "/assets/our-verticals-images/pal frozen foods.png",
     },
     {
       name: "Car Dealerships",
       category: "Automotive Retail",
       text: "Including Pal Skoda Haldwani, Pal Nissan Haldwani, and Pal Ford Haldwani.",
       href: "/industries/car-dealerships/pal-skoda-haldwani",
+      image: "/assets/our-verticals-images/skoda.png",
     },
   ];
 
@@ -2294,7 +2443,7 @@ function PalGroupPage({ page }) {
     },
     {
       title: "Decades of proven execution",
-      text: "Over 40 years of experience guiding decisions across every industry the group enters.",
+      text: "Over 45+ years of experience guiding decisions across every industry the group enters.",
     },
   ];
 
@@ -2348,7 +2497,7 @@ function PalGroupPage({ page }) {
                   Every business under this roof traces back to one founder and one city. Shri Suresh Pal established the group in 1982 in Haldwani, often called the gateway to Uttarakhand's Kumaon region, starting with a small stone supply venture.
                 </p>
                 <p>
-                  With over 40 years of business experience behind him, his leadership has carried the group from that single idea into a name recognised across many industries today.
+                  With over 45+ years of business experience behind him, his leadership has carried the group from that single idea into a name recognised across many industries today.
                 </p>
                 <p>
                   What has carried through every stage of that growth is a simple approach: <strong>Quality first, transparency always,</strong> and a genuine focus on the people the group serves.
@@ -2434,6 +2583,7 @@ function PalGroupPage({ page }) {
                     <h3>{biz.name}</h3>
                     <small>{biz.text}</small>
                   </div>
+                  <img src={biz.image} alt="" loading="lazy" />
                   <ArrowUpRight size={22} />
                 </a>
               ))}
@@ -2644,80 +2794,75 @@ function OwnershipPage({ page }) {
     { label: "Media & Awards", href: "/media" },
   ];
 
+  // Image tiles mapped to chairman photos in /public/assets/chairman-images/.
+  // The 4-col x 3-row grid has 12 cells. With 8 tiles we need exactly
+  // four size-2 (TALL or WIDE) and four size-1 (SQUARE) tiles:
+  //   1 WIDE landscape + 2 TALL portraits + 1 WIDE quote + 4 SQUARE (2 portraits + 1 landscape + stat)
+  // Source order is read left-to-right, top-to-bottom by CSS Grid auto-flow
+  // and produces this layout:
+  //   Row 1: [WIDE founder     ][TALL office ][TALL award            ]
+  //   Row 2: [                 ][            ][         ][SQ stat      ]
+  //   Row 3: [WIDE quote       ][SQ portrait][SQ portrait             ]
   const ownerMoments = [
     {
+      // 7008x4672 landscape — founder in his office
       type: "image",
-      src: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85",
-      alt: "Shri Suresh Pal at a SM Pal Group event",
+      src: "/assets/chairman-images/suresh pal - owner chairmen.webp",
+      alt: "Shri Suresh Pal seated at his office desk, the founder of SM Pal Group",
       caption: "At the foundation of the group",
-      span: "square",
-    },
-    {
-      type: "image",
-      src: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=85",
-      alt: "Shri Suresh Pal leading a business meeting",
-      caption: "Leading a board meeting",
       span: "wide",
     },
     {
+      // 3008x4512 portrait — at the modern office desk, checkered white shirt
       type: "image",
-      src: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=85",
-      alt: "Award ceremony for Shri Suresh Pal",
-      caption: "Recognizing industry leadership",
+      src: "/assets/chairman-images/suresh pal - owner chairmen 4.webp",
+      alt: "Shri Suresh Pal at his modern office desk",
+      caption: "Where the work still happens",
+      span: "tall",
+    },
+    {
+      // 5504x8256 portrait — award ceremony portrait
+      type: "image",
+      src: "/assets/chairman-images/suresh pal - owner chairmen (2).webp",
+      alt: "Shri Suresh Pal receiving an award on stage",
+      caption: "Recognising industry leadership",
       span: "tall",
     },
     {
       type: "stat",
       span: "square",
-      number: "40+",
-      label: "years of legacy",
-      sub: "from a single venture in 1982 to a multi-vertical group today",
+      number: "45+ Years of Legacy",
+      label: "",
+      sub: "",
     },
     {
+      // 1200x800 landscape — armchair formal portrait
       type: "image",
-      src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=85",
-      alt: "Shri Suresh Pal at a factory floor",
-      caption: "On the factory floor",
+      src: "/assets/chairman-images/suresh pal - owner chairmen 6.webp",
+      alt: "Shri Suresh Pal in a formal suit, seated in an armchair",
+      caption: "Four decades in the frame",
       span: "square",
     },
     {
-      type: "image",
-      src: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=85",
-      alt: "Shri Suresh Pal with industry leaders",
-      caption: "Among the industry leaders",
-      span: "square",
-    },
-    {
-      type: "image",
-      src: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=800&q=85",
-      alt: "Shri Suresh Pal with the SM Pal Group team",
-      caption: "With the SM Pal Group team",
-      span: "wide",
-    },
-    {
+      // Founder's quote — given a WIDE cell so the full text fits without overflow
       type: "quote",
       span: "wide",
       text: "I have never believed in building for myself. I have always believed in building for the people around me.",
       cite: "Shri Suresh Pal",
     },
     {
+      // 3008x4512 portrait — speaking on stage with microphone
       type: "image",
-      src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=85",
-      alt: "Shri Suresh Pal reviewing a project site",
-      caption: "Reviewing a project site",
+      src: "/assets/chairman-images/suresh pal - owner chairmen 5.webp",
+      alt: "Shri Suresh Pal addressing an audience on stage",
+      caption: "Addressing the people he leads",
       span: "square",
     },
     {
+      // 5504x8256 portrait — armchair suit, smiling warmly
       type: "image",
-      src: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=85",
-      alt: "A milestone moment in the SM Pal Group journey",
-      caption: "A milestone along the way",
-      span: "wide",
-    },
-    {
-      type: "image",
-      src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=85",
-      alt: "Shri Suresh Pal with a member of the team",
+      src: "/assets/chairman-images/suresh pal - owner chairmen 3.webp",
+      alt: "Shri Suresh Pal in a suit, smiling in an armchair",
       caption: "With the people behind the work",
       span: "square",
     },
@@ -2760,8 +2905,9 @@ function OwnershipPage({ page }) {
                 </p>
               </div>
               <aside className="own-who-note reveal">
-                <span>40+ years</span>
-                <p>of legacy at SM Pal Group, from the same founding city of Haldwani.</p>
+                <span className="legacy-number">45+</span>
+                <span className="legacy-label">Years of Legacy</span>
+                <p>at SM Pal Group, from the same founding city of Haldwani.</p>
                 <div className="own-who-line" />
                 <small>Founder, Owner, and Chairman, SM Pal Group</small>
               </aside>
@@ -2862,7 +3008,6 @@ function OwnershipPage({ page }) {
                       style={{ "--delay": `${index * 60}ms` }}
                     >
                       <img src={moment.src} alt={moment.alt} loading="lazy" />
-                      <figcaption>{moment.caption}</figcaption>
                     </figure>
                   );
                 }
@@ -2874,8 +3019,12 @@ function OwnershipPage({ page }) {
                       style={{ "--delay": `${index * 60}ms` }}
                     >
                       <span className="own-moment-stat-number">{moment.number}</span>
-                      <span className="own-moment-stat-label">{moment.label}</span>
-                      <p className="own-moment-stat-sub">{moment.sub}</p>
+                      {moment.label ? (
+                        <span className="own-moment-stat-label">{moment.label}</span>
+                      ) : null}
+                      {moment.sub ? (
+                        <p className="own-moment-stat-sub">{moment.sub}</p>
+                      ) : null}
                     </div>
                   );
                 }
@@ -3597,6 +3746,105 @@ function PrateekPage({ page }) {
             </div>
           </div>
         </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+function PalFreshGlobalPage() {
+  const [language, setLanguage] = useState("en");
+  const isArabic = language === "ar";
+  const content = isArabic
+    ? {
+        eyebrow: "بال فريش جلوبال · دبي، الإمارات",
+        title: "بال فريش جلوبال، من مزارعنا إلى مُجمّدك",
+        intro: "تقدم شركة بال فريش جلوبال للتجارة ذ.م.م الخضروات المجمدة الهندية للمنازل والشركات في الإمارات وخارجها، مدعومة بسلسلة توريد تبدأ من مزارع حقيقية وتنتهي في مُجمّدك.",
+        aboutTitle: "عن شركة بال فريش جلوبال للتجارة",
+        about: "بال فريش جلوبال هي الكيان الدولي المخصص لشركة بال فروزن فودز، ومقرها دبي، وقد تأسست لإدارة عمليات التصدير إلى أسواق الإمارات والأسواق العالمية. تحمل الشركة نفس الالتزام بالجودة والمذاق والابتكار على مستوى عالمي.",
+        rootsTitle: "جذورنا في بال فروزن فودز",
+        roots: "تعود قصة بال فريش جلوبال إلى بال فروزن فودز، التي تأسست عام 2013 في أوتاراخند بالهند كقسم تصنيع الأغذية التابع لمجموعة إس إم بال جروب. ومن مبادرة إقليمية نشأت علامة تخدم المنازل وسلاسل الضيافة ومزودي خدمات الأغذية.",
+        productsTitle: "مجموعة الخضروات المجمدة لدينا",
+        productsIntro: "تضم تشكيلة بال فريش جلوبال تسعة أنواع من الخضروات المجمدة، تتم معالجتها للحفاظ على الطعم واللون والقيمة الغذائية من الحصاد وحتى التجميد.",
+        whyTitle: "لماذا تختار بال فريش جلوبال؟",
+        reachTitle: "إلى أين تصل منتجاتنا؟",
+        reach: "تُصدّر بال فريش جلوبال الخضروات المجمدة والوجبات الخفيفة الجاهزة للأكل إلى الشرق الأوسط وأمريكا الشمالية وآسيا، لتوسع نطاق بال فروزن فودز إلى ما هو أبعد من الهند.",
+        contactTitle: "تواصل مع بال فريش جلوبال أو زورونا",
+        addressLabel: "العنوان",
+        address: "M-22، مول بن شبيب، شارع بغداد، القصيص، دبي، الإمارات العربية المتحدة",
+        phoneLabel: "الهاتف",
+        hoursLabel: "ساعات العمل",
+        hours: "من الإثنين إلى السبت، 9:00 صباحًا حتى 6:00 مساءً",
+        faqTitle: "الأسئلة الشائعة",
+        exploreTitle: "لمزيد من الاستكشاف",
+        explore: "لمعرفة المزيد عن مصادر مكوناتنا، تفضلوا بزيارة بال أجريكلتشر، أو تعرفوا على مشاركاتنا في المعارض، أو تابعوا آخر أخبارنا عبر المدونة.",
+        cta: "تواصل معنا",
+      }
+    : {
+        eyebrow: "Pal Fresh Global · Dubai, UAE",
+        title: "PalFresh Global, from our farms to your freezer",
+        intro: "PalFresh Global Trading LLC brings India's frozen vegetables to households and businesses across the UAE and beyond, backed by a supply chain that starts on real farms and ends in your freezer.",
+        aboutTitle: "About PalFresh Global Trading LLC",
+        about: "PalFresh Global Trading LLC is the dedicated international entity for Pal Frozen Foods, based in Dubai, UAE, and built to manage export operations for the UAE and global markets. It carries forward the same promise of quality, taste, and innovation on a global scale.",
+        rootsTitle: "Our roots in Pal Frozen Foods",
+        roots: "PalFresh Global's story begins with Pal Frozen Foods, established in 2013 in Uttarakhand, India, as the food processing division of SM Pal Group. What started as a regional initiative grew into a brand serving households, hospitality chains, and food service providers.",
+        productsTitle: "Our frozen vegetable range",
+        productsIntro: "PalFresh Global's range covers nine frozen vegetables, each processed to preserve taste, color, and nutrition from harvest to freezer.",
+        whyTitle: "Why choose PalFresh Global",
+        reachTitle: "Where PalFresh Global reaches",
+        reach: "PalFresh Global exports frozen vegetables and ready-to-eat snacks across the Middle East, North America, and Asia, extending Pal Frozen Foods well beyond its original base in India.",
+        contactTitle: "Visit or contact PalFresh Global",
+        addressLabel: "Address",
+        address: "M-22, Bin Shabib Mall, Baghdad Street, Al Qusais, Dubai, UAE",
+        phoneLabel: "Phone",
+        hoursLabel: "Hours",
+        hours: "Monday to Saturday, 9:00 am to 6:00 pm",
+        faqTitle: "Frequently asked questions",
+        exploreTitle: "Explore more",
+        explore: "To learn more about our ingredients, visit Pal Agriculture, see our latest Exhibitions, meet our Board of Directors, or read the latest Blog updates.",
+        cta: "Get in touch",
+      };
+  const products = (isArabic
+    ? ["البازلاء الخضراء المجمدة", "الذرة الحلوة المجمدة", "خليط الخضروات المجمدة - 3 أنواع", "خليط الخضروات المجمدة - 4 أنواع", "البامية المجمدة", "البروكلي المجمد", "السبانخ المجمد", "الفاصوليا الخضراء المقطعة المجمدة", "القرع المر المجمد"]
+    : ["Frozen Green Peas", "Frozen Sweet Corn", "Frozen Mix Veg, 3 way", "Frozen Mix Veg, 4 way", "Frozen Okra", "Frozen Broccoli", "Frozen Spinach", "Frozen Cut Green Beans", "Frozen Bitter Gourd"]
+  ).map((label) => ({ label, href: "/industries/pal-frozen-foods/pal-fresh" }));
+  const reasons = isArabic
+    ? ["تقنية تجميد متطورة تحفظ الطعم واللون والقيمة الغذائية.", "خدمة المنازل وقطاع الفنادق والمطاعم بنفس مستوى الجودة.", "معايير سلامة غذائية عالمية وسلسلة توريد متكاملة.", "توصيل موثوق وإمداد ثابت، وليس شحنات لمرة واحدة."]
+    : ["Advanced freezing technology locks in taste, color, and nutrition at the point of freezing.", "Built for households and the HORECA sector with the same product standard.", "International food safety standards backed by an integrated farm-to-export supply chain.", "Reliable delivery that businesses and households can depend on."];
+  const faqs = isArabic
+    ? [["ما هي شركة بال فريش جلوبال؟", "هي الذراع الدولية لشركة بال فروزن فودز، ومقرها دبي، ومتخصصة في تصدير الخضروات المجمدة والوجبات الجاهزة."], ["أين يقع مقر بال فريش جلوبال؟", "تقع في مول بن شبيب على شارع بغداد في منطقة القصيص، دبي."], ["ما المنتجات التي تقدمها؟", "تقدم الخضروات المجمدة وعبوات التجزئة والفنادق والمطاعم للمشترين التجاريين."], ["ما الأسواق التي تخدمها؟", "تُصدّر إلى أسواق الشرق الأوسط وأمريكا الشمالية وآسيا."]]
+    : [["What is PalFresh Global Trading LLC?", "PalFresh Global is the international arm of Pal Frozen Foods, based in Dubai and dedicated to exporting frozen vegetables and ready-to-eat snacks."], ["Where is PalFresh Global based?", "PalFresh Global is based at Bin Shabib Mall on Baghdad Street in Al Qusais, Dubai, UAE."], ["What products does PalFresh Global offer?", "It offers frozen vegetables and a dedicated Retail/HoReca pack for business buyers."], ["Which markets does PalFresh Global serve?", "It exports across the Middle East, North America, and Asia."]];
+  useEffect(() => {
+    document.documentElement.lang = language;
+    document.documentElement.dir = isArabic ? "rtl" : "ltr";
+    return () => {
+      document.documentElement.lang = "en";
+      document.documentElement.dir = "ltr";
+    };
+  }, [isArabic, language]);
+  return (
+    <div className={`route-page pfg-page ${isArabic ? "pfg-page-ar" : ""}`}>
+      <RouteHeader showLanguageToggle language={language} onLanguageChange={setLanguage} />
+      <PalFreshGlobalSeo />
+      <main>
+        <section className="pfg-hero">
+          <img src="/assets/pal-frozen.webp" alt="PalFresh Global frozen vegetables" />
+          <div className="pfg-hero-shade" />
+          <div className="container pfg-hero-copy">
+            <p className="eyebrow">{content.eyebrow}</p>
+            <h1>{content.title}</h1>
+            <p>{content.intro}</p>
+            <a className="button button-brass" href="#pfg-products">{content.productsTitle} <ArrowDownRight size={17} /></a>
+          </div>
+          <div className="pfg-hero-mark"><strong>UAE</strong><span>GLOBAL EXPORTS</span></div>
+        </section>
+        <section className="pfg-intro section-pad"><div className="container pfg-two-col"><div><p className="eyebrow eyebrow-dark">01 · {content.aboutTitle}</p><h2>{content.aboutTitle}</h2></div><div><p className="large-copy">{content.about}</p><p>{content.roots}</p><div className="pfg-inline-links"><a href="/about">{isArabic ? "من نحن" : "About Us"} <ArrowUpRight size={14} /></a><a href="/industries/pal-frozen-foods/pal-fresh">{isArabic ? "بال فروزن فودز (الهند)" : "Pal Frozen Foods (India)"} <ArrowUpRight size={14} /></a><a href="/about/the-pal-group">SM Pal Group <ArrowUpRight size={14} /></a></div></div></div></section>
+        <section className="pfg-products section-pad" id="pfg-products"><div className="container"><div className="pfg-section-heading"><p className="eyebrow eyebrow-dark">02 · {content.productsTitle}</p><h2>{content.productsTitle}</h2><p>{content.productsIntro}</p></div><div className="pfg-product-grid">{products.map((product, index) => <a className="pfg-product-card" href={product.href} key={product.label}><span>0{index + 1}</span><h3>{product.label}</h3><ArrowUpRight size={18} /></a>)}<a className="pfg-product-card pfg-product-card-featured" href="#pfg-contact"><span>10</span><h3>{isArabic ? "عبوة التجزئة والفنادق والمطاعم" : "Retail / HoReca Pack"}</h3><ArrowUpRight size={18} /></a></div></div></section>
+        <section className="pfg-reasons section-pad"><div className="container pfg-two-col"><div><p className="eyebrow">03 · {content.whyTitle}</p><h2>{content.whyTitle}</h2></div><div className="pfg-reason-list">{reasons.map((reason, index) => <div key={reason}><span>0{index + 1}</span><p>{reason}</p></div>)}</div></div></section>
+        <section className="pfg-reach section-pad"><div className="container pfg-two-col"><div><p className="eyebrow eyebrow-dark">04 · {content.reachTitle}</p><h2>{content.reachTitle}</h2></div><p className="large-copy">{content.reach}</p></div></section>
+        <section className="pfg-contact section-pad" id="pfg-contact"><div className="container pfg-contact-grid"><div><p className="eyebrow">05 · {content.contactTitle}</p><h2>{content.contactTitle}</h2><p>{isArabic ? "للحصول على كتيبات المنتجات أو للاستفسارات الخاصة، تفضلوا بزيارة فريقنا." : "For product brochures or specific inquiries, get in touch with our team."}</p></div><address><div><span>{content.addressLabel}</span><strong>{content.address}</strong></div><div><span>{content.phoneLabel}</span><a href="tel:+971505738300">+971 50 573 8300</a></div><div><span>{content.hoursLabel}</span><strong>{content.hours}</strong></div><a className="button button-brass" href="/contact">{content.cta} <ArrowUpRight size={17} /></a></address></div></section>
+        <section className="pfg-faq section-pad"><div className="container pfg-two-col"><div><p className="eyebrow eyebrow-dark">06 · {content.faqTitle}</p><h2>{content.faqTitle}</h2></div><div className="faq-list">{faqs.map(([question, answer]) => <details className="faq-item" key={question}><summary>{question}<ArrowDownRight size={18} /></summary><p>{answer}</p></details>)}</div></div></section>
+        <section className="pfg-explore section-pad"><div className="container pfg-two-col"><div><p className="eyebrow">07 · {content.exploreTitle}</p><h2>{content.exploreTitle}</h2></div><div><p className="large-copy">{content.explore}</p><div className="pfg-inline-links"><a href="/industries/pal-farms">{isArabic ? "بال أجريكلتشر" : "Pal Agriculture"} <ArrowUpRight size={14} /></a><a href="/media">{isArabic ? "المعارض" : "Exhibitions"} <ArrowUpRight size={14} /></a><a href="/about/board-of-directors">{isArabic ? "مجلس الإدارة" : "Board of Directors"} <ArrowUpRight size={14} /></a><a href="/media">{isArabic ? "المدونة" : "Blog"} <ArrowUpRight size={14} /></a></div></div></div></section>
       </main>
       <Footer />
     </div>
@@ -6898,6 +7146,7 @@ function SiteRouter() {
     if (page.type === "ownership") return <OwnershipPage page={page} />;
     if (page.type === "board") return <BoardPage page={page} />;
     if (page.type === "prateek") return <PrateekPage page={page} />;
+    if (page.type === "pal-fresh-global") return <PalFreshGlobalPage />;
     if (page.type === "pal-fresh") return <PalFreshPage page={page} />;
     if (page.type === "frozzo") return <FrozzoPage page={page} />;
     if (page.type === "pal-stone") return <PalStoneIndustriesPage page={page} />;
@@ -6952,22 +7201,23 @@ function SiteRouter() {
               <p className="eyebrow">
                 Haldwani, Uttarakhand <span /> Since 1982
               </p>
+
               <h1>
-                SM Pal Group, <br />
+                SM Pal Group,
                 <em className="heading-shimmer">
+                  {' '}
                   A legacy of trust across real estate, car dealerships, frozen
                   foods and pal stone industries
                 </em>
               </h1>
-              <p className="hero-intro">
-                SM Pal Group is a Haldwani-based, multi-industry business house
-                with roots going back to 1982. What began as a single
-                stone-crushing unit has grown into a trusted group spanning real
-                estate development, car dealerships, frozen foods, and stone
-                &amp; construction materials, serving the Kumaon region of
-                Uttarakhand with the same transparent, customer-first approach
-                for over four decades.
-              </p>
+
+              <div className="hero-badges" aria-label="SM Pal Group focus areas">
+                <span>Infrastructure</span>
+                <span>Real Estate</span>
+                <span>Frozen Foods</span>
+                <span>Automotive</span>
+              </div>
+
               <div className="hero-actions">
                 <a className="button button-brass" href="#businesses">
                   Explore Our Industries <ArrowDownRight size={17} />
@@ -6977,13 +7227,31 @@ function SiteRouter() {
                 </a>
               </div>
             </div>
-            <aside className="hero-trust" aria-label="About SM Pal Group">
-              <strong>
-                45<span>+</span>
-              </strong>
-              <p>Years of trust</p>
+
+            <aside className="hero-visual" aria-label="SM Pal Group highlights">
+              <div className="hero-panel">
+                <div className="hero-panel-header">
+                  <span className="hero-panel-kicker">Trusted since 1982</span>
+                </div>
+
+                <div className="hero-panel-legacy" aria-label="45 plus years of legacy">
+                  <span className="legacy-number">45+</span>
+                  <span className="legacy-label">Years of Legacy</span>
+                </div>
+
+                <div className="hero-panel-list">
+                  <p>Expansion built on purpose.</p>
+                  <ul>
+                    <li>Stone & Construction</li>
+                    <li>Real Estate</li>
+                    <li>Frozen Foods</li>
+                    <li>Automotive</li>
+                  </ul>
+                </div>
+              </div>
             </aside>
           </div>
+
           <div className="scroll-cue">
             <span /> Scroll to explore
           </div>
@@ -7208,7 +7476,7 @@ function SiteRouter() {
           <div className="container community-grid">
             <div className="community-image reveal">
               <img
-                src="/assets/meera-pal.jpeg"
+                src="/assets/meera-pal.jpg"
                 alt="Community gathering celebrating together"
                 loading="lazy"
               />
