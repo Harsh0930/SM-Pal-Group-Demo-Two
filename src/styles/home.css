@@ -1,0 +1,122 @@
+/* Homepage refinements share the site's typography and brand palette. */
+.home-page .chairman-grid {
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(32px, 5vw, 72px);
+}
+
+/* Preserve the complete portrait, including its top and bottom edges. */
+.home-page .chairman-image {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  background: transparent;
+}
+
+.home-page .chairman-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5504 / 8156;
+  object-fit: contain;
+  object-position: center;
+}
+
+.home-page .hero .heading-shimmer {
+  font-size: inherit;
+  letter-spacing: inherit;
+  color: var(--brass);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  animation: none;
+}
+
+.home-page .hero-actions {
+  flex-wrap: wrap;
+}
+
+.home-page .businesses .card-body > p:last-of-type,
+.home-page .faq-item p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.home-page .businesses .card-body h3 {
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.home-page :is(.card-category, .award-vertical) {
+  color: var(--soft);
+  font-size: 12px;
+}
+
+.home-page .businesses .card-cta {
+  font-size: 12px;
+  margin-top: 24px;
+}
+
+.home-page .businesses .card-body > p:last-of-type {
+  flex: 1;
+}
+
+.home-page .award-detail {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.home-page .section-heading {
+  min-height: 0;
+  margin-bottom: 40px;
+}
+
+.home-page :is(.community-grid, .faq-grid) {
+  gap: clamp(32px, 5vw, 72px);
+}
+
+.home-page .faq-item summary svg {
+  flex-shrink: 0;
+}
+
+.home-page main :is(a, summary):focus-visible {
+  outline: 2px solid var(--soft);
+  outline-offset: 5px;
+}
+
+.home-page .hero a:focus-visible {
+  outline-color: var(--brass);
+}
+
+@media (max-width: 1100px) {
+  .home-page .businesses .business-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .home-page .chairman-grid,
+  .home-page .community-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-page .chairman-copy {
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-page .businesses .business-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-page .hero .button {
+    white-space: normal;
+  }
+
+  .home-page .chairman-image {
+    max-width: 360px;
+  }
+
+  .home-page :is(.award-item, .news-item) {
+    grid-template-columns: 24px minmax(0, 1fr) 20px;
+    gap: 12px;
+  }
+}

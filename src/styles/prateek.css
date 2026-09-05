@@ -1,0 +1,116 @@
+/* Leadership page: use the shared brand scale and container widths. */
+.prateek-page .own-hero > img { opacity: 1; }
+.prateek-page .own-hero-shade {
+  background: linear-gradient(90deg, rgba(8, 40, 30, .62), rgba(8, 40, 30, .25) 52%, transparent 78%);
+}
+.prateek-page .own-hero-copy h1 { max-width: min(58%, 660px); }
+.prateek-page .own-hero-copy h1 em { display: block; color: var(--brass); }
+.prateek-page .own-hero-intro { max-width: min(52%, 560px); }
+.prateek-page .prateek-hero-link { color: var(--brass); }
+.prateek-page .own-section-label { align-items: baseline; }
+.prateek-page .own-section-label > i { flex: 0 0 44px; }
+.prateek-page .own-section-label > span:last-child { min-width: 0; line-height: 1.5; }
+.prateek-page .own-who-note {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 32px;
+  border: 0;
+  border-left: 3px solid var(--brass);
+  border-radius: 0;
+  background: var(--ivory);
+  box-shadow: none;
+}
+.prateek-page .own-who-note .legacy-label { margin: 0; line-height: 1.5; }
+.prateek-page .own-who-note p { font-size: 22px; line-height: 1.5; }
+.prateek-page .own-journey-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.prateek-page .own-journey-card { display: flex; flex-direction: column; }
+.prateek-page .own-journey-card h3 { font-size: clamp(18px, 2vw, 22px); }
+.prateek-page .prateek-card-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 28px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.prateek-page .prateek-card-link svg { flex-shrink: 0; color: var(--brass); }
+
+/* Keep the alternating journey in aligned rows with consistent image frames. */
+.prateek-page .prateek-timeline { background: var(--deep); }
+.prateek-page .prateek-timeline-track { gap: 56px; padding: 0; }
+.prateek-page .prateek-timeline-track::before { top: 0; bottom: 0; }
+.prateek-page .prateek-timeline-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; }
+.prateek-page .prateek-timeline-row > * { min-width: 0; grid-row: 1; }
+.prateek-page .prateek-timeline-row .prateek-timeline-image {
+  aspect-ratio: 4 / 3;
+  border-radius: 0;
+  box-shadow: none;
+}
+.prateek-page .prateek-timeline-copy { padding: 0 16px; }
+.prateek-page .prateek-timeline-copy h3 { font-size: clamp(18px, 2vw, 22px); line-height: 1.3; }
+
+/* Recognition uses the same two-column editorial layout as the vision section. */
+.prateek-page .own-next-gen > .container {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.prateek-recognition-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 80px; }
+.prateek-page .prateek-recognition-intro { margin-bottom: 0; }
+.prateek-page .prateek-recognition-grid h2 { font-size: var(--text-h2); color: var(--green); }
+.prateek-page .own-next-gen-card { padding: 0; margin: 0; background: transparent; }
+.prateek-page .own-next-gen-card p { font-size: 16px; line-height: 1.7; }
+.prateek-page .prateek-recognition-statement {
+  padding: 0 0 0 24px;
+  border-left: 2px solid var(--brass);
+  color: var(--green);
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.5;
+}
+.prateek-page .own-next-gen-cta { padding: 24px 0 0; border: 0; border-top: 1px solid var(--line); }
+.prateek-page main a:focus-visible { outline: 2px solid var(--brass); outline-offset: 5px; }
+.prateek-page .faq-item summary svg { flex-shrink: 0; }
+
+@media (max-width: 900px) {
+  .prateek-page .own-who-grid,
+  .prateek-recognition-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .prateek-page .prateek-timeline-row { gap: 40px; }
+  .prateek-page .prateek-timeline-copy { padding: 0; }
+}
+@media (max-width: 640px) {
+  /* Give the portrait its own space so text cannot obscure the face. */
+  .prateek-page .own-hero { display: block; min-height: 0; }
+  .prateek-page .own-hero > img {
+    position: relative;
+    display: block;
+    height: clamp(300px, 78vw, 480px);
+    object-position: 78% top;
+  }
+  .prateek-page .own-hero-shade { display: none; }
+  .prateek-page .own-hero-copy { padding-top: 36px; padding-bottom: 56px; }
+  .prateek-page .own-hero-copy h1,
+  .prateek-page .own-hero-intro { max-width: 100%; }
+  .prateek-page .own-section-label { gap: 12px; }
+  .prateek-page .own-section-label > i { flex-basis: 28px; }
+  .prateek-page .own-section-label > span:last-child { font-size: 12px; letter-spacing: 1px; }
+  .prateek-page .own-who-note { padding: 26px 24px; }
+  .prateek-page .own-journey-grid { grid-template-columns: minmax(0, 1fr); }
+  .prateek-page .prateek-timeline-track { padding-left: 24px; gap: 40px; }
+  .prateek-page .prateek-timeline-track::before { left: 0; }
+  .prateek-page .prateek-timeline-row { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .prateek-page .prateek-timeline-row > * { grid-column: 1; grid-row: auto; }
+  .prateek-page .prateek-timeline-row::before { left: -24px; top: 28px; }
+  .prateek-page .prateek-timeline-copy { margin: 0; }
+  .prateek-page .prateek-timeline-year { top: 12px; left: 12px; font-size: 20px; }
+}

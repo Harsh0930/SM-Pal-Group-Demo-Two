@@ -1,0 +1,112 @@
+/* The supplied artwork includes the gradient and grid treatment. */
+.board-page .board-hero > img {
+  opacity: 1;
+  object-position: center;
+}
+
+.board-page .board-hero-shade {
+  background: none;
+  pointer-events: none;
+}
+
+.board-page .board-hero-copy h1 {
+  max-width: 800px;
+}
+
+.board-page .board-hero-copy h1 em {
+  display: block;
+  color: var(--brass);
+  font-family: var(--serif);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: inherit;
+}
+
+.board-page .board-hero-intro {
+  max-width: 620px;
+  margin: 0 0 30px;
+  color: rgba(255, 255, 255, .9);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.board-page .board-section-label {
+  gap: 12px;
+  margin-bottom: 32px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.board-page .board-section-label span:last-child {
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.board-page .board-section-label i {
+  flex: 0 0 32px;
+}
+
+.board-page :is(.board-director-card, .board-matters-card) p {
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.board-page .board-director-role {
+  color: var(--soft);
+  font-size: 12px;
+}
+
+.board-page .board-director-card .text-link {
+  align-self: flex-start;
+  font-size: 12px;
+  min-height: 44px;
+}
+
+.board-page .board-director-card h3 {
+  font-size: 24px;
+  letter-spacing: -.025em;
+}
+
+.board-page :is(.board-director-card, .board-matters-card):hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.board-page .board-governance-inner {
+  gap: clamp(32px, 5vw, 72px);
+}
+
+.board-page main :is(a, summary):focus-visible {
+  outline: 2px solid var(--soft);
+  outline-offset: 5px;
+}
+
+.board-page .board-hero a:focus-visible {
+  outline-color: var(--brass);
+}
+
+@media (max-width: 1100px) {
+  .board-page .board-hero-mark { display: none; }
+}
+
+@media (max-width: 640px) {
+  .board-page .board-hero {
+    min-height: 0;
+  }
+
+  .board-page .board-hero-copy {
+    padding-top: 144px;
+    padding-bottom: 64px;
+  }
+
+  .board-page .board-explore-links {
+    align-items: stretch;
+  }
+
+  .board-page .board-explore-links .button {
+    justify-content: space-between;
+    white-space: normal;
+  }
+}

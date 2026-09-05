@@ -1,0 +1,171 @@
+/* Keep the supplied gradient visible and use the shared brand type scale. */
+.pal-group-page .pg-hero > img {
+  opacity: 1;
+  object-position: center;
+}
+
+.pal-group-page .pg-hero-shade {
+  background: none;
+  pointer-events: none;
+}
+
+.pal-group-page .pg-hero-copy h1 {
+  max-width: 800px;
+}
+
+.pal-group-page .pg-hero-copy h1 em {
+  display: block;
+  color: var(--brass);
+  font-family: var(--serif);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: inherit;
+}
+
+.pal-group-page .pg-hero-intro {
+  max-width: 620px;
+  margin: 0 0 30px;
+  color: rgba(255, 255, 255, .9);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.pal-group-page .pg-section-label {
+  gap: 12px;
+  margin-bottom: 32px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.pal-group-page .pg-section-label span:last-child {
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.pal-group-page .pg-section-label i {
+  flex: 0 0 32px;
+}
+
+.pal-group-page .pg-diversified .pg-section-label span:last-child {
+  color: var(--brass);
+}
+
+.pal-group-page :is(.pg-wider-card, .pg-diversified-card) p {
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.pal-group-page .pg-wider-category {
+  color: var(--soft);
+  font-size: 12px;
+}
+
+.pal-group-page .pg-core-category {
+  color: rgba(255, 255, 255, .85);
+  font-size: 12px;
+}
+
+.pal-group-page .pg-core-card small {
+  color: rgba(255, 255, 255, .9);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.pal-group-page .pg-core-card > div {
+  min-width: 0;
+}
+
+.pal-group-page .pg-wider-card h3 {
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.pal-group-page .pg-wider-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.pal-group-page :is(.pg-story-grid, .pg-naming-grid) {
+  gap: clamp(32px, 5vw, 72px);
+}
+
+.pal-group-page .pg-story-links .text-link,
+.pal-group-page .pg-wider-cta .text-link {
+  max-width: 100%;
+  white-space: normal;
+}
+
+.pal-group-page .text-link svg {
+  flex-shrink: 0;
+}
+
+.pal-group-page main :is(a, summary):focus-visible {
+  outline: 2px solid var(--soft);
+  outline-offset: 5px;
+}
+
+.pal-group-page :is(.pg-hero a, .pg-core-card):focus-visible {
+  outline-color: var(--brass);
+}
+
+@media (max-width: 1000px) {
+  .pal-group-page .pg-hero {
+    display: block;
+    min-height: 0;
+    padding-bottom: 48px;
+  }
+
+  .pal-group-page .pg-hero-copy {
+    padding-top: 144px;
+    padding-bottom: 32px;
+  }
+
+  .pal-group-page .pg-hero-mark {
+    position: relative;
+    inset: auto;
+    width: 196px;
+    margin-left: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .pal-group-page .pg-story-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pal-group-page .pg-story-note {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .pal-group-page :is(.pg-wider-card, .pg-diversified-card) {
+    padding: 26px 22px;
+  }
+
+  .pal-group-page .pg-core-card h3 {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  .pal-group-page .pg-explore-card {
+    min-height: 80px;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .pal-group-page .pg-explore-card svg {
+    flex-shrink: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pal-group-page :is(.pg-core-card, .pg-core-card img, .pg-core-card::after, .pg-explore-card, .pg-explore-card svg) {
+    transition: none;
+    transform: none;
+  }
+}

@@ -1,0 +1,78 @@
+/* Page-specific layout; type sizes and brand tokens come from global.css. */
+.sumeera-page,
+.sumeera-page p,
+.sumeera-page h1,
+.sumeera-page h2,
+.sumeera-page h3 {
+  text-align: left;
+  text-justify: auto;
+  hyphens: none;
+}
+.sumeera-page section[id] { scroll-margin-top: 100px; }
+.sumeera-breadcrumb { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; font-size: 12px; color: rgba(255,255,255,.8); }
+.sumeera-breadcrumb a:hover { color: var(--brass); }
+.sumeera-page .sumeera-hero-intro { max-width: 700px; color: rgba(255,255,255,.85); font-size: 18px; line-height: 1.65; margin-bottom: 30px; }
+.sumeera-hero-intro a { text-decoration: underline; text-underline-offset: 4px; }
+.sumeera-page .route-hero-copy h1 { line-height: 1.1; }
+.sumeera-split { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: start; }
+.sumeera-page .section-heading > div { max-width: 800px; }
+.sumeera-page .section-heading p:last-child,
+.sumeera-page .route-copy > p:last-child,
+.sumeera-amenity p,
+.sumeera-highlight p { color: var(--muted); margin-bottom: 0; }
+.sumeera-page h2,
+.sumeera-page h3 { color: var(--green); }
+.sumeera-location,
+.sumeera-highlights { background: #fff; }
+.sumeera-amenities { background: var(--grad-brass-wash), var(--ivory); }
+.sumeera-landmarks { padding: 36px; background: var(--ivory); border: 1px solid var(--line); }
+.sumeera-landmarks > p { display: flex; gap: 10px; align-items: center; }
+.sumeera-landmark { position: relative; padding: 24px 30px 24px 0; border-top: 1px solid var(--line); }
+.sumeera-landmark:last-child { padding-bottom: 0; }
+.sumeera-landmark h3 { margin-bottom: 6px; }
+.sumeera-landmark p { color: var(--muted); margin: 0; }
+.sumeera-landmark > svg { position: absolute; right: 0; top: 28px; color: var(--green); }
+.sumeera-amenity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.sumeera-amenity { padding: 32px; border: 1px solid var(--line); background: #fff; }
+.sumeera-amenity > svg { color: var(--green); margin-bottom: 24px; }
+.sumeera-highlight-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 70px; }
+.sumeera-highlight,
+.sumeera-reasons article { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 18px; padding: 30px 0; border-top: 1px solid var(--line); }
+.sumeera-number { color: var(--brass); font-size: 12px; font-weight: 700; letter-spacing: 1px; padding-top: 4px; }
+.sumeera-why { background: var(--deep); color: #fff; }
+.sumeera-why h2,
+.sumeera-why h3 { color: #fff; }
+.sumeera-why h2 em { color: var(--brass); }
+.sumeera-why .button { margin-top: 16px; }
+.sumeera-reasons article { border-color: rgba(255,255,255,.2); }
+.sumeera-reasons article:first-child { padding-top: 0; border: 0; }
+.sumeera-reasons article:last-child { padding-bottom: 0; }
+.sumeera-reasons p { color: rgba(255,255,255,.75); margin-bottom: 0; }
+.sumeera-contact { background: var(--ivory); }
+.sumeera-contact-details { font-style: normal; padding: 36px; background: #fff; border: 1px solid var(--line); }
+.sumeera-contact-details > div { display: grid; grid-template-columns: 24px minmax(0,1fr); gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.sumeera-contact-details > div:first-child { padding-top: 0; }
+.sumeera-contact-details > div:last-child { padding-bottom: 0; border: 0; }
+.sumeera-contact-details svg { color: var(--green); }
+.sumeera-contact-details span { display: block; margin-bottom: 10px; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; color: var(--green); }
+.sumeera-contact-details p { margin: 0; }
+.sumeera-contact-details a { overflow-wrap: anywhere; text-decoration: underline; text-underline-offset: 4px; }
+.sumeera-page .faq-item svg { flex-shrink: 0; }
+.sumeera-page a:focus-visible,
+.sumeera-page summary:focus-visible { outline: 2px solid var(--brass); outline-offset: 5px; }
+@media (max-width: 900px) {
+  .sumeera-split { gap: 40px; }
+  .sumeera-amenity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sumeera-highlight-grid { column-gap: 36px; }
+}
+@media (max-width: 640px) {
+  .sumeera-split,
+  .sumeera-amenity-grid,
+  .sumeera-highlight-grid { grid-template-columns: 1fr; }
+  .sumeera-page .sumeera-hero-intro { font-size: 15px; }
+  .sumeera-page .route-hero-copy h1 { overflow-wrap: break-word; }
+  .sumeera-breadcrumb { gap: 8px; }
+  .sumeera-landmarks,
+  .sumeera-contact-details,
+  .sumeera-amenity { padding: 26px; }
+}

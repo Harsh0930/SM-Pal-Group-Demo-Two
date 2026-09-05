@@ -1386,6 +1386,7 @@ function PalamViewPage() {
 
   return (
     <>
+      <main id="main" className="palam-main">
       <ScrollCanvasHero />
       <VisionSection />
       <ExperienceSection />
@@ -1395,6 +1396,7 @@ function PalamViewPage() {
       <TestimonialsSection />
       <StatsSection />
       <CTASection />
+      </main>
       <Footer />
     </>
   );

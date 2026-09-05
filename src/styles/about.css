@@ -1,0 +1,277 @@
+/* About page refinements use the shared SM Pal Group type and colour tokens. */
+.about-page .about-hero-copy h1 em {
+  letter-spacing: inherit;
+}
+
+.about-page .about-hero-copy > p:not(.eyebrow) {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.about-page :is(.about-leadership-grid, .about-community-grid, .about-recognition-grid, .about-contact-grid) {
+  gap: clamp(32px, 5vw, 72px);
+}
+
+.about-page .about-direction-grid p {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.about-page .about-business-card small {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.about-page .about-business-card h3 {
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.25;
+}
+
+.about-page .about-community-stat {
+  position: relative;
+  max-width: none;
+  padding: 28px;
+  border: 0;
+  background: var(--deep);
+}
+
+.about-page .about-community-stat p {
+  max-width: none;
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  text-transform: none;
+}
+
+.about-page .about-community-image {
+  min-height: 0;
+  height: auto;
+}
+
+.about-page .about-community-image > img {
+  min-height: 0;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-position: center;
+}
+
+.about-page .legacy-wall .container {
+  width: min(1180px, calc(100% - 48px));
+}
+
+.about-page .legacy-heading {
+  margin-bottom: 40px;
+}
+
+.about-page .legacy-heading h2 {
+  margin: 0;
+  color: var(--green);
+  font-size: var(--text-h2);
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+
+.about-page .legacy-heading h2 em {
+  font-family: var(--serif);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.about-page .legacy-wall .legacy-layout {
+  grid-template-columns: minmax(0, .85fr) minmax(0, 2.15fr);
+  align-items: start;
+  gap: 40px;
+}
+
+.about-page .legacy-wall .legacy-foundation {
+  padding: 0 28px 0 0;
+}
+
+/* Landscape images get 3:2 cells; the two portraits span two rows.
+   Explicit areas keep portraits and group photos out of arbitrary nth-child crops. */
+.about-page .legacy-wall .legacy-mosaic {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  aspect-ratio: 9 / 10;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+  grid-template-areas:
+    "leadership pallazio foods"
+    "leadership skoda heritage"
+    "farming brand sumeera"
+    "team speech ford"
+    "awards speech chairman";
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+
+.about-page .legacy-wall .legacy-tile {
+  grid-area: var(--tile-area);
+  min-height: 0;
+  border-radius: 2px;
+  background: var(--ivory);
+}
+
+.about-page .legacy-wall .legacy-tile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--image-position, center);
+  filter: none;
+  transform: none;
+  transition: none;
+}
+
+.about-page .legacy-wall .legacy-center-mark {
+  grid-area: brand;
+  min-width: 0;
+  min-height: 0;
+  width: auto;
+  height: auto;
+}
+
+.about-page .legacy-wall .legacy-center-mark img {
+  width: 140px;
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+}
+
+.about-page .legacy-wall .legacy-purpose {
+  grid-column: 1 / -1;
+  padding: 32px 0 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.about-page .legacy-wall .legacy-purpose h3 {
+  margin-bottom: 24px;
+  font-size: 25px;
+}
+
+.about-page .legacy-wall .legacy-purpose .legacy-values {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 32px;
+}
+
+.about-page .legacy-wall .legacy-values strong {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.about-page .legacy-wall .legacy-values span {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.about-page .legacy-wall .legacy-attribution {
+  gap: 6px;
+}
+
+.about-page main :is(a, summary):focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 5px;
+}
+
+@media (max-width: 900px) {
+  .about-page .legacy-wall .legacy-layout,
+  .about-page :is(.about-community-grid, .about-recognition-grid, .about-contact-grid) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-page .legacy-wall .legacy-foundation {
+    padding: 0;
+    border: 0;
+    max-width: 680px;
+  }
+
+  .about-page .legacy-wall .legacy-purpose .legacy-values {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-page .about-recognition-grid > div:last-child,
+  .about-page .about-contact-grid > div:last-child {
+    padding-top: 0;
+  }
+
+  .about-page .about-hero {
+    display: block;
+    min-height: 0;
+    padding-bottom: 48px;
+  }
+
+  .about-page .about-hero-copy {
+    padding-top: 144px;
+    padding-bottom: 32px;
+  }
+
+  .about-page .about-hero-mark {
+    position: relative;
+    inset: auto;
+    margin-left: 24px;
+    width: 196px;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-page .legacy-wall .container {
+    width: calc(100% - 36px);
+  }
+
+  .about-page .legacy-heading {
+    margin-bottom: 28px;
+  }
+
+  .about-page .legacy-wall .legacy-mosaic {
+    aspect-ratio: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: auto;
+    grid-template-areas:
+      "leadership chairman"
+      "pallazio pallazio"
+      "foods foods"
+      "skoda skoda"
+      "heritage heritage"
+      "brand brand"
+      "farming speech"
+      "sumeera sumeera"
+      "team team"
+      "ford ford"
+      "awards awards";
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .about-page .legacy-wall .legacy-tile {
+    aspect-ratio: 2 / 3;
+  }
+
+  .about-page .legacy-wall .legacy-tile.wide {
+    aspect-ratio: 3 / 2;
+  }
+
+  .about-page .legacy-wall .legacy-center-mark {
+    padding: 16px;
+    min-height: 100px;
+  }
+
+  .about-page .legacy-wall .legacy-center-mark img {
+    width: 120px;
+  }
+
+  .about-page .legacy-wall .legacy-purpose .legacy-values {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .about-page .about-community-stat {
+    padding: 24px;
+  }
+}

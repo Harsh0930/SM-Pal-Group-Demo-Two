@@ -17,10 +17,11 @@ import { businesses } from "../data/businesses.js";
 import { insights, legacyMoments, journeyStages } from "../data/aboutContent.js";
 import { usePageSeo, buildFaqSchema } from "../hooks/usePageSeo.js";
 import PalamViewPage from "./PalamViewPage.jsx";
+import PalSumeeraPage from "./PalSumeeraPage.jsx";
 
 // Data constants (businesses, heroImages, stories, awards, news, videos) are
 // imported from ../data/homeContent.js.
-const chairmanImage = "/assets/Chairman.webp";
+const chairmanImage = "/assets/hero-gradient-images/chairman-banner-gradient.webp";
 const siteUrl = "https://smpalgroup.com";
 const aboutSeo = {
   title: "About SM Pal Group | Haldwani Business Group Since 1982",
@@ -446,12 +447,12 @@ function PrateekSeo() {
     setHeadMeta("property", "og:description", pageDescription);
     setHeadMeta("property", "og:url", canonicalUrl);
     setHeadMeta("property", "og:type", "profile");
-    setHeadMeta("property", "og:image", chairmanImage);
+    setHeadMeta("property", "og:image", `${siteUrl}/assets/prateek-pal-images/prateek-pal-banner.webp`);
     setHeadMeta("property", "og:image:alt", "Prateek Pal, Director at SM Pal Group");
     setHeadMeta("name", "twitter:card", "summary_large_image");
     setHeadMeta("name", "twitter:title", pageTitle);
     setHeadMeta("name", "twitter:description", pageDescription);
-    setHeadMeta("name", "twitter:image", chairmanImage);
+    setHeadMeta("name", "twitter:image", `${siteUrl}/assets/prateek-pal-images/prateek-pal-banner.webp`);
     setHeadMeta("name", "twitter:image:alt", "Prateek Pal, Director at SM Pal Group");
 
     let canonical = document.head.querySelector('link[rel="canonical"]');
@@ -1047,7 +1048,7 @@ const routePages = {
     title: "SM Pal Group: A Multi-Industry Legacy Since 1982",
     intro:
       "SM Pal Group began in 1982 with a single stone supply business in Haldwani. More than four decades later, it has grown into a wide family of companies spanning real estate, car dealerships, frozen foods, healthcare, education, infrastructure, media, and more. This page brings that full picture together in one place.",
-    image: "/assets/Palam City -1.jpg.webp",
+    image: "/assets/hero-gradient-images/banner-gradient.webp",
     facts: [
       "Established 1982",
       "Headquartered in Haldwani",
@@ -1075,8 +1076,7 @@ const routePages = {
     title: "Board of directors at SM Pal Group",
     intro:
       "SM Pal Group is guided by a board of directors rooted in the same family that founded the company in 1982. Below, meet the people who lead SM Pal Group's growth across real estate, automobiles, frozen foods, and stone supply today.",
-    image:
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=85",
+    image: "/assets/hero-gradient-images/banner-gradient.webp",
     facts: [
       "Family-led board",
       "Continuity since 1982",
@@ -1090,7 +1090,7 @@ const routePages = {
     title: "Prateek Pal, director at SM Pal Group",
     intro:
       "Prateek Pal serves as a director at SM Pal Group, where he has spent the last several years expanding the businesses his father built into new products and new markets.",
-    image: chairmanImage,
+    image: "/assets/prateek-pal-images/prateek-pal-banner.webp",
     facts: [
       "Prateek Pal",
       "Director, SM Pal Group",
@@ -1174,7 +1174,7 @@ const routePages = {
     body: "From its crushing unit at Halduchaur, Haldwani, Pal Stone Industries has built a reputation for reliable materials and delivery. Its work has supported notable projects including the Gokul Dam Project and Indian Railways.",
   },
   "/industries/pal-colonisers/pal-sumeera-residency": {
-    type: "project",
+    type: "pal-sumeera",
     eyebrow: "Pal Colonisers · Residential",
     title: "Pal Sumeera\nResidency.",
     intro:
@@ -1356,6 +1356,16 @@ function RouteHeader({ showLanguageToggle = false, language, onLanguageChange })
   const [openMenu, setOpenMenu] = useState(null);
   const [openIndustrySubmenu, setOpenIndustrySubmenu] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1001px)");
+    const resetNavigation = () => {
+      setDrawerOpen(false);
+      setOpenMenu(null);
+      setOpenIndustrySubmenu(null);
+    };
+    desktop.addEventListener("change", resetNavigation);
+    return () => desktop.removeEventListener("change", resetNavigation);
+  }, []);
   const industrySubmenus = {
     "Pal Frozen Foods": [
       { label: "Pal Fresh", href: "/industries/pal-frozen-foods/pal-fresh" },
@@ -1575,10 +1585,14 @@ function RouteHeader({ showLanguageToggle = false, language, onLanguageChange })
 
 function LegacyWall({ values }) {
   return (
-    <section className="legacy-wall section-pad" id="legacy">
+    <section className="legacy-wall section-pad" id="legacy" aria-labelledby="legacy-heading">
       <div className="container">
-        <div className="legacy-layout reveal">
-          <aside className="legacy-panel legacy-foundation">
+        <div className="legacy-heading">
+          <p className="eyebrow eyebrow-dark">Our journey wall</p>
+          <h2 id="legacy-heading">A shared legacy.<br /><em>Moments that shaped us.</em></h2>
+        </div>
+        <div className="legacy-layout">
+          <aside className="legacy-panel legacy-foundation reveal">
             <p className="eyebrow eyebrow-dark">The foundation</p>
             <h3>
               Pal Stone Industries <span>1982</span>
@@ -1605,8 +1619,9 @@ function LegacyWall({ values }) {
               <figure
                 className={`legacy-tile ${moment.shape || ""}`}
                 key={moment.title}
+                style={{ "--tile-area": moment.area, "--image-position": moment.position || "50% 50%" }}
               >
-                <img src={moment.image} alt={moment.alt} loading="lazy" />
+                <img src={moment.image} alt={moment.alt} loading="lazy" decoding="async" />
                 <figcaption>{moment.title}</figcaption>
               </figure>
             ))}
@@ -1617,9 +1632,9 @@ function LegacyWall({ values }) {
               />
             </div>
           </div>
-          <aside className="legacy-panel legacy-purpose">
+          <aside className="legacy-panel legacy-purpose reveal">
             <p className="eyebrow eyebrow-dark">Our legacy</p>
-            <h4>Our Values</h4>
+            <h3>Our values</h3>
             <div className="legacy-values">
               {values.map(([title, text], index) => (
                 <div key={title}>
@@ -1763,13 +1778,15 @@ function AboutPage({ page }) {
   ];
   return (
     <div className="route-page about-page">
+      <a className="skip-link" href="#about-main">Skip to content</a>
       <AboutSeo />
       <RouteHeader />
-      <main>
+      <main id="about-main">
         <section className="about-hero">
           <img
             src={page.image}
             alt="Modern architecture representing SM Pal Group's growth"
+            fetchPriority="high"
           />
           <div className="route-hero-shade" />
           <div className="container about-hero-copy">
@@ -2184,19 +2201,24 @@ function PalGroupPage({ page }) {
 
   return (
     <div className="route-page pal-group-page">
+      <a className="skip-link" href="#pal-group-main">Skip to content</a>
       <PalGroupSeo />
       <RouteHeader />
-      <main>
+      <main id="pal-group-main">
         <section className="pg-hero">
           <img
             src={page.image}
-            alt="SM Pal Group's diverse business portfolio"
+            alt=""
+            fetchPriority="high"
           />
           <div className="pg-hero-shade" />
           <div className="container pg-hero-copy">
             <p className="eyebrow">{page.eyebrow}</p>
-            <h1>{page.title}</h1>
+            <h1>SM Pal Group: <em>A Multi-Industry Legacy Since 1982</em></h1>
             <p className="pg-hero-intro">{page.intro}</p>
+            <a className="button button-brass" href="#core-businesses">
+              Explore our businesses <ArrowDownRight size={17} />
+            </a>
           </div>
           <div className="pg-hero-mark">
             <strong>
@@ -2601,7 +2623,7 @@ function OwnershipPage({ page }) {
       <RouteHeader />
       <main>
         <section className="own-hero">
-          <img src={page.image} alt="Shri Suresh Pal, Founder and Chairman of SM Pal Group" fetchpriority="high" />
+          <img src={page.image} alt="Shri Suresh Pal, Founder and Chairman of SM Pal Group" fetchPriority="high" />
           <div className="own-hero-shade" />
           <div className="container own-hero-copy">
             <p className="eyebrow">{page.eyebrow}</p>
@@ -2937,22 +2959,26 @@ function BoardPage({ page }) {
   const exploreMore = [
     { label: "Owner-Chairman", href: "/about/ownership" },
     { label: "The Pal Group", href: "/about/the-pal-group" },
-    { label: "SM Pal Group", href: "/about/the-pal-group" },
-    { label: "Our Team", href: "/contact" },
+    { label: "About SM Pal Group", href: "/about" },
+    { label: "Contact the team", href: "/contact" },
   ];
 
   return (
     <div className="board-page">
+      <a className="skip-link" href="#board-main">Skip to content</a>
       <BoardSeo />
       <RouteHeader />
-      <main>
+      <main id="board-main">
         <section className="board-hero">
-          <img src={page.image} alt="" fetchpriority="high" />
+          <img src={page.image} alt="" fetchPriority="high" />
           <div className="board-hero-shade" />
           <div className="container board-hero-copy">
             <p className="eyebrow">{page.eyebrow}</p>
-            <h1>{page.title}</h1>
+            <h1>Board of directors <em>at SM Pal Group</em></h1>
             <p className="board-hero-intro">{page.intro}</p>
+            <a className="button button-brass" href="#board">
+              Meet our board <ArrowDownRight size={17} />
+            </a>
           </div>
           <div className="board-hero-mark" aria-hidden="true">
             BoD
@@ -3118,7 +3144,7 @@ function BoardPage({ page }) {
                 <em>picture of the group.</em>
               </h2>
               <p className="large-copy">
-                Visit our <a href="/about/ownership">Owner-Chairman</a> page for Suresh Pal's full story, or meet the wider team on <a href="/contact">Our Team</a>. You can also explore <a href="/about/the-pal-group">The Pal Group</a> to see the full family of businesses this board leads, or read our full story on the <a href="/about/the-pal-group">SM Pal Group</a> page.
+                Visit our <a href="/about/ownership">Owner-Chairman</a> page for Suresh Pal's full story, or <a href="/contact">contact our team</a>. You can also explore <a href="/about/the-pal-group">The Pal Group</a> to see the full family of businesses this board leads, or read our full story on the <a href="/about">About SM Pal Group</a> page.
               </p>
             </div>
             <div className="board-explore-links reveal">
@@ -3205,45 +3231,53 @@ function PrateekPage({ page }) {
       year: "2008",
       title: "First steps into the business",
       text: "Joined SM Pal Group while still studying in Europe, beginning to apply what he was learning abroad to the family business back home.",
-      image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85",
+      image: "/assets/prateek-pal-images/prateek-pal-journey.webp",
+      imageAlt: "Portrait of Prateek Pal",
+      imagePosition: "50% 8%",
       align: "left",
     },
     {
       year: "2012",
       title: "Convenience food, reimagined",
       text: "Studied the European food and beverage sector closely, then brought back the insight that became the foundation for Pal Fresh and Frozzo.",
-      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85",
+      image: "/assets/prateek-pal-images/pal-fresh-journey.webp",
+      imageAlt: "A visit to the Pal Fresh food production facility",
       align: "right",
     },
     {
       year: "2017",
       title: "Pal Colonisers goes vertical",
       text: "Led the move into apartment construction for the first time, opening a new kind of housing for buyers in the region.",
-      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=85",
+      image: "/assets/prateek-pal-images/palamview-connected-journey.webp",
+      imageAlt: "Architectural rendering of Palam View Residences",
+      imagePosition: "left center",
       align: "left",
     },
     {
       year: "2022",
       title: "Crossing borders",
       text: "Took the frozen foods business international through Pal Fresh Global Trading LLC, expanding reach well beyond the home market.",
-      image: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=900&q=85",
+      image: "/assets/prateek-pal-images/ship-ocean-container.webp",
+      imageAlt: "Aerial view of container ships and cargo at a port",
       align: "right",
     },
   ];
 
   return (
     <div className="route-page prateek-page">
+      <a className="skip-link" href="#prateek-main">Skip to content</a>
       <PrateekSeo />
       <RouteHeader />
-      <main>
+      <main id="prateek-main">
         {/* Hero */}
         <section className="own-hero">
-          <img src={page.image} alt="Prateek Pal, Director at SM Pal Group" fetchpriority="high" />
+          <img src={page.image} alt="Prateek Pal, Director at SM Pal Group" fetchPriority="high" />
           <div className="own-hero-shade" />
           <div className="container own-hero-copy">
             <p className="eyebrow">{page.eyebrow}</p>
-            <h1>{page.title}</h1>
+            <h1>Prateek Pal, <em>director at SM Pal Group</em></h1>
             <p className="own-hero-intro">{page.intro}</p>
+            <a className="text-link prateek-hero-link" href="#contributions">Explore his work <ArrowDownRight size={17} /></a>
           </div>
         </section>
 
@@ -3265,12 +3299,12 @@ function PrateekPage({ page }) {
                 <p className="large-copy">{page.body}</p>
                 <p>
                   You can read more about the family&apos;s wider leadership on our{" "}
-                  <a href="/about/ownership">Owner-Chairman</a> and{" "}
-                  <a href="/about/board-of-directors">Board of Directors</a> pages.
+                  <a className="inline-link" href="/about/ownership">Owner-Chairman</a> and{" "}
+                  <a className="inline-link" href="/about/board-of-directors">Board of Directors</a> pages.
                 </p>
               </div>
               <aside className="own-who-note reveal">
-                <span>Next Generation</span>
+                <span className="legacy-label">Next generation</span>
                 <p>Carrying forward the family&apos;s vision for growth and innovation.</p>
                 <div className="own-who-line" />
                 <small>Director, SM Pal Group</small>
@@ -3341,6 +3375,7 @@ function PrateekPage({ page }) {
                   <p className="own-journey-sub">{item.sub}</p>
                   <h3>{item.name}</h3>
                   <p className="own-journey-text">{item.text}</p>
+                  <span className="prateek-card-link">Explore business <ArrowUpRight size={17} /></span>
                 </a>
               ))}
             </div>
@@ -3362,7 +3397,7 @@ function PrateekPage({ page }) {
                 <em>runs through it all.</em>
               </h2>
               <p className="large-copy">
-                A look at the moments that shaped Prateek Pal&apos;s path at SM Pal Group, from his first steps into the business to taking it international. Each one is a different kind of image, but they all point to the same people first approach.
+                A look at the moments that shaped Prateek Pal&apos;s path at SM Pal Group, from his first steps into the business to taking it international. Together, they reflect the same people first approach.
               </p>
             </div>
             <div className="prateek-timeline-track">
@@ -3373,7 +3408,13 @@ function PrateekPage({ page }) {
                   style={{ "--delay": `${index * 80}ms` }}
                 >
                   <div className="prateek-timeline-image">
-                    <img src={moment.image} alt={moment.title} loading="lazy" />
+                    <img
+                      src={moment.image}
+                      alt={moment.imageAlt || moment.title}
+                      style={{ objectPosition: moment.imagePosition || "center" }}
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <span className="prateek-timeline-year">{moment.year}</span>
                   </div>
                   <div className="prateek-timeline-copy">
@@ -3394,18 +3435,20 @@ function PrateekPage({ page }) {
               <i />
               <span>Recognition</span>
             </div>
-            <div className="own-next-gen-card reveal">
-              <div className="own-next-gen-mark" aria-hidden="true">"</div>
-              <p>
-                As a community, we agree to grow together. Our team is an illustration of what we can accomplish when a group of people united by a common goal works together.
-              </p>
+            <div className="prateek-recognition-grid">
+              <div className="own-section-intro prateek-recognition-intro reveal">
+                <h2>Progress built<br /><em>on people.</em></h2>
+                <p className="prateek-recognition-statement">As a community, we agree to grow together. Our team is an illustration of what we can accomplish when a group of people united by a common goal works together.</p>
+              </div>
+              <div className="own-next-gen-card reveal">
               <p>
                 Prateek Pal&apos;s work has extended into SM Pal Group&apos;s car dealerships, where his leadership has been recognised through industry awards tied to the group&apos;s automotive performance — accolades that overlap with the{" "}
-                <a href="/about/ownership">Nissan Global Award and Ford President&apos;s Award of Excellence</a>.
+                <a className="inline-link" href="/about/ownership">Nissan Global Award and Ford President&apos;s Award of Excellence</a>.
               </p>
               <p>
                 That same people first approach he inherited from his father has shaped how he runs every project, every partnership, and every team under his care. It is the thread that runs through all of it.
               </p>
+            </div>
             </div>
             <div className="own-next-gen-cta reveal">
               <p>
@@ -3553,9 +3596,9 @@ function PalFreshGlobalPage() {
     <div className={`route-page pfg-page ${isArabic ? "pfg-page-ar" : ""}`}>
       <RouteHeader showLanguageToggle language={language} onLanguageChange={setLanguage} />
       <PalFreshGlobalSeo />
-      <main>
+      <main lang={isArabic ? "ar" : "en"} dir={isArabic ? "rtl" : "ltr"}>
         <section className="pfg-hero">
-          <img src="/assets/pal-frozen.webp" alt="PalFresh Global frozen vegetables" fetchpriority="high" />
+          <img src="/assets/pal-frozen.webp" alt="PalFresh Global frozen vegetables" fetchPriority="high" />
           <div className="pfg-hero-shade" />
           <div className="container pfg-hero-copy">
             <p className="eyebrow">{content.eyebrow}</p>
@@ -6655,7 +6698,7 @@ function RoutePage({ page }) {
       <RouteHeader />
       <main>
         <section className="route-hero">
-          <img src={page.image} alt="" fetchpriority="high" />
+          <img src={page.image} alt="" fetchPriority="high" />
           <div className="route-hero-shade" />
           <div className="container route-hero-copy">
             <p className="eyebrow">{page.eyebrow}</p>
@@ -6862,6 +6905,7 @@ function SiteRouter() {
 
   if (path !== "/" && routePages[path]) {
     const page = routePages[path];
+    if (page.type === "pal-sumeera") return <div className="route-page"><a className="skip-link" href="#main">Skip to content</a><RouteHeader /><PalSumeeraPage page={page} /></div>;
     if (page.type === "about") return <AboutPage page={page} />;
     if (page.type === "pal-group") return <PalGroupPage page={page} />;
     if (page.type === "ownership") return <OwnershipPage page={page} />;
@@ -6893,7 +6937,7 @@ function SiteRouter() {
     setStoryIndex((current) => (current - 1 + stories.length) % stories.length);
 
   return (
-    <div id="top">
+    <div id="top" className="home-page">
       <a className="skip-link" href="#main">
         Skip to content
       </a>
@@ -6943,7 +6987,7 @@ function SiteRouter() {
                 <a className="button button-brass" href="#businesses">
                   Explore Our Industries <ArrowDownRight size={17} />
                 </a>
-                <a className="button button-outline" href="#contact">
+                <a className="button button-outline" href="/contact">
                   Contact SM Pal Group <ArrowUpRight size={17} />
                 </a>
               </div>
@@ -7085,8 +7129,12 @@ function SiteRouter() {
           <div className="container chairman-grid">
             <div className="chairman-image reveal">
               <img
-                src={chairmanImage}
-                alt="Chairman and founder of SM Pal Group"
+                src="/assets/Chairman.webp"
+                alt="Shri Suresh Pal, chairman and founder of SM Pal Group"
+                width="5504"
+                height="8156"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="chairman-copy reveal">
@@ -7115,6 +7163,9 @@ function SiteRouter() {
                 <br />
                 <strong>SM Pal Group</strong>
               </p>
+              <a className="text-link" href="/about/ownership">
+                Meet our chairman <ArrowRight size={17} />
+              </a>
             </div>
           </div>
         </section>
@@ -7154,7 +7205,7 @@ function SiteRouter() {
                 <p className="eyebrow eyebrow-dark">Latest at SM Pal Group</p>
                 <h2>Latest at SM Pal Group</h2>
               </div>
-              <a className="text-link" href="#contact">
+              <a className="text-link" href="/media">
                 View all news <ArrowRight size={17} />
               </a>
             </div>
@@ -7162,7 +7213,7 @@ function SiteRouter() {
               {news.map((item, index) => (
                 <a
                   className={`news-item${index === 0 ? " news-item--latest" : ""}`}
-                  href="#contact"
+                  href="/media"
                   key={item}
                 >
                   <span>0{index + 1}</span>
@@ -7199,7 +7250,7 @@ function SiteRouter() {
                 project launches, SM Pal Group treats every milestone as a
                 shared moment with the community it serves.
               </p>
-              <a className="text-link" href="#contact">
+              <a className="text-link" href="/about">
                 See our community work <ArrowRight size={17} />
               </a>
             </div>

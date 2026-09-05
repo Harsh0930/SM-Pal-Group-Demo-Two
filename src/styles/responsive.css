@@ -1,0 +1,117 @@
+/* Shared safeguards after page styles. Preserve each page's composition while
+   using the same readable type scale and allowing content to fit its container. */
+main :is(h1, h2, h3, p, li),
+.site-footer :is(p, a) {
+  overflow-wrap: anywhere;
+}
+.container > *,
+:is([class$="-grid"], [class*="-grid "], .footer-shell) > * {
+  min-width: 0;
+}
+.route-copy,
+.route-form,
+.route-form :is(input, textarea),
+.site-footer .footer-nav,
+.site-footer .footer-address-card {
+  max-width: 100%;
+  min-width: 0;
+}
+.site-footer .footer-shell {
+  grid-template-columns: minmax(0, 1.32fr) minmax(0, .82fr) minmax(0, .58fr) minmax(0, 1.2fr);
+  gap: 32px;
+}
+.site-footer .footer-address-card { width: 100%; padding: 28px 22px; }
+.footer-address-card :is(p, a:not(.footer-contact-cta)) {
+  grid-template-columns: 24px minmax(0, 1fr);
+}
+.site-footer .footer-bottom { text-align: left; }
+.button,
+.palam-hero-cta-btn,
+.palam-hero-cta-link,
+.footer-contact-cta {
+  min-height: 44px;
+  max-width: 100%;
+}
+.button svg,
+.route-related-card svg,
+.route-drawer button svg { flex-shrink: 0; }
+.route-drawer { overscroll-behavior: contain; }
+.route-drawer a,
+.route-drawer button { overflow-wrap: anywhere; }
+.route-drawer a:focus-visible,
+.route-drawer button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+.pfg-page-ar main :is(h1, h2, p) {
+  text-align: right;
+  letter-spacing: normal;
+}
+.pfg-page-ar main :is(a[href^="tel:"], a[href^="mailto:"]) {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+.palam-hero-title-row { font-size: var(--text-h1); }
+.palam-hero-title { line-height: 1.1; }
+.palam-life-title { font-size: var(--text-h2); }
+.flip-intro-active-title { font-size: var(--text-h2); }
+.palam-hero-overline {
+  max-width: 100%;
+  white-space: normal;
+  letter-spacing: .16em;
+}
+.palam-hero-eyebrow { width: max-content; max-width: calc(100% - 40px); }
+.flip-intro-hint { max-width: calc(100% - 40px); white-space: normal; text-align: center; }
+.palam-canvas-sticky { height: 100svh; }
+
+/* The supplied Prateek banner already includes its green background treatment. */
+.prateek-page .own-hero > img { opacity: 1; }
+@media (max-width: 640px) {
+  .prateek-page .own-hero > img { object-position: 78% top; }
+}
+
+@media (max-width: 1200px) {
+  .site-footer .footer-shell { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
+}
+@media (max-width: 1000px) {
+  .route-header .logo img { width: 138px; }
+  .route-menu-toggle { flex-shrink: 0; margin-right: 0; }
+  .route-nav { gap: 18px; }
+}
+@media (max-width: 900px) {
+  .legacy-wall .legacy-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .legacy-wall .legacy-foundation { padding-right: 0; border-right: 0; }
+  .legacy-wall .legacy-purpose { grid-column: auto; padding-left: 0; }
+  .legacy-wall .legacy-purpose .legacy-values { grid-template-columns: 1fr; }
+  .about-foundation-grid,
+  .about-leadership-grid,
+  .board-governance-inner { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+}
+@media (max-width: 640px) {
+  .site-footer .footer-shell { grid-template-columns: minmax(0, 1fr); gap: 34px; }
+  .site-footer .footer-address-card { max-width: 100%; }
+  .route-drawer-nested-links a,
+  .route-drawer-submenu > a,
+  .route-drawer-subtrigger { min-height: 44px; display: flex; align-items: center; }
+  .route-drawer-submenu > a,
+  .route-drawer-subtrigger { font-size: 14px; }
+  .hero-actions { flex-wrap: wrap; }
+  .section-heading { min-height: 0; }
+  .palam-vision-grid > .palam-vision-card:first-child { grid-row: auto; }
+  .palam-hero-title-row--alt { margin-top: 0; padding-left: 0; }
+  .palam-hero-tagline { font-size: 15px; }
+  .palam-hero-headline { bottom: 86px; }
+}
+/* Landscape phones need vertical room for the animated hero's controls. */
+@media (max-height: 600px) and (max-width: 1000px) {
+  .palam-canvas-sticky { min-height: 540px; }
+  .palam-hero-eyebrow { top: 80px; }
+  .palam-hero-headline { bottom: 65px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .palam-bar,
+  .palam-bar-shine,
+  .palam-hero-eyebrow-dot,
+  .palam-life-hint-dot { animation: none; }
+}

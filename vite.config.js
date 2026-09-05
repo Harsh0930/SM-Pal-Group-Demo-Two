@@ -8,7 +8,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: fileURLToPath(new URL('./index.html', import.meta.url)),
-        about: fileURLToPath(new URL('./about/index.html', import.meta.url))
+        about: fileURLToPath(new URL('./about/index.html', import.meta.url)),
+        sumeera: fileURLToPath(new URL('./industries/pal-colonisers/pal-sumeera-residency/index.html', import.meta.url))
       }
     }
   }
