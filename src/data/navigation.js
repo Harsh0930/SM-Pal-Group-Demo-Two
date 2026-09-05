@@ -8,7 +8,6 @@ export const routeGroups = {
       label: "Pal Frozen Foods",
       href: "/industries/pal-frozen-foods/pal-fresh",
     },
-    { label: "Pal Farms", href: "/industries/pal-farms" },
     { label: "Pal Stone Industries", href: "/industries/pal-stone-industries" },
     {
       label: "Pal Colonisers",

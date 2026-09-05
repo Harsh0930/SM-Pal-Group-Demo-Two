@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState, useMemo } from "react";
-import { motion, useScroll, useTransform, useInView, AnimatePresence, useSpring, useMotionValue } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -28,7 +30,22 @@ import PalamGradientBars from "../components/PalamGradientBars.jsx";
 // --muted: #72756e
 
 // Scroll-Telling Canvas Hero Section
+//
+// Reverse-direction intent:
+//   At the top of the hero, the user sees the LAST frame (the "front" view
+//   of the building). As they scroll down, the sequence walks BACKWARD through
+//   the frames back to frame 0. This is intentional and matches the editorial
+//   idea of "zooming in" on the building as the user commits to the project.
+//   Do not "fix" the reversal — the static <img> poster and the loader both
+//   rely on the same convention.
 const ScrollCanvasHero = () => {
+  // Register the ScrollTrigger plugin once. GSAP's plugin registration is
+  // global, so calling it here is safe even if multiple components share the
+  // gsap import.
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+  }, []);
+
   const canvasRef = useRef(null);
   const sectionRef = useRef(null);
   const [loaded, setLoaded] = useState(false);
@@ -38,57 +55,161 @@ const ScrollCanvasHero = () => {
   const targetFrameRef = useRef(0);
   const animationRef = useRef(null);
 
-  const FRAME_COUNT = 300;
-  const FRAME_PREFIX = 'ezgif-frame-';
-  const FRAME_EXT = '.jpg';
-  const FRAME_PATH = '/assets/palam-view-frames/';
-  const EASING = 0.08;
-  const INITIAL_FRAME_COUNT = 36;
+  // The frame count is read from a small manifest.json at /assets/palam-view-frames/.
+  // If the manifest is missing or fails to load, we fall back to 300 (the
+  // current count). The fallback path also guards against a hard 404 if
+  // someone adds or removes frames without updating the manifest.
+  const FRAME_COUNT_FALLBACK = 300;
+  const FRAME_PREFIX_DEFAULT = "ezgif-frame-";
+  const FRAME_EXT_DEFAULT = ".jpg";
+  const FRAME_PATH = "/assets/palam-view-frames/";
+  const MANIFEST_URL = `${FRAME_PATH}manifest.json`;
 
+  // frameCountRef is mutable so the load and render effects can pick up the
+  // manifest value as soon as it arrives, without re-running the heavy
+  // effects on a state change.
+  const frameCountRef = useRef(FRAME_COUNT_FALLBACK);
+  const framePrefixRef = useRef(FRAME_PREFIX_DEFAULT);
+  const frameExtRef = useRef(FRAME_EXT_DEFAULT);
+  const [frameCount, setFrameCount] = useState(FRAME_COUNT_FALLBACK);
+
+  // Easing for the render loop's lerp toward the ScrollTrigger-driven target.
+  // 0.18 gives a soft "settle" on the eased scrub, while still tracking fast
+  // scrolls within ~1 frame of jitter.
+  const EASING = 0.18;
+
+  // Initial-burst frame counts — tuned per breakpoint so mobile doesn't try
+  // to decode 36 jpegs in parallel the moment the section enters the viewport.
+  // isMobileViewport() checks at effect time, so a phone that rotates from
+  // portrait to landscape gets the right strategy on the next page load.
+  const isMobileViewport = () =>
+    typeof window !== "undefined" && window.innerWidth <= 640;
+  const INITIAL_FRAME_COUNT_DESKTOP = 36;
+  const INITIAL_FRAME_COUNT_MOBILE = 18;
+  const REMAINING_BATCH_SIZE_DESKTOP = 12;
+  const REMAINING_BATCH_SIZE_MOBILE = 6;
+  const BATCH_INTERVAL_DESKTOP = 120;
+  const BATCH_INTERVAL_MOBILE = 200;
+
+  // Defer frame loading until the section is about to enter the viewport.
+  // This prevents hundreds of image requests from firing on the PalamView
+  // page mount for users who never scroll down to the canvas (e.g. the link
+  // could be a stray browser tab, or the user navigates away quickly).
   useEffect(() => {
-    const frames = [];
-    let loadedCount = 0;
-    let initialLoadedCount = 0;
-    let idleHandle;
-    let batchTimer;
+    const section = sectionRef.current;
+    if (!section) return undefined;
+
     let cancelled = false;
 
-    const loadFrame = (index, isInitial) => {
-      const frameNum = String(index + 1).padStart(3, '0');
-      const img = new Image();
-      const onSettled = () => {
+    // Try to load the manifest first so we know the real frame count. If the
+    // manifest is missing or 404s, we silently keep the fallback (300) so the
+    // page still works without a deploy.
+    const loadManifest = async () => {
+      try {
+        const res = await fetch(MANIFEST_URL, { cache: "force-cache" });
+        if (!res.ok) return;
+        const data = await res.json();
         if (cancelled) return;
-        loadedCount++;
-        if (isInitial) initialLoadedCount++;
-        setLoadProgress(Math.round((loadedCount / FRAME_COUNT) * 100));
-        if (initialLoadedCount >= INITIAL_FRAME_COUNT) setLoaded(true);
-      };
-      img.onload = onSettled;
-      img.onerror = onSettled;
-      img.src = `${FRAME_PATH}${FRAME_PREFIX}${frameNum}${FRAME_EXT}`;
-      frames[index] = img;
-    };
-
-    for (let i = 1; i <= FRAME_COUNT; i++) {
-      if (i <= INITIAL_FRAME_COUNT) loadFrame(i - 1, true);
-    }
-
-    framesRef.current = frames;
-    const loadRemainingFrames = () => {
-      for (let i = INITIAL_FRAME_COUNT; i < FRAME_COUNT; i++) {
-        if (cancelled) return;
-        loadFrame(i, false);
+        if (Number.isFinite(data?.count) && data.count > 0) {
+          frameCountRef.current = data.count;
+          setFrameCount(data.count);
+        }
+        if (typeof data?.prefix === "string" && data.prefix) {
+          framePrefixRef.current = data.prefix;
+        }
+        if (typeof data?.ext === "string" && data.ext) {
+          frameExtRef.current = data.ext;
+        }
+      } catch {
+        /* manifest missing — keep fallback frame count and path. */
       }
     };
-    if ('requestIdleCallback' in window) {
-      idleHandle = window.requestIdleCallback(loadRemainingFrames, { timeout: 1500 });
+
+    loadManifest();
+
+    const startLoading = () => {
+      if (cancelled) return;
+      const total = frameCountRef.current;
+      const mobile = isMobileViewport();
+      const initialCount = mobile
+        ? INITIAL_FRAME_COUNT_MOBILE
+        : INITIAL_FRAME_COUNT_DESKTOP;
+      const batchSize = mobile
+        ? REMAINING_BATCH_SIZE_MOBILE
+        : REMAINING_BATCH_SIZE_DESKTOP;
+      const batchInterval = mobile ? BATCH_INTERVAL_MOBILE : BATCH_INTERVAL_DESKTOP;
+
+      const frames = new Array(total);
+      let loadedCount = 0;
+      let initialLoadedCount = 0;
+      let batchHandle = 0;
+      let batchIndex = initialCount;
+
+      const loadFrame = (index, isInitial) => {
+        const frameNum = String(index + 1).padStart(3, "0");
+        const img = new Image();
+        const onSettled = () => {
+          if (cancelled) return;
+          loadedCount++;
+          if (isInitial) initialLoadedCount++;
+          setLoadProgress(Math.round((loadedCount / total) * 100));
+          if (initialLoadedCount >= initialCount) setLoaded(true);
+        };
+        img.onload = onSettled;
+        img.onerror = onSettled;
+        img.src = `${FRAME_PATH}${framePrefixRef.current}${frameNum}${frameExtRef.current}`;
+        frames[index] = img;
+      };
+
+      // Eagerly load the first batch so the canvas can paint quickly.
+      const firstBatchEnd = Math.min(initialCount, total);
+      for (let i = 0; i < firstBatchEnd; i++) loadFrame(i, true);
+
+      framesRef.current = frames;
+
+      const loadNextBatch = () => {
+        if (cancelled || batchIndex >= total) return;
+        const end = Math.min(batchIndex + batchSize, total);
+        for (let i = batchIndex; i < end; i++) loadFrame(i, false);
+        batchIndex = end;
+        batchHandle = window.setTimeout(loadNextBatch, batchInterval);
+      };
+      batchHandle = window.setTimeout(loadNextBatch, 400);
+
+      // Expose a cleanup so the outer effect can cancel the rest of the
+      // batches if the user unmounts before they all load.
+      cleanup = () => window.clearTimeout(batchHandle);
+    };
+
+    let cleanup = null;
+    if (typeof IntersectionObserver === "undefined") {
+      // Fallback: just start immediately.
+      startLoading();
     } else {
-      batchTimer = window.setTimeout(loadRemainingFrames, 200);
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              startLoading();
+              observer.disconnect();
+              break;
+            }
+          }
+        },
+        // 200px pre-fetch: start loading just before the user scrolls in.
+        { rootMargin: "200px 0px" },
+      );
+      observer.observe(section);
+      return () => {
+        cancelled = true;
+        observer.disconnect();
+        if (cleanup) cleanup();
+      };
     }
+
     return () => {
       cancelled = true;
-      if (idleHandle) window.cancelIdleCallback(idleHandle);
-      if (batchTimer) window.clearTimeout(batchTimer);
+      if (cleanup) cleanup();
     };
   }, []);
 
@@ -128,15 +249,23 @@ const ScrollCanvasHero = () => {
 
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     const dpr = window.devicePixelRatio || 1;
     const displayWidth = window.innerWidth;
     const displayHeight = window.innerHeight;
 
     const renderLoop = () => {
-      currentFrameRef.current += (targetFrameRef.current - currentFrameRef.current) * EASING;
+      const total = frameCountRef.current;
+      // Lerp current → target. EASING stays small for a soft settle; GSAP's
+      // scrub is what gives the per-pixel feel, and this just smooths the last
+      // 1-2 frames of catch-up after a fast scroll.
+      currentFrameRef.current +=
+        (targetFrameRef.current - currentFrameRef.current) * EASING;
 
-      const displayFrame = Math.max(0, Math.min(FRAME_COUNT - 1, Math.round(currentFrameRef.current)));
+      const displayFrame = Math.max(
+        0,
+        Math.min(total - 1, Math.round(currentFrameRef.current)),
+      );
       const img = framesRef.current[displayFrame];
 
       if (img && img.complete) {
@@ -177,65 +306,68 @@ const ScrollCanvasHero = () => {
     };
   }, [loaded]);
 
-  // Handle scroll to map to frame (REVERSED: scroll down → frame goes from end → start)
+  // Single source of truth: GSAP ScrollTrigger drives targetFrameRef.
+  // The rAF render loop reads it; a lightweight setInterval syncs React state
+  // for the on-screen frame counter. This replaces both the native scroll
+  // listener and the Framer Motion useScroll/useTransform that previously
+  // duplicated the same calculation.
   useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
+    const section = sectionRef.current;
+    if (!section) return;
 
-      const rect = sectionRef.current.getBoundingClientRect();
-      const sectionHeight = sectionRef.current.offsetHeight - window.innerHeight;
+    const trigger = ScrollTrigger.create({
+      trigger: section,
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 0.5,
+      onUpdate: (self) => {
+        const total = frameCountRef.current;
+        // Reverse: at the top of the hero (self.progress = 0) show the LAST frame
+        // (the "front" view of the building). At the bottom, show frame 0.
+        targetFrameRef.current = Math.min(
+          total - 1,
+          Math.max(0, Math.floor((1 - self.progress) * total)),
+        );
+      },
+    });
 
-      let progress = 0;
-      if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
-        progress = Math.abs(rect.top) / sectionHeight;
-      } else if (rect.top > 0) {
-        progress = 0;
-      } else {
-        progress = 1;
-      }
-
-      // Reverse: at the top of the hero (progress 0) show the LAST frame
-      // (the original "front" view of the building), and as the user scrolls
-      // down, walk back through the sequence to frame 0.
-      const reversed = 1 - progress;
-      targetFrameRef.current = Math.min(
-        FRAME_COUNT - 1,
-        Math.max(0, Math.floor(reversed * FRAME_COUNT))
-      );
+    return () => {
+      trigger.kill();
     };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Track scroll progress for UI overlays
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"],
-  });
-
-  const frameProgress = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  // Lightweight React state sync for the on-screen frame counter.
+  // Uses a setInterval rather than a useEffect + useMotionValue subscription
+  // so it ticks only ~10 times per second, keeping the counter live without
+  // forcing canvas re-renders on every scroll frame.
   const [progressDisplay, setProgressDisplay] = useState(0);
-  const [activeFrame, setActiveFrame] = useState(FRAME_COUNT - 1);
+  const [activeFrame, setActiveFrame] = useState(FRAME_COUNT_FALLBACK - 1);
 
   useEffect(() => {
-    const unsub = frameProgress.on("change", (v) => {
-      setProgressDisplay(Math.round(v));
-      // Reverse the frame index to match the reversed scroll direction
-      const reversedPct = 1 - v / 100;
-      setActiveFrame(
-        Math.min(FRAME_COUNT - 1, Math.max(0, Math.floor(reversedPct * FRAME_COUNT)))
-      );
-    });
-    return () => unsub();
-  }, [frameProgress]);
+    const total = frameCountRef.current;
+    const id = setInterval(() => {
+      const raw = currentFrameRef.current;
+      const pct = total > 0 ? raw / (total - 1) : 0;
+      setProgressDisplay(Math.round(Math.min(100, Math.max(0, pct * 100))));
+      setActiveFrame(Math.round(raw));
+    }, 100);
+    return () => clearInterval(id);
+  }, []);
 
   const tagline = "Where the Himalayas meet refined living";
 
   return (
     <section ref={sectionRef} className="palam-canvas-section">
+      {/* No-JS fallback: shows the "front" view of the building (frame 300)
+          before the canvas takes over. Browsers with JS paint the canvas on
+          top of this <img> immediately, so there is no visible flash. */}
+      <noscript>
+        <img
+          src={`${FRAME_PATH}${FRAME_PREFIX_DEFAULT}300${FRAME_EXT_DEFAULT}`}
+          alt="Palam View exterior"
+          className="palam-noscript-poster"
+        />
+      </noscript>
       <div className="palam-canvas-bg" />
       <div className="palam-canvas-sticky">
         <canvas ref={canvasRef} className="palam-canvas" />
@@ -372,7 +504,7 @@ const ScrollCanvasHero = () => {
             />
           </div>
           <div className="palam-hero-progress-meta">
-            <span>{String(activeFrame + 1).padStart(3, "0")} / {FRAME_COUNT}</span>
+            <span>{String(activeFrame + 1).padStart(3, "0")} / {frameCount}</span>
             <span>{progressDisplay}%</span>
           </div>
         </motion.div>
@@ -828,7 +960,7 @@ const VisionSection = () => {
               className="palam-vision-card"
             >
               <div className="palam-vision-image-wrap">
-                <img src={vision.image} alt={vision.title} className="palam-vision-image" />
+                <img src={vision.image} alt={vision.title} className="palam-vision-image" loading="lazy" />
                 <div className="palam-vision-shade" />
               </div>
               <div className="palam-vision-body">
@@ -898,7 +1030,7 @@ const ExperienceSection = () => {
               className="palam-experience-card"
             >
               <div className="palam-experience-image-wrap">
-                <img src={exp.image} alt={exp.title} />
+                <img src={exp.image} alt={exp.title} loading="lazy" />
               </div>
               <div className="palam-experience-body">
                 <h3>{exp.title}</h3>
@@ -1085,7 +1217,7 @@ const GallerySection = () => {
               whileHover={{ scale: 1.03 }}
               className={`palam-gallery-item ${index === 0 ? "palam-gallery-featured" : ""}`}
             >
-              <img src={image} alt={`Gallery ${index + 1}`} />
+              <img src={image} alt={`Gallery ${index + 1}`} loading="lazy" />
             </motion.div>
           ))}
         </div>

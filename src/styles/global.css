@@ -85,7 +85,7 @@
   border-bottom: 0;
 }
 .route-menu a:hover {
-  background: #eef2ed;
+  background: var(--line);
   color: var(--green);
 }
 .route-menu-nested > button {
@@ -107,7 +107,7 @@
     padding-left 0.2s ease;
 }
 .route-menu-nested > button:hover {
-  background: #eef2ed;
+  background: var(--line);
   color: var(--green);
 }
 .route-menu-nested-links {
@@ -175,7 +175,7 @@
   max-width: 760px;
   margin: 0 0 24px;
   color: #fff;
-  font-size: clamp(58px, 7vw, 96px);
+  font-size: 50px;
   line-height: 0.98;
   letter-spacing: -3px;
 }
@@ -232,7 +232,7 @@
 .route-copy h2 {
   margin: 0 0 22px;
   color: var(--green);
-  font-size: clamp(37px, 4vw, 58px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1.05;
   letter-spacing: -1.8px;
 }
@@ -356,7 +356,7 @@
     padding-bottom: 70px;
   }
   .route-hero-copy h1 {
-    font-size: clamp(48px, 14vw, 70px);
+    font-size: 50px;
     letter-spacing: -2px;
   }
   .route-hero-copy > p:last-child {
@@ -412,7 +412,7 @@
   max-width: 760px;
   margin: 0 0 24px;
   color: #fff;
-  font-size: clamp(48px, 5.9vw, 78px);
+  font-size: 50px;
   line-height: 0.96;
   letter-spacing: -3.6px;
 }
@@ -516,7 +516,7 @@
 .about-leadership h2 {
   margin: 0 0 25px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 68px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2.5px;
 }
@@ -733,7 +733,7 @@
 .about-values h2 {
   margin: 0;
   color: #fff;
-  font-size: clamp(42px, 5vw, 68px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2.5px;
 }
@@ -850,7 +850,7 @@
     padding-bottom: 115px;
   }
   .about-hero-copy h1 {
-    font-size: clamp(42px, 11vw, 58px);
+    font-size: 50px;
     letter-spacing: -2.2px;
   }
   .about-hero-copy > p:not(.eyebrow) {
@@ -1432,7 +1432,7 @@
   max-width: 820px;
   margin: 0 0 26px;
   color: #fff;
-  font-size: clamp(48px, 6.5vw, 88px);
+  font-size: 50px;
   line-height: 0.98;
   letter-spacing: -3px;
 }
@@ -1477,7 +1477,7 @@
   font-family: var(--sans);
   margin: 0;
   color: var(--green);
-  font-size: clamp(38px, 5vw, 66px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2.4px;
 }
@@ -1566,7 +1566,7 @@
 .pfg-reach { background: var(--ivory); }
 .pfg-contact { background: #fff; }
 .pfg-contact-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(300px, 1.1fr); gap: 100px; align-items: start; }
-.pfg-contact h2 { max-width: 560px; margin: 0 0 24px; color: var(--green); font-size: clamp(40px, 5vw, 68px); line-height: 1; letter-spacing: -2.4px; }
+.pfg-contact h2 { max-width: 560px; margin: 0 0 24px; color: var(--green); font-size: clamp(28px, 3.5vw, 42px); line-height: 1; letter-spacing: -2.4px; }
 .pfg-contact > .container > div > p:last-child { max-width: 460px; color: var(--muted); line-height: 1.7; }
 .pfg-contact address { display: grid; gap: 0; margin: 0; font-style: normal; border-top: 1px solid var(--line); }
 .pfg-contact address > div { display: grid; gap: 8px; padding: 19px 0; border-bottom: 1px solid var(--line); }
@@ -1628,14 +1628,14 @@
   .route-language-toggle { min-width: 64px; }
   .pfg-hero { min-height: 720px; }
   .pfg-hero-copy { padding-top: 130px; padding-bottom: 135px; }
-  .pfg-hero-copy h1 { font-size: clamp(42px, 12vw, 60px); letter-spacing: -2px; }
+  .pfg-hero-copy h1 { font-size: 50px; letter-spacing: -2px; }
   .pfg-hero-copy > p:not(.eyebrow) { font-size: 15px; }
   .pfg-hero-mark { right: 18px; bottom: 32px; }
   .pfg-two-col,
   .pfg-contact-grid { grid-template-columns: 1fr; gap: 30px; }
   .pfg-two-col h2,
   .pfg-section-heading h2,
-  .pfg-contact h2 { font-size: clamp(38px, 11vw, 56px); }
+  .pfg-contact h2 { font-size: clamp(28px, 7vw, 38px); }
   .pfg-product-grid { grid-template-columns: 1fr; }
   .pfg-product-card { min-height: 155px; }
   .pfg-reason-list p { font-size: 17px; }
@@ -1678,7 +1678,7 @@
 .about-contact h2 {
   margin: 0 0 25px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 68px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2.5px;
 }
@@ -1957,7 +1957,7 @@ body .hero {
   min-height: 780px;
   padding: 144px 0 112px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(210px, 260px);
+  grid-template-columns: minmax(0, 1fr);
   justify-content: space-between;
   align-items: end;
   gap: 44px;
@@ -1979,10 +1979,10 @@ body .hero {
   text-shadow: none;
 }
 .hero h1 {
-  font-size: clamp(40px, 4.2vw, 60px);
+  font-size: 50px;
   max-width: 650px;
-  margin-bottom: 25px;
-  letter-spacing: -1.8px;
+  margin-bottom: 22px;
+  letter-spacing: -1.4px;
   color: #ffffff;
   text-shadow: none;
 }
@@ -2049,128 +2049,6 @@ body .hero {
   color: rgba(255, 255, 255, 0.96);
   text-shadow: none;
 }
-.hero .hero-visual {
-  display: flex;
-  justify-content: flex-end;
-  align-items: end;
-}
-.hero .hero-panel {
-  width: min(100%, 430px);
-  padding: 18px 18px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 26px;
-  background: rgba(21, 41, 33, 0.26);
-  backdrop-filter: blur(12px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 18px 42px rgba(4, 26, 19, 0.18);
-}
-.hero .hero-panel-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-.hero .hero-panel-kicker {
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.hero .hero-panel-legacy {
-  display: grid;
-  gap: 8px;
-  margin-bottom: 18px;
-  padding: 16px 12px 18px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
-  text-align: center;
-}
-.hero .hero-panel-legacy .legacy-number {
-  display: block;
-  color: var(--brass);
-  font-family: var(--serif);
-  font-size: clamp(50px, 4vw, 84px);
-  line-height: 0.9;
-  letter-spacing: -4px;
-}
-.hero .hero-panel-legacy .legacy-label {
-  display: block;
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.hero .hero-panel-metrics {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-bottom: 18px;
-}
-.hero .hero-panel-metrics div {
-  display: flex;
-  min-height: 118px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 12px 12px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-.hero .hero-panel-metrics strong {
-  display: block;
-  color: var(--brass);
-  font-family: var(--serif);
-  font-size: clamp(50px, 4vw, 64px);
-  line-height: 0.9;
-  letter-spacing: -4px;
-}
-.hero .hero-panel-metrics span {
-  display: block;
-  margin-top: 8px;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.hero .hero-panel-list {
-  padding-top: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
-.hero .hero-panel-list p {
-  margin: 0 0 12px;
-  color: rgba(255, 255, 255, 0.96);
-  font-size: 18px;
-  line-height: 1.4;
-  font-weight: 500;
-}
-.hero .hero-panel-list ul {
-  display: grid;
-  gap: 8px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.hero .hero-panel-list li {
-  position: relative;
-  padding-left: 18px;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 14px;
-  line-height: 1.6;
-}
-.hero .hero-panel-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 10px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--brass);
-  box-shadow: 0 0 0 4px rgba(197, 160, 62, 0.18);
-}
 .hero .scroll-cue {
   left: max(24px, calc((100% - 1180px) / 2));
   bottom: 33px;
@@ -2208,7 +2086,7 @@ body .hero {
     max-width: 620px;
   }
   .hero h1 {
-    font-size: clamp(38px, 4vw, 56px);
+    font-size: 50px;
   }
   .hero .hero-intro {
     max-width: 520px;
@@ -2216,94 +2094,6 @@ body .hero {
   }
   .hero .hero-panel {
     width: 100%;
-  }
-}
-.video-section .video-item {
-  width: 100%;
-  border: 0;
-  cursor: pointer;
-  text-align: left;
-  font: inherit;
-}
-.video-section .video-item:focus-visible {
-  outline: 3px solid var(--brass);
-  outline-offset: 4px;
-}
-.video-section .video-item:hover > div,
-.video-section .video-item:focus-visible > div {
-  background: var(--brass);
-  color: var(--green);
-}
-.video-modal {
-  position: fixed;
-  z-index: 100;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 28px;
-  background: rgba(4, 27, 20, 0.84);
-  backdrop-filter: blur(10px);
-}
-.video-dialog {
-  width: min(1040px, 100%);
-  overflow: hidden;
-  background: var(--deep);
-  box-shadow: 0 28px 85px rgba(0, 0, 0, 0.45);
-}
-.video-dialog-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  min-height: 64px;
-  padding: 14px 17px 14px 22px;
-  color: #fff;
-}
-.video-dialog-head p {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 600;
-}
-.video-close {
-  display: grid;
-  flex: 0 0 auto;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border: 1px solid rgba(255, 255, 255, 0.38);
-  background: transparent;
-  color: var(--brass);
-  cursor: pointer;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-.video-close:hover,
-.video-close:focus-visible {
-  background: var(--brass);
-  color: var(--green);
-  outline: 0;
-}
-.video-player {
-  display: block;
-  width: 100%;
-  max-height: calc(100vh - 145px);
-  background: #000;
-  aspect-ratio: 16 / 9;
-}
-@media (max-width: 640px) {
-  .video-modal {
-    padding: 16px;
-  }
-  .video-dialog-head {
-    min-height: 58px;
-    padding-left: 16px;
-  }
-  .video-dialog-head p {
-    font-size: 12px;
-  }
-  .video-player {
-    max-height: calc(100vh - 122px);
   }
 }
 .hero .hero-trust {
@@ -2374,7 +2164,7 @@ body .hero {
     gap: 36px;
   }
   .hero h1 {
-    font-size: clamp(50px, 7vw, 68px);
+    font-size: 50px;
   }
   .hero .hero-trust {
     padding: 23px 22px;
@@ -2426,7 +2216,7 @@ body .hero {
     margin-bottom: 9px;
   }
   .hero h1 {
-    font-size: clamp(44px, 12vw, 58px);
+    font-size: 50px;
     line-height: 1.03;
     letter-spacing: -1.8px;
     margin-bottom: 20px;
@@ -2456,17 +2246,6 @@ body .hero {
     padding: 11px 14px;
     font-size: 9px;
     letter-spacing: 1px;
-  }
-  .hero .hero-visual {
-    margin-top: 28px;
-    justify-content: stretch;
-  }
-  .hero .hero-panel {
-    width: 100%;
-    padding: 16px 16px 14px;
-  }
-  .hero .hero-panel-metrics strong {
-    font-size: 34px;
   }
   .hero .scroll-cue {
     left: 18px;
@@ -3081,7 +2860,7 @@ body .legacy-wall {
 /* Legacy wall reference composition */
 body .legacy-wall {
   padding-top: 96px !important;
-  background: #f8f7f2;
+  background: var(--ivory);
 }
 .legacy-wall .container {
   width: min(1440px, calc(100% - 72px));
@@ -3108,7 +2887,7 @@ body .legacy-wall {
 }
 .legacy-wall .legacy-panel .eyebrow {
   margin-bottom: 24px;
-  color: #6d7280;
+  color: var(--muted);
 }
 .legacy-wall .legacy-panel .eyebrow::before {
   content: "";
@@ -3132,7 +2911,7 @@ body .legacy-wall {
 .legacy-wall
   .legacy-panel
   > p:not(.eyebrow):not(.legacy-attribution) {
-  color: #737886;
+  color: var(--muted);
   font-size: 15px;
   line-height: 1.68;
 }
@@ -3140,13 +2919,13 @@ body .legacy-wall {
   margin: 26px 0 28px;
   padding: 0;
   border: 0;
-  color: #245e3e;
+  color: var(--soft);
   font-size: 18px;
   line-height: 1.42;
 }
 .legacy-wall .legacy-attribution {
   gap: 22px;
-  color: #737886;
+  color: var(--muted);
   font-size: 14px;
   line-height: 1.6;
 }
@@ -3279,7 +3058,7 @@ body .legacy-wall {
   gap: 10px;
 }
 .legacy-wall .legacy-values b {
-  color: #2a8a52;
+  color: var(--soft);
   font-size: 14px;
 }
 .legacy-wall .legacy-values strong {
@@ -3397,7 +3176,7 @@ body .legacy-wall {
   border-bottom: 0;
 }
 .business-menu a:hover {
-  background: #eef2ed;
+  background: var(--line);
   color: var(--green);
 }
 .chairman {
@@ -3523,6 +3302,44 @@ body {
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.55;
+}
+/* Justify prose paragraphs site-wide. Eyebrows, nav items, buttons,
+   badges, footers, FAQ questions, and form copy opt out via the
+   selectors below. */
+main p,
+.large-copy,
+.intro-detail,
+.about-story-copy p,
+.pg-story-copy p,
+.own-who-copy p,
+.board-meet-copy p,
+.skoda-about-copy p,
+.nissan-about-copy p,
+.ford-about-copy p,
+.pfg-reach p,
+.pfg-reason-list p,
+.fz-reach p,
+.ps-about-copy p,
+.pf-about-copy p,
+.community-copy p,
+.faq-item p,
+.contact-copy p,
+.about-leadership-copy p,
+.about-community-copy p,
+.about-direction-copy p,
+.about-recognition-copy p,
+.chairman-copy p,
+.award-detail,
+.skoda-faq p,
+.nissan-faq p,
+.ford-faq p,
+.ps-faq p,
+.pf-faq p,
+.fz-faq p,
+.pfg-faq p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 a {
   color: inherit;
@@ -3711,27 +3528,34 @@ i {
 h1,
 h2 {
   font-weight: 700;
-  letter-spacing: -2px;
-  line-height: 1.02;
+  letter-spacing: -1px;
+  line-height: 1.1;
 }
 h1 {
-  font-size: clamp(50px, 7.2vw, 94px);
+  font-size: 50px;
   max-width: 780px;
-  margin-bottom: 30px;
+  margin-bottom: 22px;
 }
 h2 {
-  font-size: clamp(42px, 5vw, 68px);
-  margin-bottom: 28px;
+  font-size: clamp(24px, 3vw, 36px);
+  margin-bottom: 20px;
 }
 h1 em,
 h2 em {
   font-family: var(--serif);
   font-weight: 500;
-  letter-spacing: -3px;
+  letter-spacing: -1.5px;
 }
 h3 {
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.25;
+  font-size: clamp(18px, 2vw, 22px);
+  margin-bottom: 12px;
+}
+h4 {
+  font-weight: 700;
+  font-size: clamp(15px, 1.6vw, 17px);
+  margin-bottom: 10px;
 }
 .hero-intro {
   font-size: 18px;
@@ -3938,9 +3762,8 @@ h3 {
   text-transform: none;
   letter-spacing: 0;
 }
-.businesses,
-.video-section {
-  background: #e8ede8;
+.businesses {
+  background: var(--ivory);
 }
 .section-heading {
   display: flex;
@@ -4195,6 +4018,37 @@ h3 {
   padding-right: 12px;
   background: #fff;
 }
+.news-item--latest {
+  background: linear-gradient(
+    90deg,
+    rgba(193, 154, 88, 0.08) 0%,
+    rgba(193, 154, 88, 0.02) 100%
+  );
+  border-bottom-color: rgba(193, 154, 88, 0.45);
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.news-item--latest > span {
+  color: var(--green);
+  font-weight: 700;
+}
+.news-item--latest h3 {
+  font-weight: 600;
+}
+.news-latest-badge {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 3px 10px;
+  border: 1px solid var(--brass);
+  border-radius: 999px;
+  background: var(--brass);
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
 .community-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -4207,49 +4061,6 @@ h3 {
 }
 .community-copy {
   max-width: 520px;
-}
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-.video-item {
-  min-height: 190px;
-  background: var(--green);
-  color: #fff;
-  padding: 22px;
-  position: relative;
-  transition: transform 0.25s var(--ease);
-}
-.video-item:hover {
-  transform: translateY(-5px);
-}
-.video-item > div {
-  width: 45px;
-  height: 45px;
-  border: 1px solid var(--brass);
-  color: var(--brass);
-  display: grid;
-  place-items: center;
-  margin-bottom: 35px;
-}
-.video-item > span {
-  position: absolute;
-  top: 25px;
-  right: 22px;
-  color: var(--brass);
-  font-size: 11px;
-}
-.video-item h3 {
-  font-size: 17px;
-  max-width: 220px;
-  margin: 0;
-}
-.video-item small {
-  position: absolute;
-  bottom: 22px;
-  right: 22px;
-  color: rgba(255, 255, 255, 0.6);
 }
 .faq-grid {
   display: grid;
@@ -4461,9 +4272,6 @@ h3 {
   .contact-grid {
     gap: 60px;
   }
-  .video-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 @media (max-width: 640px) {
   .container {
@@ -4518,7 +4326,7 @@ h3 {
   .hero-note {
     right: 18px;
     bottom: 76px;
-    font-size: 43px;
+    font-size: clamp(26px, 9vw, 43px);
   }
   .scroll-cue {
     left: 18px;
@@ -4534,7 +4342,7 @@ h3 {
     margin-bottom: 34px;
   }
   .intro-copy h2 {
-    font-size: 46px;
+    font-size: 32px;
   }
   .large-copy {
     font-size: 17px;
@@ -4543,8 +4351,7 @@ h3 {
     margin-top: 42px;
   }
   .business-grid,
-  .insight-grid,
-  .video-grid {
+  .insight-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
@@ -4592,7 +4399,7 @@ h3 {
     font-size: 16px;
   }
   .contact-copy h2 {
-    font-size: 52px;
+    font-size: 32px;
   }
   .footer-top {
     align-items: flex-start;
@@ -4610,6 +4417,100 @@ h3 {
   .footer-bottom span {
     display: block;
     margin-bottom: 8px;
+  }
+
+  /* Additional grids → single column */
+  .awards-grid,
+  .news-grid,
+  .bento-grid,
+  .explore-grid,
+  .stat-grid,
+  .team-grid,
+  .testimonial-grid,
+  .leadership-grid,
+  .recognition-grid,
+  .vision-grid,
+  .about-leadership-grid,
+  .about-recognition-grid,
+  .pg-naming-grid,
+  .pg-story-grid,
+  .own-who-grid,
+  .board-governance-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* Eyebrow labels */
+  .eyebrow {
+    font-size: 11px;
+  }
+
+  /* Section heading → smaller h2 */
+  .section-heading > h2 {
+    font-size: clamp(22px, 7vw, 36px);
+  }
+
+  /* Section label */
+  .section-label {
+    font-size: 10px;
+  }
+
+  /* Images */
+  .card-image {
+    height: 200px;
+  }
+  .intro-stat strong {
+    font-size: 48px;
+  }
+  .insight-image {
+    height: 220px;
+  }
+
+  /* Nav drawer — smaller text */
+  .route-drawer {
+    width: min(360px, calc(100vw - 24px));
+  }
+  .route-drawer-links {
+    font-size: 18px;
+  }
+
+  /* Logos */
+  .logo-copy strong {
+    font-size: 16px;
+  }
+  .logo-mark {
+    width: 32px;
+    height: 32px;
+    font-size: 10px;
+  }
+  .site-header .logo img {
+    height: 32px;
+    width: auto;
+  }
+  .route-header .logo img {
+    width: 100px;
+    height: auto;
+  }
+
+  /* Footer logo sizing */
+  .footer-logo-wordmark {
+    width: 220px;
+  }
+  .footer-logo-mark {
+    width: 90px;
+  }
+  .site-footer .footer-nav a {
+    font-size: 16px;
+  }
+  .site-footer .footer-address-card {
+    padding: 28px 22px;
+  }
+
+  /* Story feature image */
+  .story-feature,
+  .story-feature > img {
+    min-height: 360px;
+    height: 360px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -4666,6 +4567,12 @@ body .site-footer {
   letter-spacing: -28px;
   pointer-events: none;
 }
+
+@media (max-width: 640px) {
+  .footer-year-mark {
+    display: none;
+  }
+}
 .site-footer .footer-shell {
   display: grid;
   grid-template-columns: minmax(260px, 1.32fr) minmax(190px, 0.82fr) minmax(
@@ -4681,6 +4588,8 @@ body .site-footer {
   align-items: center;
   gap: 17px;
   color: #fff;
+  justify-self: start;
+  align-self: start;
 }
 .footer-logo-mark {
   display: block;
@@ -5019,7 +4928,7 @@ body .site-footer {
   max-width: 860px;
   margin: 0 0 24px;
   color: #fff;
-  font-size: clamp(44px, 5.2vw, 72px);
+  font-size: 50px;
   line-height: 1;
   letter-spacing: -2.5px;
 }
@@ -5131,7 +5040,7 @@ body .site-footer {
 .pg-story-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -5186,7 +5095,7 @@ body .site-footer {
 .pg-naming-grid h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -5230,7 +5139,7 @@ body .site-footer {
 .pg-section-intro h2 {
   margin: 0 0 20px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -5407,7 +5316,7 @@ body .site-footer {
 .pg-diversified-intro h2 {
   margin: 0 0 20px;
   color: #fff;
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -5479,7 +5388,7 @@ body .site-footer {
 .pg-explore-intro h2 {
   margin: 0 0 20px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -5558,7 +5467,7 @@ body .site-footer {
     padding-bottom: 115px;
   }
   .pg-hero-copy h1 {
-    font-size: clamp(38px, 10vw, 58px);
+    font-size: 50px;
     letter-spacing: -1.8px;
   }
   .pg-hero-intro {
@@ -5657,7 +5566,7 @@ body .site-footer {
   max-width: 860px;
   margin: 0 0 24px;
   color: #fff;
-  font-size: clamp(40px, 4.8vw, 68px);
+  font-size: 50px;
   line-height: 1.04;
   letter-spacing: -2.2px;
 }
@@ -5697,7 +5606,7 @@ body .site-footer {
 .own-section-intro h2 {
   margin: 0 0 20px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -5735,7 +5644,7 @@ body .site-footer {
 .own-who-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -5869,7 +5778,7 @@ body .site-footer {
 .own-vision-grid h2 {
   margin: 0 0 24px;
   color: #fff;
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -5931,12 +5840,7 @@ body .site-footer {
   overflow: hidden;
 }
 .own-next-gen::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--grad-brass-wash);
-  pointer-events: none;
-  z-index: 1;
+  content: none;
 }
 .own-next-gen > .container {
   padding: 24px 22px 20px;
@@ -5954,14 +5858,7 @@ body .site-footer {
   background: var(--ivory);
 }
 .own-next-gen-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("/assets/prateek-pal-images/prateek-pal.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center 18%;
-  opacity: 0.1;
+  content: none;
 }
 .own-next-gen-card > * {
   position: relative;
@@ -6392,7 +6289,7 @@ body .site-footer {
 .own-explore-intro h2 {
   margin: 0 0 20px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -6473,7 +6370,7 @@ body .site-footer {
     padding-bottom: 100px;
   }
   .own-hero-copy h1 {
-    font-size: clamp(34px, 9vw, 52px);
+    font-size: 50px;
     letter-spacing: -1.6px;
   }
   .own-hero-intro {
@@ -6603,7 +6500,7 @@ body .site-footer {
   max-width: 860px;
   margin: 0 0 24px;
   color: #fff;
-  font-size: clamp(40px, 4.8vw, 68px);
+  font-size: 50px;
   line-height: 1.04;
   letter-spacing: -2.2px;
 }
@@ -6658,7 +6555,7 @@ body .site-footer {
 .board-section-intro h2 {
   margin: 0 0 20px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -6821,7 +6718,7 @@ body .site-footer {
 .board-governance-copy h2 {
   margin: 0 0 20px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -6894,7 +6791,7 @@ body .site-footer {
 .board-faq h2 {
   margin: 0 0 25px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 68px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2.5px;
 }
@@ -6927,7 +6824,7 @@ body .site-footer {
 .board-explore-intro h2 {
   margin: 0 0 20px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -6999,7 +6896,7 @@ body .site-footer {
     padding-bottom: 100px;
   }
   .board-hero-copy h1 {
-    font-size: clamp(34px, 9vw, 52px);
+    font-size: 50px;
     letter-spacing: -1.6px;
   }
   .board-hero-intro {
@@ -7076,7 +6973,7 @@ body .site-footer {
   max-width: 800px;
   margin: 0 0 24px;
   color: #fff;
-  font-size: clamp(42px, 5.2vw, 68px);
+  font-size: 50px;
   line-height: 1.05;
   letter-spacing: -2.5px;
 }
@@ -7199,7 +7096,7 @@ body .site-footer {
 .pf-about-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -7271,7 +7168,7 @@ body .site-footer {
 .pf-iqf-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 58px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -7346,7 +7243,7 @@ body .site-footer {
 .pf-section-intro h2 {
   margin: 0 0 20px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -7564,7 +7461,7 @@ body .site-footer {
 .pf-bento-intro h2 {
   margin: 0 0 20px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -7803,7 +7700,7 @@ body .site-footer {
     padding-bottom: 140px;
   }
   .pf-hero-copy h1 {
-    font-size: clamp(32px, 9vw, 52px);
+    font-size: 50px;
     letter-spacing: -1.5px;
   }
   .pf-hero-intro {
@@ -7973,7 +7870,7 @@ body .site-footer {
   max-width: 800px;
   margin: 0 0 24px;
   color: #fff;
-  font-size: clamp(42px, 5.2vw, 68px);
+  font-size: 50px;
   line-height: 1.05;
   letter-spacing: -2.5px;
 }
@@ -8058,7 +7955,7 @@ body .site-footer {
 .ui-styling .fz-about-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -8119,7 +8016,7 @@ body .site-footer {
 
 /* Frozzo IQF / What makes different */
 .ui-styling .fz-iqf {
-  background: linear-gradient(180deg, #ffffff 0%, #f1f8fb 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--ivory) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -8146,7 +8043,7 @@ body .site-footer {
 .ui-styling .fz-iqf-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 58px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -8209,7 +8106,7 @@ body .site-footer {
 .ui-styling .fz-section-intro h2 {
   margin: 0 0 20px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -8229,7 +8126,7 @@ body .site-footer {
 }
 .ui-styling .fz-product-card {
   padding: 32px 28px;
-  background: #f5fafc;
+  background: var(--ivory);
   border-top: 2px solid var(--brass);
   transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
@@ -8375,7 +8272,7 @@ body .site-footer {
 .ui-styling .fz-bento-intro h2 {
   margin: 0 0 20px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -8459,7 +8356,7 @@ body .site-footer {
 .ui-styling .fz-reach-grid h2 {
   margin: 0 0 0;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 58px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -8479,7 +8376,7 @@ body .site-footer {
 
 /* Frozzo Why */
 .ui-styling .fz-why {
-  background: #f1f8fb;
+  background: var(--ivory);
 }
 .ui-styling .fz-why-grid {
   display: grid;
@@ -8519,7 +8416,7 @@ body .site-footer {
 
 /* Frozzo Backing */
 .ui-styling .fz-backing {
-  background: linear-gradient(180deg, #ffffff 0%, #f1f8fb 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--ivory) 100%);
 }
 .ui-styling .fz-backing-card {
   position: relative;
@@ -8556,7 +8453,7 @@ body .site-footer {
 .ui-styling .fz-backing-content h2 {
   margin: 0 0 24px;
   color: #fff;
-  font-size: clamp(36px, 4.2vw, 52px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1.05;
   letter-spacing: -1.5px;
 }
@@ -8587,7 +8484,7 @@ body .site-footer {
 
 /* Frozzo Explore */
 .ui-styling .fz-explore {
-  background: #f1f8fb;
+  background: var(--ivory);
   padding-top: 96px;
   padding-bottom: 64px;
 }
@@ -8721,7 +8618,7 @@ body .site-footer {
     padding-bottom: 140px;
   }
   .ui-styling .fz-hero-copy h1 {
-    font-size: clamp(32px, 9vw, 52px);
+    font-size: 50px;
     letter-spacing: -1.5px;
   }
   .ui-styling .fz-hero-intro {
@@ -8876,7 +8773,7 @@ body .site-footer {
   max-width: 880px;
   margin: 0 0 24px;
   color: #fff;
-  font-size: clamp(40px, 4.8vw, 64px);
+  font-size: 50px;
   line-height: 1.05;
   letter-spacing: -2.2px;
 }
@@ -8974,7 +8871,7 @@ body .site-footer {
 .ps-about-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -9046,7 +8943,7 @@ body .site-footer {
 
 /* Pal Stone Materials */
 .ps-materials {
-  background: linear-gradient(180deg, #ffffff 0%, #faf6e2 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--ivory) 100%);
 }
 .ps-section-intro {
   max-width: 700px;
@@ -9055,7 +8952,7 @@ body .site-footer {
 .ps-section-intro h2 {
   margin: 0 0 20px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -9091,7 +8988,7 @@ body .site-footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #faf6e2;
+  background: var(--ivory);
   border: 2px solid var(--clay);
   border-radius: 50%;
   margin-bottom: 24px;
@@ -9162,7 +9059,7 @@ body .site-footer {
 .ps-sustainable-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 58px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -9187,7 +9084,7 @@ body .site-footer {
   width: 100%;
   max-width: 320px;
   aspect-ratio: 1;
-  background: linear-gradient(135deg, #faf6e2 0%, #f3ecd1 100%);
+  background: linear-gradient(135deg, var(--ivory) 0%, #f3ecd1 100%);
   border: 2px solid var(--clay);
   border-radius: 50%;
   padding: 40px;
@@ -9201,7 +9098,7 @@ body .site-footer {
 
 /* Pal Stone Infrastructure */
 .ps-infrastructure {
-  background: #faf6e2;
+  background: var(--ivory);
 }
 .ps-infrastructure-grid {
   display: grid;
@@ -9212,7 +9109,7 @@ body .site-footer {
 .ps-infrastructure-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 58px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -9282,7 +9179,7 @@ body .site-footer {
 }
 .ps-why-card {
   padding: 36px 32px;
-  background: #faf6e2;
+  background: var(--ivory);
   border-top: 3px solid var(--clay-deep);
   transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
@@ -9313,7 +9210,7 @@ body .site-footer {
 
 /* Pal Stone FAQ */
 .ps-faq {
-  background: linear-gradient(180deg, #ffffff 0%, #faf6e2 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--ivory) 100%);
 }
 
 /* Pal Stone Contact (brand layout: ivory bg, facts sidebar + copy) */
@@ -9377,7 +9274,7 @@ body .site-footer {
 .ps-contact-copy h2 {
   margin: 0 0 22px;
   color: var(--green);
-  font-size: clamp(37px, 4vw, 58px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1.05;
   letter-spacing: -1.8px;
 }
@@ -9396,7 +9293,7 @@ body .site-footer {
 
 /* Pal Stone Explore */
 .ps-explore {
-  background: #faf6e2;
+  background: var(--ivory);
   padding-top: 96px;
   padding-bottom: 64px;
 }
@@ -9504,7 +9401,7 @@ body .site-footer {
     padding-bottom: 140px;
   }
   .ps-hero-copy h1 {
-    font-size: clamp(32px, 9vw, 52px);
+    font-size: 50px;
     letter-spacing: -1.5px;
   }
   .ps-hero-intro {
@@ -9562,7 +9459,7 @@ body .site-footer {
 /* Pal Skoda Page */
 .pal-skoda-page {
   --skoda-soft: #f3ecd1;
-  --skoda-pale: #faf6e2;
+  --skoda-pale: var(--ivory);
   --skoda-clay: var(--brass);
 }
 .pal-skoda-page p,
@@ -9603,7 +9500,7 @@ body .site-footer {
 .skoda-section-intro h2 {
   margin: 0 0 20px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -9666,7 +9563,7 @@ body .site-footer {
   max-width: 900px;
   margin: 0 0 24px;
   color: #fff;
-  font-size: clamp(40px, 4.8vw, 64px);
+  font-size: 50px;
   line-height: 1.05;
   letter-spacing: -2.2px;
 }
@@ -9764,7 +9661,7 @@ body .site-footer {
 .skoda-about-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -9836,7 +9733,7 @@ body .site-footer {
 
 /* Pal Skoda Models */
 .skoda-models {
-  background: linear-gradient(180deg, #ffffff 0%, #faf6e2 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--ivory) 100%);
 }
 .skoda-models-grid {
   display: grid;
@@ -9959,7 +9856,7 @@ body .site-footer {
 .skoda-team-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -9987,7 +9884,7 @@ body .site-footer {
 
 /* Pal Skoda Promise */
 .skoda-promise {
-  background: linear-gradient(180deg, #faf6e2 0%, #ffffff 100%);
+  background: linear-gradient(180deg, var(--ivory) 0%, #ffffff 100%);
 }
 .skoda-promise-grid {
   display: grid;
@@ -9998,7 +9895,7 @@ body .site-footer {
 .skoda-promise-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -10103,7 +10000,7 @@ body .site-footer {
 
 /* Pal Skoda FAQ */
 .skoda-faq {
-  background: linear-gradient(180deg, #ffffff 0%, #faf6e2 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--ivory) 100%);
 }
 
 /* Pal Skoda Visit */
@@ -10169,7 +10066,7 @@ body .site-footer {
 .skoda-visit-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -10189,7 +10086,7 @@ body .site-footer {
 
 /* Pal Skoda Explore */
 .skoda-explore {
-  background: linear-gradient(180deg, #faf6e2 0%, #fff 100%);
+  background: linear-gradient(180deg, var(--ivory) 0%, #fff 100%);
 }
 .skoda-explore-intro {
   max-width: 720px;
@@ -10326,7 +10223,7 @@ body .site-footer {
 
 .pal-nissan-page {
   --nissan-soft: #f3ecd1;
-  --nissan-pale: #faf6e2;
+  --nissan-pale: var(--ivory);
   --nissan-clay: var(--brass);
 }
 .pal-nissan-page p,
@@ -10367,7 +10264,7 @@ body .site-footer {
 .nissan-section-intro h2 {
   margin: 0 0 20px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -10430,7 +10327,7 @@ body .site-footer {
   max-width: 900px;
   margin: 0 0 24px;
   color: #fff;
-  font-size: clamp(40px, 4.8vw, 64px);
+  font-size: 50px;
   line-height: 1.05;
   letter-spacing: -2.2px;
 }
@@ -10528,7 +10425,7 @@ body .site-footer {
 .nissan-about-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -10600,7 +10497,7 @@ body .site-footer {
 
 /* Pal Nissan Models */
 .nissan-models {
-  background: linear-gradient(180deg, #ffffff 0%, #faf6e2 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--ivory) 100%);
 }
 .nissan-models-grid {
   display: grid;
@@ -10723,7 +10620,7 @@ body .site-footer {
 .nissan-team-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -10751,7 +10648,7 @@ body .site-footer {
 
 /* Pal Nissan Promise */
 .nissan-promise {
-  background: linear-gradient(180deg, #faf6e2 0%, #ffffff 100%);
+  background: linear-gradient(180deg, var(--ivory) 0%, #ffffff 100%);
 }
 .nissan-promise-grid {
   display: grid;
@@ -10762,7 +10659,7 @@ body .site-footer {
 .nissan-promise-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -10867,7 +10764,7 @@ body .site-footer {
 
 /* Pal Nissan FAQ */
 .nissan-faq {
-  background: linear-gradient(180deg, #ffffff 0%, #faf6e2 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--ivory) 100%);
 }
 
 /* Pal Nissan Visit */
@@ -10933,7 +10830,7 @@ body .site-footer {
 .nissan-visit-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -10953,7 +10850,7 @@ body .site-footer {
 
 /* Pal Nissan Explore */
 .nissan-explore {
-  background: linear-gradient(180deg, #faf6e2 0%, #fff 100%);
+  background: linear-gradient(180deg, var(--ivory) 0%, #fff 100%);
 }
 .nissan-explore-intro {
   max-width: 720px;
@@ -11090,7 +10987,7 @@ body .site-footer {
 
 .pal-ford-page {
   --ford-soft: #f3ecd1;
-  --ford-pale: #faf6e2;
+  --ford-pale: var(--ivory);
   --ford-clay: var(--brass);
 }
 .pal-ford-page p,
@@ -11131,7 +11028,7 @@ body .site-footer {
 .ford-section-intro h2 {
   margin: 0 0 20px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -11194,7 +11091,7 @@ body .site-footer {
   max-width: 900px;
   margin: 0 0 24px;
   color: #fff;
-  font-size: clamp(40px, 4.8vw, 64px);
+  font-size: 50px;
   line-height: 1.05;
   letter-spacing: -2.2px;
 }
@@ -11292,7 +11189,7 @@ body .site-footer {
 .ford-about-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -11364,7 +11261,7 @@ body .site-footer {
 
 /* Pal Ford Service */
 .ford-service {
-  background: linear-gradient(180deg, #ffffff 0%, #faf6e2 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--ivory) 100%);
 }
 .ford-service-grid {
   display: grid;
@@ -11455,7 +11352,7 @@ body .site-footer {
 .ford-sales-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -11514,7 +11411,7 @@ body .site-footer {
 .ford-regional-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -11564,7 +11461,7 @@ body .site-footer {
 
 /* Pal Ford Leadership */
 .ford-leadership {
-  background: linear-gradient(180deg, #faf6e2 0%, #ffffff 100%);
+  background: linear-gradient(180deg, var(--ivory) 0%, #ffffff 100%);
 }
 .ford-leadership-grid {
   display: grid;
@@ -11575,7 +11472,7 @@ body .site-footer {
 .ford-leadership-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -11636,7 +11533,7 @@ body .site-footer {
 
 /* Pal Ford Promise */
 .ford-promise {
-  background: linear-gradient(180deg, #faf6e2 0%, #ffffff 100%);
+  background: linear-gradient(180deg, var(--ivory) 0%, #ffffff 100%);
 }
 .ford-promise-grid {
   display: grid;
@@ -11647,7 +11544,7 @@ body .site-footer {
 .ford-promise-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -11752,7 +11649,7 @@ body .site-footer {
 
 /* Pal Ford FAQ */
 .ford-faq {
-  background: linear-gradient(180deg, #ffffff 0%, #faf6e2 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--ivory) 100%);
 }
 
 /* Pal Ford Visit */
@@ -11818,7 +11715,7 @@ body .site-footer {
 .ford-visit-copy h2 {
   margin: 0 0 24px;
   color: var(--green);
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1;
   letter-spacing: -2px;
 }
@@ -11838,7 +11735,7 @@ body .site-footer {
 
 /* Pal Ford Explore */
 .ford-explore {
-  background: linear-gradient(180deg, #faf6e2 0%, #fff 100%);
+  background: linear-gradient(180deg, var(--ivory) 0%, #fff 100%);
 }
 .ford-explore-intro {
   max-width: 720px;
@@ -11986,6 +11883,17 @@ body .site-footer {
 .palam-canvas-section {
   position: relative;
   height: 500vh;
+}
+
+/* No-JS poster: full-bleed fallback shown only when <noscript> is rendered.
+   Sits behind the canvas so JS-enabled browsers never see it. */
+.palam-noscript-poster {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .palam-canvas-bg {
@@ -12211,7 +12119,7 @@ body .site-footer {
 .palam-hero-title-row {
   display: inline-flex;
   align-items: baseline;
-  font-size: clamp(48px, 5.5vw, 84px);
+  font-size: 50px;
   font-weight: 500;
 }
 
@@ -12279,7 +12187,7 @@ body .site-footer {
 }
 
 .palam-hero-cta-btn:hover {
-  background: #e8c304;
+  background: var(--brass);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(217, 178, 4, 0.3);
 }
@@ -12366,20 +12274,20 @@ body .site-footer {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #5fd17a;
+  color: var(--brass);
 }
 
 .palam-hero-info-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #5fd17a;
+  background: var(--brass);
   animation: pulse-live 1.8s ease-in-out infinite;
 }
 
 @keyframes pulse-live {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(95, 209, 122, 0.5); }
-  50% { box-shadow: 0 0 0 6px rgba(95, 209, 122, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(217, 178, 4, 0.5); }
+  50% { box-shadow: 0 0 0 6px rgba(217, 178, 4, 0); }
 }
 
 /* Bottom right — scroll progress */
@@ -12444,7 +12352,7 @@ body .site-footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #0d3b2e;
+  background: var(--green);
   z-index: 10;
 }
 
@@ -12493,7 +12401,7 @@ body .site-footer {
   }
 
   .palam-hero-title-row {
-    font-size: clamp(40px, 6.5vw, 64px);
+    font-size: 50px;
   }
 
   .palam-hero-progress,
@@ -12536,7 +12444,7 @@ body .site-footer {
   }
 
   .palam-hero-title-row {
-    font-size: clamp(40px, 11vw, 56px);
+    font-size: 50px;
   }
 
   .palam-hero-title-row--alt {
@@ -12591,7 +12499,7 @@ body .site-footer {
   width: 100%;
   height: 100vh;
   min-height: 720px;
-  background: linear-gradient(180deg, #0d3b2e 0%, #08281e 100%);
+  background: linear-gradient(180deg, var(--green) 0%, var(--deep) 100%);
   overflow: hidden;
   color: var(--ivory);
   isolation: isolate;
@@ -12758,7 +12666,7 @@ body .site-footer {
 }
 
 .flip-intro-front {
-  background: #1a1a1a;
+  background: var(--deep);
 }
 
 .flip-intro-img {
@@ -12780,7 +12688,7 @@ body .site-footer {
 }
 
 .flip-intro-back {
-  background: #0a1f17;
+  background: var(--deep);
   border: 1px solid rgba(217, 178, 4, 0.35);
   display: flex;
   flex-direction: column;
@@ -13124,7 +13032,7 @@ body .site-footer {
 }
 
 .palam-amenity-card:hover {
-  background: #faf8f2;
+  background: var(--ivory);
   box-shadow: none;
 }
 
@@ -13488,7 +13396,7 @@ body .site-footer {
 
 .palam-cta-section h2 {
   color: #fff;
-  font-size: clamp(36px, 5vw, 56px);
+  font-size: clamp(28px, 3.5vw, 42px);
   line-height: 1.05;
   margin-bottom: 22px;
   letter-spacing: -0.015em;
@@ -13780,7 +13688,7 @@ body .site-footer {
   }
 
   .palam-cta-section h2 {
-    font-size: 34px;
+    font-size: 30px;
   }
 
   .palam-cta-actions {
@@ -13930,5 +13838,355 @@ body .site-footer {
   .board-hero-mark {
     right: 18px;
     bottom: 30px;
+  }
+}
+
+/* ============================================
+   390px breakpoint — iPhone 12/13/14 width
+   ============================================ */
+@media (max-width: 390px) {
+  .container {
+    width: min(calc(100% - 32px), 1180px);
+  }
+
+  /* Header + logos */
+  .site-header .logo img {
+    height: 30px;
+  }
+  .route-header .logo img {
+    width: 90px;
+  }
+  .logo-copy strong {
+    font-size: 15px;
+  }
+  .logo-mark {
+    width: 30px;
+    height: 30px;
+    font-size: 9px;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 600px;
+  }
+  .hero-content {
+    padding-top: 48px;
+  }
+  .hero-intro {
+    font-size: 15px;
+    max-width: 240px;
+  }
+  .hero-note {
+    font-size: clamp(22px, 9vw, 30px);
+    right: 16px;
+    bottom: 60px;
+  }
+  .scroll-cue {
+    left: 16px;
+    bottom: 24px;
+  }
+
+  /* Sections */
+  .section-pad {
+    padding: 60px 0;
+  }
+  .eyebrow {
+    font-size: 10px;
+  }
+  .section-label {
+    font-size: 9px;
+    margin-bottom: 24px;
+  }
+  .section-heading > h2 {
+    font-size: clamp(20px, 7vw, 32px);
+  }
+  .large-copy {
+    font-size: 15px;
+  }
+  .card-image {
+    height: 180px;
+  }
+  .intro-stat strong {
+    font-size: 42px;
+  }
+  .intro-stat {
+    margin-top: 32px;
+  }
+  .insight-image {
+    height: 180px;
+  }
+  .community-image {
+    height: 280px;
+  }
+  .story-feature,
+  .story-feature > img {
+    min-height: 280px;
+    height: 280px;
+  }
+  .story-caption {
+    padding: 70px 18px 20px;
+  }
+  .story-caption h3 {
+    font-size: 24px;
+  }
+
+  /* Awards + news */
+  .award-item h3,
+  .news-item h3 {
+    font-size: 14px;
+  }
+
+  /* Nav drawer */
+  .route-drawer {
+    width: min(340px, calc(100vw - 20px));
+  }
+  .route-drawer-links {
+    font-size: 16px;
+  }
+  .route-drawer-submenu > a,
+  .route-drawer-subtrigger {
+    min-height: 40px;
+    font-size: 13px;
+  }
+
+  /* Footer */
+  .footer-logo-wordmark {
+    width: 200px;
+  }
+  .footer-logo-mark {
+    width: 80px;
+  }
+  .site-footer .footer-nav a {
+    font-size: 15px;
+  }
+  .site-footer .footer-address-card {
+    padding: 24px 20px;
+  }
+  .footer-contact-cta {
+    padding: 11px 18px;
+    font-size: 12px;
+  }
+  .footer-bottom {
+    font-size: 11px;
+  }
+
+  /* Hero marks */
+  .hero .hero-trust strong,
+  .about-hero-mark strong,
+  .pg-hero-mark strong,
+  .pf-hero-mark strong,
+  .ui-styling .fz-hero-mark strong,
+  .ps-hero-mark strong,
+  .skoda-hero-mark strong,
+  .nissan-hero-mark strong,
+  .ford-hero-mark strong {
+    font-size: clamp(80px, 35vw, 120px);
+  }
+
+  /* Grids */
+  .awards-grid,
+  .news-grid,
+  .bento-grid,
+  .explore-grid,
+  .stat-grid,
+  .team-grid,
+  .testimonial-grid,
+  .leadership-grid,
+  .recognition-grid,
+  .vision-grid,
+  .about-leadership-grid,
+  .about-recognition-grid,
+  .pg-naming-grid,
+  .pg-story-grid,
+  .own-who-grid,
+  .board-governance-grid {
+    gap: 24px;
+  }
+
+  /* Awards + news column sizing */
+  .award-item,
+  .news-item {
+    grid-template-columns: 30px 1fr 20px;
+    gap: 8px;
+  }
+
+  /* Per-page h1 — override the 50px set in each page's 640px block */
+  .hero h1,
+  .route-hero-copy h1,
+  .about-hero-copy h1,
+  .pg-hero-copy h1,
+  .own-hero-copy h1,
+  .board-hero-copy h1,
+  .pf-hero-copy h1,
+  .ui-styling .fz-hero-copy h1,
+  .ps-hero-copy h1,
+  .skoda-hero-copy h1,
+  .nissan-hero-copy h1,
+  .ford-hero-copy h1 {
+    font-size: 40px;
+    letter-spacing: -1.5px;
+  }
+}
+
+/* ============================================
+   320px breakpoint — iPhone SE / small Android
+   ============================================ */
+@media (max-width: 320px) {
+  .container {
+    width: min(calc(100% - 24px), 1180px);
+  }
+
+  /* Header + logos */
+  .site-header .logo img {
+    height: 28px;
+  }
+  .route-header .logo img {
+    width: 82px;
+  }
+  .logo-copy strong {
+    font-size: 14px;
+  }
+  .logo-mark {
+    width: 28px;
+    height: 28px;
+    font-size: 9px;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 540px;
+  }
+  .hero-content {
+    padding-top: 44px;
+  }
+  .hero-intro {
+    font-size: 14px;
+    max-width: 200px;
+  }
+  .hero-note {
+    font-size: clamp(18px, 10vw, 26px);
+    right: 14px;
+    bottom: 50px;
+  }
+  .scroll-cue {
+    left: 14px;
+    bottom: 20px;
+  }
+
+  /* Sections */
+  .section-pad {
+    padding: 50px 0;
+  }
+  .eyebrow {
+    font-size: 9px;
+  }
+  .section-label {
+    font-size: 8px;
+    margin-bottom: 20px;
+  }
+  .section-heading > h2 {
+    font-size: clamp(18px, 8vw, 28px);
+  }
+  .large-copy {
+    font-size: 14px;
+  }
+  .card-image {
+    height: 160px;
+  }
+  .intro-stat strong {
+    font-size: 38px;
+  }
+  .intro-stat {
+    margin-top: 28px;
+  }
+  .insight-image {
+    height: 160px;
+  }
+  .community-image {
+    height: 220px;
+  }
+  .story-feature,
+  .story-feature > img {
+    min-height: 220px;
+    height: 220px;
+  }
+  .story-caption {
+    padding: 55px 14px 16px;
+  }
+  .story-caption h3 {
+    font-size: 20px;
+  }
+
+  /* Awards + news */
+  .award-item h3,
+  .news-item h3 {
+    font-size: 13px;
+  }
+  .award-item,
+  .news-item {
+    grid-template-columns: 26px 1fr 18px;
+    gap: 6px;
+  }
+
+  /* Nav drawer — full width */
+  .route-drawer {
+    width: calc(100vw);
+    border-radius: 0;
+  }
+  .route-drawer-links {
+    font-size: 15px;
+  }
+  .route-drawer-submenu > a,
+  .route-drawer-subtrigger {
+    min-height: 36px;
+    font-size: 12px;
+  }
+
+  /* Footer */
+  .footer-logo-wordmark {
+    width: 180px;
+  }
+  .footer-logo-mark {
+    width: 70px;
+  }
+  .site-footer .footer-nav a {
+    font-size: 14px;
+  }
+  .footer-contact-cta {
+    padding: 10px 14px;
+    font-size: 11px;
+  }
+  .footer-bottom {
+    font-size: 10px;
+  }
+
+  /* Hero marks */
+  .hero .hero-trust strong,
+  .about-hero-mark strong,
+  .pg-hero-mark strong,
+  .pf-hero-mark strong,
+  .ui-styling .fz-hero-mark strong,
+  .ps-hero-mark strong,
+  .skoda-hero-mark strong,
+  .nissan-hero-mark strong,
+  .ford-hero-mark strong {
+    font-size: clamp(70px, 40vw, 100px);
+  }
+
+  /* Per-page h1 — override 50px set in 640px blocks */
+  .hero h1,
+  .route-hero-copy h1,
+  .about-hero-copy h1,
+  .pg-hero-copy h1,
+  .own-hero-copy h1,
+  .board-hero-copy h1,
+  .pf-hero-copy h1,
+  .ui-styling .fz-hero-copy h1,
+  .ps-hero-copy h1,
+  .skoda-hero-copy h1,
+  .nissan-hero-copy h1,
+  .ford-hero-copy h1 {
+    font-size: 36px;
+    letter-spacing: -1px;
   }
 }

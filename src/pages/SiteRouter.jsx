@@ -7,143 +7,20 @@ import {
   ChevronRight,
   Languages,
   Menu,
-  Play,
   X,
 } from "lucide-react";
 import Footer from "../components/Footer.jsx";
 import CursorGrid from "../components/CursorGrid.jsx";
 import { routeGroups } from "../data/navigation.js";
+import { heroImages, stories, awards, news } from "../data/homeContent.js";
+import { businesses } from "../data/businesses.js";
+import { insights, legacyMoments, journeyStages } from "../data/aboutContent.js";
+import { usePageSeo, buildFaqSchema } from "../hooks/usePageSeo.js";
 import PalamViewPage from "./PalamViewPage.jsx";
 
-const businesses = [
-  {
-    name: "Pal Stone Industries",
-    category: "Stone & Construction Materials",
-    text: "Established in 1982, Pal Stone Industries supplies premium-grade stone and grit for major infrastructure projects, including work for Indian Railways and the Gokul Dam Project. Serving the Kumaon region of Uttarakhand, the brand is known for consistent quality and on-time delivery.",
-    image: "/assets/pal-stone-industries-logo.jpeg",
-    isLogo: true,
-  },
-  {
-    name: "Pal Colonisers",
-    category: "Real estate development",
-    text: "Pal Colonisers develops modern, sustainable residential societies across Haldwani and the surrounding region, including projects like Pal Sumeera Residency, Palam City, Eco Town, etc. Every project combines contemporary design with dependable construction quality.",
-    image: "/assets/pal-colonisers-logo.jpeg",
-    isLogo: true,
-  },
-  {
-    name: "Pal Frozen Foods",
-    category: "Pal Fresh and Frozzo",
-    text: "Pal Frozen Foods delivers high-quality frozen food products through two brands: Pal Fresh, specializing in premium frozen vegetables that retain freshness and nutritional value, and Frozzo, offering convenient frozen snacks that are rapidly gaining popularity with consumers both in India and international markets.",
-    image: "/assets/pal-frozen-food-logo.jpeg",
-    isLogo: true,
-  },
-  {
-    name: "Car dealerships",
-    category: "Skoda, Nissan and Ford",
-    text: "SM Pal Group's car dealerships, Pal Skoda, Pal Nissan, and Pal Ford, offer a full car-buying experience backed by strong after-sales support, and have been recognized with multiple awards for dealership excellence at national and international level.",
-    image: "/assets/pal-prateek-automobile.jpeg",
-    isLogo: true,
-  },
-];
-const heroImages = [
-  "/assets/hero-gradient-images/pal-stone-industries-gradient.jpeg",
-  "/assets/hero-gradient-images/pal-frozen-food-gradient.jpeg",
-  "/assets/hero-gradient-images/pal-colonisers-gradient.jpeg",
-  "/assets/hero-gradient-images/pal-skoda-gradient.jpeg",
-];
-
-const stories = [
-  {
-    eyebrow: "Recognition",
-    title: "Progress worth celebrating.",
-    text: "Pal Skoda wins Best Dealer 2025, a national recognition for dealership excellence made possible by the people behind every customer experience.",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1600&q=85",
-  },
-  {
-    eyebrow: "Perspective",
-    title: "Building for the next 45+ years.",
-    text: "SM Pal Group began in 1982 with Pal Stone Industries at Halduchaur, Haldwani. Four decades later, that foundation of trust continues to shape every vertical.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85",
-  },
-];
-
-const awards = [
-  {
-    vertical: "Pal Stone Industries",
-    title: "Trusted infrastructure partner",
-    detail: "Recognised through landmark supply projects for Indian Railways and the Gokul Dam Project.",
-    href: "/industries/pal-stone-industries",
-  },
-  {
-    vertical: "Pal Colonisers",
-    title: "Most Preferred Real Estate Brand",
-    detail: "Jagran Utsav recognition for excellence in real estate.",
-    href: "/industries/pal-colonisers/pal-sumeera-residency",
-  },
-  {
-    vertical: "Pal Frozen Foods",
-    title: "Excellence in Frozen Food Brand 2026",
-    detail: "Honoured at Taste of Uttar Pradesh 2026, organised by Dainik Jagran.",
-    href: "/industries/pal-frozen-foods/pal-fresh",
-  },
-  {
-    vertical: "Pal Prateek Automobiles",
-    title: "Pal Škoda Best Dealer 2025",
-    detail: "Awarded by Škoda Auto at the Škoda Best Dealer Event 2026 in the Czech Republic.",
-    href: "/industries/car-dealerships/pal-skoda-haldwani",
-  },
-];
-const news = [
-  "Pal Skoda wins Best Dealer 2025, marking a national recognition for the cars dealership",
-  "Grand unveiling of the all-new Nissan Tekton at Pal Nissan, Haldwani",
-  "Grand launch of the new Skoda Kushaq at Pal Skoda",
-  "Grand launch of the new Nissan Gravite at Pal Nissan",
-  "Pal Sumeera Residency, Kichha, opening pooja ceremony held to mark the project's launch",
-];
-const demoVideoSource =
-  "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4";
-const videos = [
-  {
-    title: "SM Pal Group, Company Overview",
-    description:
-      "A look at the group's four business verticals and its journey since 1982",
-    duration: "2:16",
-    src: demoVideoSource,
-  },
-  {
-    title: "Pal Ford",
-    description: "Inside the Pal Ford showroom experience",
-    duration: "0:16",
-    src: demoVideoSource,
-  },
-  {
-    title: "Pal Fresh",
-    description: "How Pal Fresh frozen vegetables are prepared and packaged",
-    duration: "0:16",
-    src: demoVideoSource,
-  },
-  {
-    title: "Frozzo",
-    description: "A quick look at Frozzo's frozen snack range",
-    duration: "0:16",
-    src: demoVideoSource,
-  },
-  {
-    title: "Pal Nissan",
-    description: "The Pal Nissan dealership experience",
-    duration: "0:16",
-    src: demoVideoSource,
-  },
-  {
-    title: "Pal Colonisers",
-    description: "A walkthrough of ongoing real estate projects",
-    duration: "0:16",
-    src: demoVideoSource,
-  },
-];
-const chairmanImage = "/assets/Chairman.jpg";
+// Data constants (businesses, heroImages, stories, awards, news, videos) are
+// imported from ../data/homeContent.js.
+const chairmanImage = "/assets/Chairman.webp";
 const siteUrl = "https://smpalgroup.com";
 const aboutSeo = {
   title: "About SM Pal Group | Haldwani Business Group Since 1982",
@@ -1145,162 +1022,8 @@ function PalStoneSeo() {
   return null;
 }
 
-const insights = [
-  {
-    date: "18 Jul 2025",
-    title: "What makes a place feel like home?",
-    category: "Thoughts on place",
-    image:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    date: "04 Jun 2025",
-    title: "The quiet craft behind better materials",
-    category: "Inside the group",
-    image:
-      "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    date: "22 Apr 2025",
-    title: "A culture built around moving forward",
-    category: "People & culture",
-    image:
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85",
-  },
-];
-
-const legacyMoments = [
-  {
-    title: "Pal Stone Industries",
-    text: "Where the group story began.",
-    image: "/assets/journeywall-images/pal-stone-industries-1982-facility.webp",
-    alt: "Pal Stone Industries facility in Halduchaur, Haldwani — the founding chapter of SM Pal Group established in 1982",
-    shape: "tall",
-  },
-  {
-    title: "Building communities",
-    text: "Places shaped with purpose.",
-    image: "/assets/journeywall-images/palam-city-landmark-haldwani.webp",
-    alt: "Palam City landmark development in Haldwani, Uttarakhand — real estate venture by SM Pal Group",
-  },
-  {
-    title: "Pal Frozen Foods",
-    text: "Every achievement belongs to the team.",
-    image: "/assets/journeywall-images/pal-frozen-foods-production-facility.webp",
-    alt: "Pal Frozen Foods production facility in Haldwani — frozen foods manufacturing by SM Pal Group",
-    shape: "wide",
-  },
-  {
-    title: "Pal Skoda",
-    text: "Driving new horizons.",
-    image: "/assets/journeywall-images/pal-skoda-dealership-showroom.webp",
-    alt: "Pal Skoda automobile dealership showroom in Haldwani — SM Pal Group automotive vertical",
-  },
-  {
-    title: "Ford recognition",
-    text: "Celebrating excellence.",
-    image: "/assets/journeywall-images/pal-group-editorial-leadership.webp",
-    alt: "SM Pal Group leadership editorial feature highlighting the Ford dealership legacy in Uttarakhand",
-  },
-  {
-    title: "Leadership",
-    text: "Guided by experience.",
-    image: "/assets/journeywall-images/pal-group-leadership-ceremony.webp",
-    alt: "SM Pal Group leadership ceremony honouring the founding chairman Suresh Pal Ji and senior management",
-  },
-  {
-    title: "Production excellence",
-    text: "Care at every stage.",
-    image: "/assets/journeywall-images/pal-stone-industries-production.webp",
-    alt: "Pal Stone Industries production line — stone crushing and aggregate manufacturing at the Halduchaur facility",
-  },
-  {
-    title: "A shared team",
-    text: "People power every milestone.",
-    image: "/assets/journeywall-images/pal-frozen-foods-team-gathering.webp",
-    alt: "Pal Frozen Foods team gathering — employees who power every milestone at SM Pal Group",
-  },
-  {
-    title: "Celebrating milestones",
-    text: "Honouring the moments that matter.",
-    image: "/assets/journeywall-images/palam-city-masterplan-design.webp",
-    alt: "Palam City masterplan design render — flagship real estate development by SM Pal Group in Devalchaur, Haldwani",
-    shape: "wide",
-  },
-  {
-    title: "Pal Ford",
-    text: "Service, together.",
-    image: "/assets/journeywall-images/pal-ford-opening-haldwani-ceremony.webp",
-    alt: "Pal Ford grand opening ceremony in Haldwani — the launch of the Ford automobile dealership in Uttarakhand",
-    shape: "tall",
-  },
-  {
-    title: "Dhak Dhak Ford",
-    text: "A proud achievement.",
-    image: "/assets/journeywall-images/pal-ford-dhak-dhak-awards-event.webp",
-    alt: "Pal Ford team accepting the Dhak Dhak award — celebrating sales excellence at the Ford dealership in Haldwani",
-    shape: "tall",
-  },
-  {
-    title: "Palam City",
-    text: "A landmark built for tomorrow.",
-    image: "/assets/journeywall-images/palam-city-masterplan-design.webp",
-    alt: "Palam City corporate building in Devalchaur, Haldwani — landmark headquarters of SM Pal Group on Rampur Road",
-  },
-];
-
-const journeyStages = [
-  {
-    year: "1982",
-    title: "The beginning",
-    label: "Stone & grit",
-    summary:
-      "Pal Stone Industries opens at Halduchaur, Haldwani, laying the foundation for the group.",
-    image:
-      "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=800&q=85",
-    alt: "Stone and construction materials",
-  },
-  {
-    year: "Growth",
-    title: "Growing roots",
-    label: "Regional trust",
-    summary:
-      "A reputation for dependable quality and delivery builds lasting relationships across Kumaon.",
-    image:
-      "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=800&q=85",
-    alt: "Architectural structure and light",
-  },
-  {
-    year: "Places",
-    title: "New places to call home",
-    label: "Real estate",
-    summary:
-      "Pal Colonisers brings the group’s long-term approach to thoughtfully planned communities.",
-    image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=85",
-    alt: "Modern residential interior",
-  },
-  {
-    year: "Mobility",
-    title: "Moving people forward",
-    label: "Automotive",
-    summary:
-      "Dealership partnerships add trusted vehicle sales and attentive after-sales service to the journey.",
-    image:
-      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=85",
-    alt: "Blue car on a road",
-  },
-  {
-    year: "Today",
-    title: "A shared future",
-    label: "One growing group",
-    summary:
-      "Across materials, homes, mobility and food, the same customer-first values guide every next chapter.",
-    image:
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=85",
-    alt: "Team collaborating together",
-  },
-];
+// Data constants (insights, legacyMoments, journeyStages) are imported from
+// ../data/aboutContent.js.
 
 const routePages = {
   "/about": {
@@ -1637,6 +1360,10 @@ function RouteHeader({ showLanguageToggle = false, language, onLanguageChange })
     "Pal Frozen Foods": [
       { label: "Pal Fresh", href: "/industries/pal-frozen-foods/pal-fresh" },
       { label: "Frozzo", href: "/industries/pal-frozen-foods/frozzo" },
+      {
+        label: "Pal Frozen Farms",
+        href: "/industries/pal-frozen-farms",
+      },
     ],
     "Pal Colonisers": routeGroups.colonisers,
     "Car Dealerships": routeGroups.dealerships,
@@ -2874,7 +2601,7 @@ function OwnershipPage({ page }) {
       <RouteHeader />
       <main>
         <section className="own-hero">
-          <img src={page.image} alt="Shri Suresh Pal, Founder and Chairman of SM Pal Group" />
+          <img src={page.image} alt="Shri Suresh Pal, Founder and Chairman of SM Pal Group" fetchpriority="high" />
           <div className="own-hero-shade" />
           <div className="container own-hero-copy">
             <p className="eyebrow">{page.eyebrow}</p>
@@ -3220,7 +2947,7 @@ function BoardPage({ page }) {
       <RouteHeader />
       <main>
         <section className="board-hero">
-          <img src={page.image} alt="" />
+          <img src={page.image} alt="" fetchpriority="high" />
           <div className="board-hero-shade" />
           <div className="container board-hero-copy">
             <p className="eyebrow">{page.eyebrow}</p>
@@ -3511,7 +3238,7 @@ function PrateekPage({ page }) {
       <main>
         {/* Hero */}
         <section className="own-hero">
-          <img src={page.image} alt="Prateek Pal, Director at SM Pal Group" />
+          <img src={page.image} alt="Prateek Pal, Director at SM Pal Group" fetchpriority="high" />
           <div className="own-hero-shade" />
           <div className="container own-hero-copy">
             <p className="eyebrow">{page.eyebrow}</p>
@@ -3828,7 +3555,7 @@ function PalFreshGlobalPage() {
       <PalFreshGlobalSeo />
       <main>
         <section className="pfg-hero">
-          <img src="/assets/pal-frozen.webp" alt="PalFresh Global frozen vegetables" />
+          <img src="/assets/pal-frozen.webp" alt="PalFresh Global frozen vegetables" fetchpriority="high" />
           <div className="pfg-hero-shade" />
           <div className="container pfg-hero-copy">
             <p className="eyebrow">{content.eyebrow}</p>
@@ -6928,7 +6655,7 @@ function RoutePage({ page }) {
       <RouteHeader />
       <main>
         <section className="route-hero">
-          <img src={page.image} alt="" />
+          <img src={page.image} alt="" fetchpriority="high" />
           <div className="route-hero-shade" />
           <div className="container route-hero-copy">
             <p className="eyebrow">{page.eyebrow}</p>
@@ -7044,9 +6771,16 @@ function RoutePage({ page }) {
               </div>
               <div className="news-list">
                 {news.map((item, index) => (
-                  <a className="news-item" href="/contact" key={item}>
+                  <a
+                    className={`news-item${index === 0 ? " news-item--latest" : ""}`}
+                    href="/contact"
+                    key={item}
+                  >
                     <span>0{index + 1}</span>
-                    <h3>{item}</h3>
+                    <h3>
+                      {item}
+                      {index === 0 && <span className="news-latest-badge">Latest</span>}
+                    </h3>
                     <ArrowUpRight size={19} />
                   </a>
                 ))}
@@ -7094,7 +6828,6 @@ function SiteRouter() {
   );
   const [storyIndex, setStoryIndex] = useState(0);
   const [sent, setSent] = useState(false);
-  const [activeVideo, setActiveVideo] = useState(null);
   const [activeJourney, setActiveJourney] = useState(0);
   const [activeHeroImage, setActiveHeroImage] = useState(0);
 
@@ -7118,18 +6851,6 @@ function SiteRouter() {
     nodes.forEach((node) => observer.observe(node));
     return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    if (!activeVideo) return undefined;
-    const closeOnEscape = (event) =>
-      event.key === "Escape" && setActiveVideo(null);
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", closeOnEscape);
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", closeOnEscape);
-    };
-  }, [activeVideo]);
 
   useEffect(() => {
     const interval = window.setInterval(
@@ -7227,29 +6948,6 @@ function SiteRouter() {
                 </a>
               </div>
             </div>
-
-            <aside className="hero-visual" aria-label="SM Pal Group highlights">
-              <div className="hero-panel">
-                <div className="hero-panel-header">
-                  <span className="hero-panel-kicker">Trusted since 1982</span>
-                </div>
-
-                <div className="hero-panel-legacy" aria-label="45 plus years of legacy">
-                  <span className="legacy-number">45+</span>
-                  <span className="legacy-label">Years of Legacy</span>
-                </div>
-
-                <div className="hero-panel-list">
-                  <p>Expansion built on purpose.</p>
-                  <ul>
-                    <li>Stone & Construction</li>
-                    <li>Real Estate</li>
-                    <li>Frozen Foods</li>
-                    <li>Automotive</li>
-                  </ul>
-                </div>
-              </div>
-            </aside>
           </div>
 
           <div className="scroll-cue">
@@ -7269,11 +6967,11 @@ function SiteRouter() {
               <p className="large-copy">
                 SM Pal Group's journey began in 1982 with the founding of Pal
                 Stone Industries, a supplier of quality raw materials, stone,
-                and grit from its crushing unit at Halduchaur, Haldwani. Over
+                and grit from its crushing unit. Over
                 four decades in the industry, Pal Stone Industries went on to
                 complete notable projects for clients including the Gokul Dam
                 Project and Indian Railways, building a reputation for
-                reliability across the Kumaon region.
+                reliability across the Kumaon region of Uttarakhand.
               </p>
               <p className="intro-detail">
                 That foundation of trust became the springboard for
@@ -7309,7 +7007,7 @@ function SiteRouter() {
               </span>
               <div className="stat-line" />
               <small>
-                Serving Kumaon
+                Serving India
                 <br />
                 with purpose
               </small>
@@ -7462,9 +7160,16 @@ function SiteRouter() {
             </div>
             <div className="news-list">
               {news.map((item, index) => (
-                <a className="news-item reveal" href="#contact" key={item}>
+                <a
+                  className={`news-item${index === 0 ? " news-item--latest" : ""}`}
+                  href="#contact"
+                  key={item}
+                >
                   <span>0{index + 1}</span>
-                  <h3>{item}</h3>
+                  <h3>
+                    {item}
+                    {index === 0 && <span className="news-latest-badge">Latest</span>}
+                  </h3>
                   <ArrowUpRight size={19} />
                 </a>
               ))}
@@ -7488,7 +7193,7 @@ function SiteRouter() {
                 SM Pal Group's presence in Haldwani extends beyond business. In
                 March, the group marked Women's Day by celebrating the strength,
                 dignity, and contribution of the women within its organization
-                and community — a moment led by Meera Pal Ma'am, a reflection of
+                and community — a moment led by Meera Pal Ji, a reflection of
                 the values the group carries into its day-to-day operations.
                 From temple inaugurations at Palam City to ceremonies marking new
                 project launches, SM Pal Group treats every milestone as a
@@ -7500,8 +7205,6 @@ function SiteRouter() {
             </div>
           </div>
         </section>
-
-        {/* <section className="video-section section-pad" id="media"><div className="container"><div className="section-heading reveal"><div><p className="eyebrow eyebrow-dark">Watch SM Pal Group in Action</p><h2>Watch SM Pal Group in Action</h2></div><p>Explore the group's four business verticals and its journey since 1982.</p></div><div className="video-grid">{videos.map((video, index) => <button className="video-item reveal" type="button" onClick={() => setActiveVideo(video)} style={{ '--delay': `${index * 70}ms` }} key={video.title}><div><Play size={19} fill="currentColor" /></div><span>0{index + 1}</span><h3>{video.title}</h3><p>{video.description}</p><small>{video.duration}</small></button>)}</div></div></section> */}
 
         <section className="faq section-pad">
           <div className="container faq-grid">
@@ -7554,44 +7257,6 @@ function SiteRouter() {
       </main>
 
       <Footer />
-      {activeVideo && (
-        <div
-          className="video-modal"
-          role="presentation"
-          onMouseDown={(event) =>
-            event.target === event.currentTarget && setActiveVideo(null)
-          }
-        >
-          <section
-            className="video-dialog"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="video-dialog-title"
-          >
-            <div className="video-dialog-head">
-              <p id="video-dialog-title">{activeVideo.title}</p>
-              <button
-                className="video-close"
-                type="button"
-                onClick={() => setActiveVideo(null)}
-                aria-label="Close video"
-              >
-                <X size={21} />
-              </button>
-            </div>
-            <video
-              className="video-player"
-              controls
-              autoPlay
-              playsInline
-              preload="metadata"
-            >
-              <source src={activeVideo.src} type="video/mp4" />
-              Your browser does not support embedded video.
-            </video>
-          </section>
-        </div>
-      )}
     </div>
   );
 }
