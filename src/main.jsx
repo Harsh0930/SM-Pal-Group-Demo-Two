@@ -11,6 +11,8 @@ import "./styles/home.css";
 import "./styles/brand-consistency.css";
 import "./styles/ownership.css";
 import "./styles/industries.css";
+import "./styles/pal-fresh-global.css";
+import "./styles/pal-fresh-products.css";
 import "./styles/prose.css";
 
 createRoot(document.getElementById("root")).render(

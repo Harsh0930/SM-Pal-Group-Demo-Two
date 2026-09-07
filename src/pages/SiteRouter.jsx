@@ -1033,8 +1033,7 @@ const routePages = {
     title: "About SM Pal Group: Transforming Lives for a Better Future",
     intro:
       "When people in Haldwani talk about a business built on trust, SM Pal Group usually comes up first. Founded in 1982 by Shri Suresh Pal, the group has grown from a single stone supply business into a name that touches real estate, car dealerships, frozen foods, and community life across Uttarakhand. Here is the story behind that growth, the people who lead it, and the values that hold it all together.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85",
+    image: "/assets/hero-gradient-images/about-us-banner-gradient.webp",
     facts: [
       "Established in 1982",
       "Headquartered in Haldwani",
@@ -1164,8 +1163,7 @@ const routePages = {
     title: "Pal Stone Industries",
     intro:
       "The original foundation of SM Pal Group, supplying quality stone and grit for the region’s infrastructure.",
-    image:
-      "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1600&q=85",
+    image: "/assets/hero-gradient-images/pal-stone-industries-gradient.jpeg",
     facts: [
       "Founded in 1982",
       "Stone and grit supply",
@@ -1296,8 +1294,7 @@ const routePages = {
     title: "Good things\nstart here.",
     intro:
       "Whether you are looking to work with us, join us or simply learn more, we would love to hear from you.",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85",
+    image: "/assets/hero-gradient-images/contactus-bannergradient.webp",
     facts: [
       "Haldwani, Uttarakhand",
       "hello@smpalgroup.com",
@@ -3722,30 +3719,37 @@ function PalFreshPage({ page }) {
   const products = [
     {
       name: "Frozen Green Peas",
+      image: "/assets/pal-fresh-products/green-peas.png",
       text: "A pantry staple that works in everything from curries to fried rice, frozen at peak sweetness so you get consistent quality no matter the season.",
     },
     {
       name: "Frozen Mix Veg",
+      image: "/assets/pal-fresh-products/mix-veg.png",
       text: "A ready-to-cook blend for quick meals, sabzis, and stir-fries, saving the chopping and prep work without giving up freshness.",
     },
     {
       name: "Frozen Soya Chaap",
+      image: "/assets/pal-fresh-products/soya-chaap.png",
       text: "A protein-rich option that has become a popular base for both home cooking and restaurant menus, frozen to stay ready whenever you need it.",
     },
     {
       name: "Frozen Cauliflower",
+      image: "/assets/pal-fresh-products/cauliflower.png",
       text: "Cut and frozen for easy use in curries, stir-fries, or roasted dishes, without the trimming and cleaning fresh cauliflower usually demands.",
     },
     {
       name: "Frozen Cut Beans",
+      image: "/assets/pal-fresh-products/cut-beans.png",
       text: "Pre-cut and ready to cook, useful for everything from simple side dishes to larger batch cooking in commercial kitchens.",
     },
     {
       name: "Frozen Broccoli",
+      image: "/assets/pal-fresh-products/broccoli.png",
       text: "A versatile option for salads, stir-fries, and healthier meal planning, frozen to hold onto its texture and nutrition.",
     },
     {
       name: "Frozen Sweet Corn",
+      image: "/assets/pal-fresh-products/sweet-corn.png",
       text: "A ready-to-use ingredient for salads, soups, and snacks, sweet and consistent whether you buy it in January or June.",
     },
   ];
@@ -3796,118 +3800,6 @@ function PalFreshPage({ page }) {
     { eyebrow: "Get in touch", label: "Contact our team", href: "/contact" },
   ];
 
-  const productImages = [
-    { label: "Peas", alt: "Frozen green peas" },
-    { label: "Mix Veg", alt: "Assorted frozen vegetables" },
-    { label: "Soya Chaap", alt: "Fresh edamame soybeans" },
-    { label: "Cauliflower", alt: "Fresh cauliflower" },
-    { label: "Cut Beans", alt: "Fresh green beans" },
-    { label: "Broccoli", alt: "Fresh broccoli" },
-    { label: "Sweet Corn", alt: "Sweet corn kernels" },
-  ];
-
-  const productSvgs = [
-    // Peas
-    (
-      <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
-        <circle cx="22" cy="48" r="11" fill="#7CB342" />
-        <circle cx="40" cy="38" r="11" fill="#9CCC65" />
-        <circle cx="58" cy="48" r="11" fill="#7CB342" />
-        <circle cx="30" cy="58" r="10" fill="#8BC34A" />
-        <circle cx="50" cy="58" r="10" fill="#9CCC65" />
-        <path d="M18 28 Q40 12 62 28" stroke="#558B2F" strokeWidth="2" fill="none" strokeLinecap="round" />
-        <ellipse cx="40" cy="22" rx="6" ry="3" fill="#7CB342" />
-      </svg>
-    ),
-    // Mix Veg
-    (
-      <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
-        <circle cx="24" cy="32" r="10" fill="#E53935" />
-        <circle cx="56" cy="32" r="10" fill="#7CB342" />
-        <circle cx="40" cy="50" r="10" fill="#FBC02D" />
-        <path d="M16 18 L24 12 M56 18 L56 12 M40 38 L40 32" stroke="#558B2F" strokeWidth="2" strokeLinecap="round" />
-        <ellipse cx="24" cy="14" rx="4" ry="2" fill="#7CB342" />
-        <ellipse cx="56" cy="14" rx="4" ry="2" fill="#558B2F" />
-      </svg>
-    ),
-    // Soya Chaap
-    (
-      <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
-        <rect x="18" y="24" width="44" height="14" rx="3" fill="#C8A165" />
-        <rect x="22" y="38" width="36" height="12" rx="3" fill="#B58A50" />
-        <rect x="20" y="50" width="40" height="14" rx="3" fill="#D4B27A" />
-        <circle cx="28" cy="31" r="1.5" fill="#8B5A2B" />
-        <circle cx="40" cy="31" r="1.5" fill="#8B5A2B" />
-        <circle cx="52" cy="31" r="1.5" fill="#8B5A2B" />
-        <circle cx="32" cy="44" r="1.5" fill="#8B5A2B" />
-        <circle cx="48" cy="44" r="1.5" fill="#8B5A2B" />
-        <circle cx="28" cy="57" r="1.5" fill="#8B5A2B" />
-        <circle cx="40" cy="57" r="1.5" fill="#8B5A2B" />
-        <circle cx="52" cy="57" r="1.5" fill="#8B5A2B" />
-      </svg>
-    ),
-    // Cauliflower
-    (
-      <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
-        <path d="M14 38 Q40 14 66 38 Q60 56 40 60 Q20 56 14 38 Z" fill="#F5F5F0" />
-        <circle cx="28" cy="36" r="5" fill="#FFFFFF" />
-        <circle cx="40" cy="30" r="5" fill="#FFFFFF" />
-        <circle cx="52" cy="36" r="5" fill="#FFFFFF" />
-        <circle cx="34" cy="44" r="4.5" fill="#FFFFFF" />
-        <circle cx="46" cy="44" r="4.5" fill="#FFFFFF" />
-        <circle cx="40" cy="50" r="4" fill="#FFFFFF" />
-        <path d="M20 60 L18 70 L62 70 L60 60" fill="#8BC34A" />
-        <path d="M20 62 L18 70 M60 62 L62 70" stroke="#558B2F" strokeWidth="1" />
-      </svg>
-    ),
-    // Cut Beans
-    (
-      <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
-        <path d="M14 36 Q22 22 40 28 Q58 22 66 36" stroke="#7CB342" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <path d="M14 50 Q22 36 40 42 Q58 36 66 50" stroke="#558B2F" strokeWidth="5" fill="none" strokeLinecap="round" />
-        <ellipse cx="22" cy="40" rx="5" ry="4" fill="#9CCC65" transform="rotate(-25 22 40)" />
-        <ellipse cx="40" cy="34" rx="5" ry="4" fill="#9CCC65" />
-        <ellipse cx="58" cy="40" rx="5" ry="4" fill="#9CCC65" transform="rotate(25 58 40)" />
-        <ellipse cx="22" cy="54" rx="5" ry="4" fill="#7CB342" transform="rotate(-25 22 54)" />
-        <ellipse cx="40" cy="48" rx="5" ry="4" fill="#7CB342" />
-        <ellipse cx="58" cy="54" rx="5" ry="4" fill="#7CB342" transform="rotate(25 58 54)" />
-      </svg>
-    ),
-    // Broccoli
-    (
-      <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
-        <circle cx="28" cy="30" r="9" fill="#2E7D32" />
-        <circle cx="42" cy="24" r="9" fill="#388E3C" />
-        <circle cx="56" cy="30" r="9" fill="#2E7D32" />
-        <circle cx="35" cy="40" r="8" fill="#43A047" />
-        <circle cx="49" cy="40" r="8" fill="#388E3C" />
-        <circle cx="42" cy="34" r="8" fill="#4CAF50" />
-        <path d="M36 50 L36 64 M44 50 L44 64" stroke="#F5F5F0" strokeWidth="6" strokeLinecap="round" />
-        <path d="M32 60 L48 60 L46 70 L34 70 Z" fill="#8BC34A" />
-      </svg>
-    ),
-    // Sweet Corn
-    (
-      <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
-        <path d="M30 12 Q50 12 50 32 L50 64 Q50 76 40 76 Q30 76 30 64 L30 32 Q30 12 50 12" fill="#FBC02D" />
-        <circle cx="36" cy="24" r="3" fill="#F9A825" />
-        <circle cx="44" cy="24" r="3" fill="#F9A825" />
-        <circle cx="40" cy="30" r="3" fill="#FBC02D" />
-        <circle cx="36" cy="36" r="3" fill="#F9A825" />
-        <circle cx="44" cy="36" r="3" fill="#F9A825" />
-        <circle cx="40" cy="42" r="3" fill="#FBC02D" />
-        <circle cx="36" cy="48" r="3" fill="#F9A825" />
-        <circle cx="44" cy="48" r="3" fill="#F9A825" />
-        <circle cx="40" cy="54" r="3" fill="#FBC02D" />
-        <circle cx="36" cy="60" r="3" fill="#F9A825" />
-        <circle cx="44" cy="60" r="3" fill="#F9A825" />
-        <circle cx="40" cy="66" r="3" fill="#FBC02D" />
-        <path d="M30 12 Q18 18 16 36 Q22 30 30 28" fill="#7CB342" />
-        <path d="M50 12 Q62 18 64 36 Q58 30 50 28" fill="#558B2F" />
-      </svg>
-    ),
-  ];
-
   return (
     <div className="route-page industry-brand pal-fresh-page">
       <PalFreshSeo />
@@ -3916,7 +3808,7 @@ function PalFreshPage({ page }) {
         {/* Hero */}
         <section className="pf-hero mobile-photo-hero">
           <img
-            src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=2200&q=85"
+            src="/assets/hero-gradient-images/palfresh-banner-gradient.webp"
             alt="Pal Fresh IQF frozen vegetables grown on partner farms in Uttarakhand"
           />
           <div className="pf-hero-shade" />
@@ -4032,7 +3924,7 @@ function PalFreshPage({ page }) {
         </section>
 
         {/* Product range */}
-        <section className="pf-products section-pad" id="pf-products">
+        <section className="pf-products section-pad" id="pf-products" aria-labelledby="pf-products-title">
           <div className="container">
             <div className="pf-section-label reveal">
               <span>03</span>
@@ -4040,7 +3932,7 @@ function PalFreshPage({ page }) {
               <span>Our Pal Fresh product range</span>
             </div>
             <div className="pf-section-intro reveal">
-              <h2>
+              <h2 id="pf-products-title">
                 Seven frozen vegetables,
                 <br />
                 <em>one shared standard.</em>
@@ -4049,19 +3941,27 @@ function PalFreshPage({ page }) {
                 Pal Fresh currently offers seven frozen vegetable products, each processed and frozen using the same IQF approach.
               </p>
             </div>
-            <div className="pf-product-grid">
+            <div className="pf-packet-grid">
               {products.map((product, index) => (
                 <article
-                  className="pf-product-card reveal"
+                  className="pf-packet-card"
                   key={product.name}
-                  style={{ "--delay": `${index * 70}ms` }}
                 >
-                  <div className="pf-product-icon" aria-hidden="true">
-                    {productSvgs[index]}
+                  <div className="pf-packet-image">
+                    <img
+                      src={product.image}
+                      alt={`Pal Fresh ${product.name.replace(/^Frozen /, "")} packet`}
+                      width={1080}
+                      height={1080}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
-                  <span>0{index + 1}</span>
-                  <h3>{product.name}</h3>
-                  <p>{product.text}</p>
+                  <div className="pf-packet-copy">
+                    <div className="pf-packet-label"><span>Pal Fresh</span><span aria-hidden="true">0{index + 1}</span></div>
+                    <h3>{product.name}</h3>
+                    <p>{product.text}</p>
+                  </div>
                 </article>
               ))}
             </div>
@@ -4975,7 +4875,7 @@ function PalStoneIndustriesPage({ page }) {
         {/* Hero */}
         <section className="ps-hero mobile-photo-hero">
           <img
-            src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=2200&q=85"
+            src="/assets/hero-gradient-images/pal-stone-industries-gradient.jpeg"
             alt="Pal Stone Industries premium stone and grit quarry"
           />
           <div className="ps-hero-shade" />
@@ -6790,7 +6690,7 @@ function RoutePage({ page }) {
         ? routeGroups.dealerships
         : routeGroups.industries;
   return (
-    <div className={`route-page${page.type === "industry" || page.type === "project" ? " industry-overview" : ""}`}>
+    <div className={`route-page${page.type === "industry" || page.type === "project" ? " industry-overview" : ""}${isContact ? " contact-page" : ""}`}>
       <RouteHeader />
       <main>
         <section className="route-hero mobile-photo-hero">

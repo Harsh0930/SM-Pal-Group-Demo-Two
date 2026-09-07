@@ -61,7 +61,7 @@ const ScrollCanvasHero = () => {
   // someone adds or removes frames without updating the manifest.
   const FRAME_COUNT_FALLBACK = 300;
   const FRAME_PREFIX_DEFAULT = "ezgif-frame-";
-  const FRAME_EXT_DEFAULT = ".jpg";
+  const FRAME_EXT_DEFAULT = ".png";
   const FRAME_PATH = "/assets/palam-view-frames/";
   const MANIFEST_URL = `${FRAME_PATH}manifest.json`;
 
@@ -74,9 +74,10 @@ const ScrollCanvasHero = () => {
   const [frameCount, setFrameCount] = useState(FRAME_COUNT_FALLBACK);
 
   // Easing for the render loop's lerp toward the ScrollTrigger-driven target.
-  // 0.18 gives a soft "settle" on the eased scrub, while still tracking fast
-  // scrolls within ~1 frame of jitter.
-  const EASING = 0.18;
+  // Higher values = less lag, nearly instant tracking. 0.5 gives a gentle
+  // 1-frame smoothing pass on fast scrolls while keeping the canvas tightly
+  // locked to scroll position.
+  const EASING = 0.5;
 
   // Initial-burst frame counts — tuned per breakpoint so mobile doesn't try
   // to decode 36 jpegs in parallel the moment the section enters the viewport.
@@ -84,10 +85,10 @@ const ScrollCanvasHero = () => {
   // portrait to landscape gets the right strategy on the next page load.
   const isMobileViewport = () =>
     typeof window !== "undefined" && window.innerWidth <= 640;
-  const INITIAL_FRAME_COUNT_DESKTOP = 36;
-  const INITIAL_FRAME_COUNT_MOBILE = 18;
-  const REMAINING_BATCH_SIZE_DESKTOP = 12;
-  const REMAINING_BATCH_SIZE_MOBILE = 6;
+  const INITIAL_FRAME_COUNT_DESKTOP = 60;
+  const INITIAL_FRAME_COUNT_MOBILE = 30;
+  const REMAINING_BATCH_SIZE_DESKTOP = 24;
+  const REMAINING_BATCH_SIZE_MOBILE = 12;
   const BATCH_INTERVAL_DESKTOP = 120;
   const BATCH_INTERVAL_MOBILE = 200;
 
@@ -174,7 +175,7 @@ const ScrollCanvasHero = () => {
         batchIndex = end;
         batchHandle = window.setTimeout(loadNextBatch, batchInterval);
       };
-      batchHandle = window.setTimeout(loadNextBatch, 400);
+      batchHandle = window.setTimeout(loadNextBatch, 200);
 
       // Expose a cleanup so the outer effect can cancel the rest of the
       // batches if the user unmounts before they all load.
@@ -322,14 +323,15 @@ const ScrollCanvasHero = () => {
       trigger: section,
       start: "top top",
       end: "bottom bottom",
-      scrub: 0.5,
+      scrub: true,
       onUpdate: (self) => {
         const total = frameCountRef.current;
         // Reverse: at the top of the hero (self.progress = 0) show the LAST frame
         // (the "front" view of the building). At the bottom, show frame 0.
+        // Instant scroll-driven target — no GSAP easing delay.
         targetFrameRef.current = Math.min(
           total - 1,
-          Math.max(0, Math.floor((1 - self.progress) * total)),
+          Math.max(0, Math.round((1 - self.progress) * (total - 1))),
         );
       },
     });

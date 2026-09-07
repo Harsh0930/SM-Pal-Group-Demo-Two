@@ -383,7 +383,7 @@
   display: flex;
   align-items: end;
   overflow: hidden;
-  background: var(--deep);
+  background: transparent;
   color: #fff;
 }
 .about-hero > img {
@@ -392,19 +392,19 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.56;
+  opacity: 1;
 }
 .about-hero .route-hero-shade {
   background: linear-gradient(
     90deg,
-    rgba(4, 27, 20, 0.98),
-    rgba(4, 27, 20, 0.72) 48%,
-    rgba(4, 27, 20, 0.16)
+    rgba(4, 27, 20, 0.15),
+    rgba(4, 27, 20, 0) 60%
   );
 }
 .about-hero-copy {
   position: relative;
   z-index: 1;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
   padding-top: 160px;
   padding-bottom: 106px;
 }
@@ -1103,7 +1103,13 @@
   padding: 8px 14px;
   border: 1px solid rgba(217, 178, 4, 0.8);
   color: var(--brass);
-  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  background: transparent;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 .route-desktop-nav .nav-cta::after {
   display: none;
@@ -1112,7 +1118,9 @@
 .route-desktop-nav .nav-cta:focus-visible {
   background: var(--brass);
   color: var(--green);
+  border-color: var(--brass);
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px -10px rgba(217, 178, 4, 0.6);
 }
 .route-menu-toggle,
 .route-drawer,
@@ -3573,6 +3581,11 @@ h4 {
 .button-brass {
   background: var(--brass);
   color: var(--green);
+}
+.button-brass:hover {
+  background: var(--green);
+  color: var(--brass);
+  box-shadow: 0 10px 24px -10px rgba(13, 59, 43, 0.5);
 }
 .button-outline {
   border-color: var(--brass);
@@ -6918,7 +6931,7 @@ body .site-footer {
   display: flex;
   align-items: end;
   overflow: hidden;
-  background: var(--deep);
+  background: transparent;
   color: #fff;
 }
 .pf-hero > img {
@@ -6927,16 +6940,15 @@ body .site-footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.56;
+  opacity: 1;
 }
 .pf-hero-shade {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(4, 27, 20, 0.98),
-    rgba(4, 27, 20, 0.72) 48%,
-    rgba(4, 27, 20, 0.16)
+    rgba(4, 27, 20, 0.15),
+    rgba(4, 27, 20, 0) 60%
   );
 }
 .pf-hero-copy {
@@ -6944,6 +6956,7 @@ body .site-footer {
   z-index: 1;
   padding-top: 160px;
   padding-bottom: 106px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
 }
 .pf-hero-copy h1 {
   max-width: 800px;
@@ -6962,7 +6975,7 @@ body .site-footer {
 .pf-hero-intro {
   max-width: 600px;
   margin: 0 0 32px;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.92);
   font-size: 17px;
   line-height: 1.7;
 }
@@ -8712,7 +8725,7 @@ body .site-footer {
 .ps-hero {
   position: relative;
   min-height: 720px;
-  background: var(--deep);
+  background: transparent;
   overflow: hidden;
 }
 .ps-hero img {
@@ -8722,6 +8735,7 @@ body .site-footer {
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  opacity: 1;
 }
 .ps-hero-shade {
   position: absolute;
@@ -8729,13 +8743,12 @@ body .site-footer {
   z-index: 1;
   background: linear-gradient(
       90deg,
-      rgba(4, 27, 20, 0.96),
-      rgba(4, 27, 20, 0.7) 48%,
-      rgba(8, 40, 30, 0.3)
+      rgba(4, 27, 20, 0.15),
+      rgba(4, 27, 20, 0) 60%
     ),
     linear-gradient(
       180deg,
-      rgba(13, 59, 43, 0.12) 0%,
+      rgba(13, 59, 43, 0.08) 0%,
       rgba(13, 59, 43, 0) 35%
     );
 }
@@ -8744,6 +8757,7 @@ body .site-footer {
   z-index: 3;
   padding-top: 160px;
   padding-bottom: 106px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
 }
 .ps-hero-copy h1 {
   max-width: 880px;
@@ -8762,7 +8776,7 @@ body .site-footer {
 .ps-hero-intro {
   max-width: 640px;
   margin: 0 0 32px;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.92);
   font-size: 17px;
   line-height: 1.7;
 }
@@ -9495,7 +9509,7 @@ body .site-footer {
 .skoda-hero {
   position: relative;
   min-height: 720px;
-  background: var(--deep);
+  background: transparent;
   overflow: hidden;
 }
 .skoda-hero img {
@@ -9505,13 +9519,14 @@ body .site-footer {
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  opacity: 1;
 }
 .skoda-hero-grid {
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.7;
+  opacity: 0.35;
 }
 .skoda-hero-shade {
   position: absolute;
@@ -9519,13 +9534,12 @@ body .site-footer {
   z-index: 2;
   background: linear-gradient(
       90deg,
-      rgba(4, 27, 20, 0.97),
-      rgba(4, 27, 20, 0.7) 48%,
-      rgba(8, 40, 30, 0.3)
+      rgba(4, 27, 20, 0.15),
+      rgba(4, 27, 20, 0) 60%
     ),
     linear-gradient(
       180deg,
-      rgba(217, 178, 4, 0.12) 0%,
+      rgba(217, 178, 4, 0.05) 0%,
       rgba(217, 178, 4, 0) 35%
     );
 }
@@ -9534,6 +9548,7 @@ body .site-footer {
   z-index: 3;
   padding-top: 160px;
   padding-bottom: 106px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
 }
 .skoda-hero-copy h1 {
   max-width: 900px;
@@ -9552,7 +9567,7 @@ body .site-footer {
 .skoda-hero-intro {
   max-width: 660px;
   margin: 0 0 32px;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.92);
   font-size: 17px;
   line-height: 1.7;
 }

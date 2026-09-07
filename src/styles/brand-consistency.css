@@ -197,6 +197,22 @@ main :is(img, video, canvas, iframe) { max-width: 100%; }
   .palam-hero-cta { flex-wrap: wrap; }
   .palam-hero-cta :is(a, button) { min-height: 44px; font-size: var(--text-label); }
 }
+
+/* Contact Us page — remove the dark image opacity and shade so the new
+   gradient banner reads cleanly. Keeps the hero copy on a transparent
+   background so it doesn't fight the lighter image. */
+.contact-page .route-hero { background: transparent; }
+.contact-page .route-hero > img { opacity: 1; }
+.contact-page .route-hero-shade {
+  background: linear-gradient(
+    90deg,
+    rgba(4, 27, 20, 0.15),
+    rgba(4, 27, 20, 0) 60%
+  );
+}
+.contact-page .route-hero-copy { color: #fff; text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35); }
+.contact-page .route-hero-copy h1 { color: #fff; }
+.contact-page .route-hero-copy > p:last-child { color: rgba(255, 255, 255, 0.92); }
 @media (prefers-reduced-motion: reduce) {
   main .reveal { opacity: 1; transform: none; transition: none; }
   main :is(img, [class$="-card"], [class$="-tile"]) { transition: none; }
