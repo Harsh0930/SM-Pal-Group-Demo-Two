@@ -4214,24 +4214,34 @@ function FrozzoPage({ page }) {
 
   const snacks = [
     {
-      name: "Frozen Veggie Sticks",
-      text: "Crispy coated vegetable sticks, ready to fry and built for share plates, after-school snacks, and quick entertaining.",
+      name: "Crunchy Veggie Stix",
+      image: "/assets/frozzo-products/crunchy-veggie-stix.webp",
+      text: "Crispy vegetable sticks for sharing plates, after-school snacks, and easy entertaining.",
     },
     {
-      name: "Frozen Samosa",
-      text: "Hand-folded samosas filled with spiced potatoes and peas, frozen so the crisp flakiness and authentic filling come through every time.",
+      name: "Crispy Aloo Tikki",
+      image: "/assets/frozzo-products/crispy-aloo-tikki.webp",
+      text: "A familiar potato favourite for snack plates, chaat, and evenings around the family table.",
     },
     {
-      name: "Frozen Spring Rolls",
-      text: "Vegetable and spice filled rolls with a light golden crust, ready to fry for the table in minutes.",
+      name: "Cheese Corn Nuggets",
+      image: "/assets/frozzo-products/cheese-corn-nuggets.webp",
+      text: "Cheese and corn in a bite-sized snack, ready for movie nights and shared platters.",
     },
     {
-      name: "Frozen Tikki",
-      text: "Spiced potato and vegetable cutlets, ready to pan-fry or shallow-fry for chatpata evenings at home.",
+      name: "Zingy Veggie Patty",
+      image: "/assets/frozzo-products/zingy-veggie-patty.webp",
+      text: "A vegetable patty for building burgers or serving alongside your favourite dips.",
     },
     {
-      name: "Frozen Snack Platter",
-      text: "A mixed assortment of Frozzo favorites, designed for gatherings, gifting, and weekend snacking without the prep work.",
+      name: "Chilli Garlic Nuggets",
+      image: "/assets/frozzo-products/chilli-garlic-nuggets.webp",
+      text: "Chilli and garlic flavours in a convenient nugget for a lively addition to your snack spread.",
+    },
+    {
+      name: "Hara Bhara Kebab",
+      image: "/assets/frozzo-products/hara-bhara-kebab.webp",
+      text: "A vegetable kebab for starters, sharing plates, and everyday family snacking.",
     },
   ];
 
@@ -4279,70 +4289,6 @@ function FrozzoPage({ page }) {
     { eyebrow: "Vertical", label: "Pal Farms", href: "/industries/pal-farms" },
     { eyebrow: "Trading", label: "Pal Fresh Global", href: "/industries/pal-fresh-global-trading" },
     { eyebrow: "Get in touch", label: "Contact our team", href: "/contact" },
-  ];
-
-  const productSvgs = [
-    // Veggie Sticks
-    (
-      <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
-        <rect x="14" y="30" width="10" height="40" rx="3" fill="#F4A93C" />
-        <rect x="28" y="22" width="10" height="48" rx="3" fill="#E89226" />
-        <rect x="42" y="32" width="10" height="38" rx="3" fill="#F4A93C" />
-        <rect x="56" y="26" width="10" height="44" rx="3" fill="#E89226" />
-        <path d="M14 28 L66 28" stroke="#9CCC65" strokeWidth="2" strokeLinecap="round" />
-        <path d="M28 20 L28 22 M42 30 L42 32 M56 24 L56 26" stroke="#7CB342" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
-    // Samosa
-    (
-      <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
-        <path d="M22 58 L40 18 L58 58 Z" fill="#D9A04A" />
-        <path d="M28 50 L40 28 L52 50" fill="#B57A2E" />
-        <circle cx="36" cy="44" r="2" fill="#7CB342" />
-        <circle cx="44" cy="44" r="2" fill="#7CB342" />
-        <circle cx="40" cy="48" r="2" fill="#9CCC65" />
-        <circle cx="40" cy="40" r="2" fill="#E53935" />
-        <path d="M22 58 L58 58" stroke="#9C6A1F" strokeWidth="2" />
-      </svg>
-    ),
-    // Spring Roll
-    (
-      <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
-        <rect x="10" y="32" width="60" height="20" rx="3" fill="#E8B872" transform="rotate(-12 40 42)" />
-        <rect x="14" y="34" width="52" height="16" rx="2" fill="#D9A04A" transform="rotate(-12 40 42)" />
-        <path d="M14 38 L66 38" stroke="#B57A2E" strokeWidth="1" transform="rotate(-12 40 42)" />
-        <path d="M14 46 L66 46" stroke="#B57A2E" strokeWidth="1" transform="rotate(-12 40 42)" />
-        <circle cx="22" cy="50" r="1.5" fill="#7CB342" />
-        <circle cx="34" cy="48" r="1.5" fill="#9CCC65" />
-        <circle cx="46" cy="50" r="1.5" fill="#7CB342" />
-        <circle cx="58" cy="48" r="1.5" fill="#9CCC65" />
-      </svg>
-    ),
-    // Tikki
-    (
-      <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
-        <ellipse cx="40" cy="48" rx="28" ry="14" fill="#D9A04A" />
-        <ellipse cx="40" cy="46" rx="22" ry="10" fill="#E89226" />
-        <circle cx="32" cy="44" r="2" fill="#7CB342" />
-        <circle cx="44" cy="44" r="2" fill="#7CB342" />
-        <circle cx="38" cy="48" r="1.5" fill="#E53935" />
-        <circle cx="48" cy="46" r="1.5" fill="#FBC02D" />
-        <path d="M16 56 L24 64 M64 56 L56 64" stroke="#E89226" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
-    // Snack Platter
-    (
-      <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
-        <ellipse cx="40" cy="52" rx="32" ry="10" fill="#F5F5F0" />
-        <ellipse cx="40" cy="50" rx="30" ry="8" fill="#FFFFFF" />
-        <path d="M22 48 L28 36 L34 48 Z" fill="#D9A04A" />
-        <rect x="38" y="32" width="14" height="14" rx="2" fill="#E89226" transform="rotate(15 45 39)" />
-        <ellipse cx="56" cy="46" rx="8" ry="4" fill="#E89226" />
-        <circle cx="26" cy="50" r="1" fill="#7CB342" />
-        <circle cx="48" cy="48" r="1" fill="#7CB342" />
-        <circle cx="58" cy="44" r="1" fill="#7CB342" />
-      </svg>
-    ),
   ];
 
   return (
@@ -4458,7 +4404,7 @@ function FrozzoPage({ page }) {
         </section>
 
         {/* Frozzo snack range */}
-        <section className="fz-products section-pad" id="fz-products">
+        <section className="fz-products section-pad" id="fz-products" aria-labelledby="fz-products-title">
           <div className="container">
             <div className="fz-section-label reveal">
               <span>03</span>
@@ -4466,7 +4412,7 @@ function FrozzoPage({ page }) {
               <span>Our Frozzo snack range</span>
             </div>
             <div className="fz-section-intro reveal">
-              <h2>
+              <h2 id="fz-products-title">
                 Vegetables and authentic
                 <br />
                 <em>Indian spices, ready to go.</em>
@@ -4475,19 +4421,27 @@ function FrozzoPage({ page }) {
                 Frozzo's snacks are built around the same idea across the range, vegetables and authentic Indian spices, frozen and ready whenever you are. From quick weeknight snacking to feeding a crowd, the range is designed to make flavorful food genuinely convenient.
               </p>
             </div>
-            <div className="fz-product-grid">
+            <div className="fz-packet-grid">
               {snacks.map((snack, index) => (
                 <article
-                  className="fz-product-card reveal"
+                  className="fz-packet-card"
                   key={snack.name}
-                  style={{ "--delay": `${index * 70}ms` }}
                 >
-                  <div className="fz-product-icon" aria-hidden="true">
-                    {productSvgs[index]}
+                  <div className="fz-packet-image">
+                    <img
+                      src={snack.image}
+                      alt={`Frozzo ${snack.name} packet`}
+                      width={1200}
+                      height={900}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
-                  <span>0{index + 1}</span>
-                  <h3>{snack.name}</h3>
-                  <p>{snack.text}</p>
+                  <div className="fz-packet-copy">
+                    <div className="fz-packet-label"><span>Frozzo</span><span aria-hidden="true">0{index + 1}</span></div>
+                    <h3>{snack.name}</h3>
+                    <p>{snack.text}</p>
+                  </div>
                 </article>
               ))}
             </div>

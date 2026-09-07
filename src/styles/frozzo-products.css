@@ -1,0 +1,54 @@
+/* Original packet artwork: https://www.palfrozenfoods.in/frozzo-products.
+   Scoped to the Frozzo snack range only. */
+.frozzo-page #fz-products { background: #fff; }
+.frozzo-page #fz-products::after { display: none; }
+.frozzo-page #fz-products .fz-section-intro { max-width: 760px; margin-bottom: 40px; }
+.frozzo-page #fz-products .fz-packet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px 24px;
+}
+.frozzo-page #fz-products .fz-packet-card {
+  min-width: 0;
+  background: #fff;
+  border-bottom: 2px solid var(--brass);
+}
+.frozzo-page #fz-products .fz-packet-image {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  background: var(--ivory);
+}
+.frozzo-page #fz-products .fz-packet-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  object-fit: contain;
+  object-position: center;
+}
+.frozzo-page #fz-products .fz-packet-copy { padding: 24px 8px 28px; }
+.frozzo-page #fz-products .fz-packet-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+  color: var(--soft);
+  font: 700 var(--text-label)/1.5 var(--sans);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.frozzo-page #fz-products .fz-packet-copy h3 {
+  margin: 0 0 12px;
+  color: var(--green);
+  font-size: var(--text-h3);
+}
+.frozzo-page #fz-products .fz-packet-copy p { margin: 0; color: var(--muted); }
+@media (max-width: 1000px) {
+  .frozzo-page #fz-products .fz-packet-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .frozzo-page #fz-products .fz-packet-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .frozzo-page #fz-products .fz-packet-image { max-height: 420px; }
+  .frozzo-page #fz-products .fz-packet-copy { padding: 20px 4px 24px; }
+}
