@@ -701,7 +701,7 @@ function PalSkodaSeo() {
     const pageTitle = "Pal Skoda Haldwani | Performance Meets Luxury";
     const pageDescription =
       "Pal Skoda Haldwani, established in 2023, brings the latest Skoda models to Uttarakhand. Visit Pal Skoda for expert sales, financing and service today.";
-    const heroImage = "/assets/pal-skoda-gradient.jpeg";
+    const heroImage = "/assets/hero-gradient-images/pal-skoda-gradient.jpeg";
 
     document.title = pageTitle;
     setHeadMeta("name", "description", pageDescription);
@@ -738,7 +738,7 @@ function PalSkodaSeo() {
         "name": "What Skoda models does Pal Skoda Haldwani offer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Pal Skoda Haldwani offers a range of Skoda models, including the Kushaq, Kylaq, and Kodiaq, giving buyers in Haldwani a genuine choice across performance and price points."
+          "text": "Pal Skoda Haldwani offers a range of Skoda models, including the Kushaq, Kylaq, Kodiaq, and Slavia, giving buyers in Haldwani a genuine choice across performance and price points."
         }
       }, {
         "@type": "Question",
@@ -820,7 +820,7 @@ function PalNissanSeo() {
         "name": "What Nissan models does Pal Nissan Haldwani offer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Pal Nissan Haldwani offers a range of Nissan models, including the Tekton and the Gravite, giving buyers in Haldwani genuine choice across performance and price points."
+          "text": "Pal Nissan Haldwani offers a range of Nissan models, including the Tekton, Gravite, and Magnite, giving buyers in Haldwani a genuine choice across performance and price points."
         }
       }, {
         "@type": "Question",
@@ -865,7 +865,7 @@ function PalFordSeo() {
     const pageTitle = "Pal Ford Haldwani | Power, Performance and Trust";
     const pageDescription =
       "Pal Ford Haldwani, trusted since 2009, offers expert Ford servicing, genuine parts and reliable repairs. Visit Pal Ford for professional care you can count on.";
-    const heroImage = "/assets/ford-opening-in-haldwani.webp";
+    const heroImage = "/assets/journeywall-images/pal-ford-opening-haldwani-ceremony.webp";
 
     document.title = pageTitle;
     setHeadMeta("name", "description", pageDescription);
@@ -1255,28 +1255,13 @@ const routePages = {
     ],
     body: "Paloma Greens brings nature closer to daily life. The project pairs practical homes with a calmer setting and the dependable service that defines Pal Colonisers.",
   },
-  "/industries/pal-colonisers/ram-ji-vihar": {
-    type: "project",
-    eyebrow: "Pal Colonisers · Residential",
-    title: "Ram Ji Vihar.",
-    intro:
-      "A neighbourhood shaped by trust, familiarity and the simple value of a place to call home.",
-    image:
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1600&q=85",
-    facts: [
-      "Residential community",
-      "A trusted local address",
-      "Built for everyday life",
-    ],
-    body: "Ram Ji Vihar carries the local, people-first spirit of Pal Colonisers. It is a place planned with care for the routines, relationships and memories that make a neighbourhood matter.",
-  },
   "/industries/car-dealerships/pal-skoda-haldwani": {
     type: "pal-skoda",
     eyebrow: "Car Dealerships · Skoda",
     title: "Pal Skoda\nHaldwani.",
     intro:
       "Pal Skoda Haldwani brings Skoda's blend of performance, luxury, and safety to Uttarakhand, backed by a modern showroom and a dedicated service team. Whether you are choosing your first Skoda or your next one, Pal Skoda Haldwani is built to make the entire journey feel personal, not transactional.",
-    image: "/assets/pal-skoda-gradient.jpeg",
+    image: "/assets/hero-gradient-images/pal-skoda-gradient.jpeg",
     facts: ["Skoda sales and service", "Haldwani", "Established in 2023"],
     body: "Pal Skoda Haldwani was established in 2023 under Pal Prateek Automobiles LLP, becoming the newest addition to SM Pal Group's car dealerships. We bring Skoda's blend of performance, luxury, and safety to Uttarakhand with a modern showroom and a dedicated service team.",
   },
@@ -1301,20 +1286,9 @@ const routePages = {
     title: "Pal Ford\nHaldwani.",
     intro:
       "Power, performance and trust: Pal Ford Haldwani has been keeping Fords on the road across Kumaon since 2009.",
-    image: "/assets/ford-opening-in-haldwani.webp",
+    image: "/assets/journeywall-images/pal-ford-opening-haldwani-ceremony.webp",
     facts: ["Ford sales and service", "Haldwani", "First SM Pal Group dealership"],
     body: "Pal Ford Haldwani was established in 2009 as the first of SM Pal Group's car dealerships, and it has grown into one of the most trusted names for Ford service in the Kumaon region.",
-  },
-  "/media": {
-    type: "media",
-    eyebrow: "Media room",
-    title: "Stories worth\nsharing.",
-    intro:
-      "News, recognition and stories from the people, places and businesses moving SM Pal Group forward.",
-    image:
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=85",
-    facts: ["Latest news", "Video stories", "Group updates"],
-    body: "Explore the latest announcements, project milestones, launches and community moments from across SM Pal Group.",
   },
   "/contact": {
     type: "contact",
@@ -1467,7 +1441,6 @@ function RouteHeader({ showLanguageToggle = false, language, onLanguageChange })
               </div>
             )}
           </div>
-          <a href="/media">Media</a>
           <a href="/contact" className="nav-cta">
             Contact Us <ArrowUpRight size={16} />
           </a>
@@ -1571,7 +1544,6 @@ function RouteHeader({ showLanguageToggle = false, language, onLanguageChange })
                   <a href="/about/board-of-directors" onClick={closeNavigation}>Board of directors</a>
                 </div>
               )}
-              <a href="/media" onClick={closeNavigation}>Media</a>
               <a href="/contact" className="route-drawer-cta" onClick={closeNavigation}>
                 Contact Us <ArrowUpRight size={17} />
               </a>
@@ -1713,7 +1685,7 @@ function AboutPage({ page }) {
     {
       name: "Pal Colonisers",
       category: "Real estate",
-      text: "Modern residential projects including Pal Sumeera Residency, Palam City, Pallazio, Eco Town, Paloma Greens and Ram Ji Vihar.",
+      text: "Modern residential projects including Pal Sumeera Residency, Palam City, Pallazio, Eco Town and Paloma Greens.",
       href: "/industries/pal-colonisers/pal-sumeera-residency",
       image: "/assets/our-verticals-images/coloniser.png",
     },
@@ -1782,7 +1754,7 @@ function AboutPage({ page }) {
       <AboutSeo />
       <RouteHeader />
       <main id="about-main">
-        <section className="about-hero">
+        <section className="about-hero mobile-photo-hero">
           <img
             src={page.image}
             alt="Modern architecture representing SM Pal Group's growth"
@@ -1801,7 +1773,7 @@ function AboutPage({ page }) {
           </div>
           <div className="about-hero-mark">
             <strong>
-              40<span>+</span>
+              45<span>+</span>
             </strong>
             <p>Years of trust</p>
           </div>
@@ -1846,9 +1818,12 @@ function AboutPage({ page }) {
         <section className="about-leadership section-pad">
           <div className="container about-leadership-grid">
             <img
-              src={chairmanImage}
+              src="/assets/chairman-images/chairman-about-us.webp"
               alt="Suresh Pal Ji, founder and chairman of SM Pal Group"
+              width={5504}
+              height={8256}
               loading="lazy"
+              decoding="async"
             />
             <div>
               <p className="eyebrow eyebrow-dark">Meet our leadership</p>
@@ -2009,11 +1984,11 @@ function AboutPage({ page }) {
                 across its industries over the years.
               </p>
               <p>
-                Explore the latest honours, coverage and moments from our
-                journey in the SM Pal Group media room.
+                Explore the honours earned by our businesses in the
+                group's awards and recognition section.
               </p>
-              <a className="text-link" href="/media">
-                Explore media and recognition <ArrowRight size={17} />
+              <a className="text-link" href="/#awards">
+                Explore awards and recognition <ArrowRight size={17} />
               </a>
             </div>
           </div>
@@ -2104,7 +2079,7 @@ function PalGroupPage({ page }) {
     {
       name: "Pal Colonisers",
       category: "Real Estate Development",
-      text: "Developing residential projects including Pal Sumeera Residency, Palam City, Palam View, Pallazio, Eco Town, Paloma Greens, and Ram Ji Vihar.",
+      text: "Developing residential projects including Pal Sumeera Residency, Palam City, Palam View, Pallazio, Eco Town, and Paloma Greens.",
       href: "/industries/pal-colonisers/pal-sumeera-residency",
       image: "/assets/our-verticals-images/coloniser.png",
     },
@@ -2195,7 +2170,7 @@ function PalGroupPage({ page }) {
     { label: "Our full story", href: "/about" },
     { label: "Owner-Chairman", href: "/about/ownership" },
     { label: "Board of Directors", href: "/about/board-of-directors" },
-    { label: "Media & Awards", href: "/media" },
+    { label: "Awards & Recognition", href: "/#awards" },
     { label: "Contact Us", href: "/contact" },
   ];
 
@@ -2222,7 +2197,7 @@ function PalGroupPage({ page }) {
           </div>
           <div className="pg-hero-mark">
             <strong>
-              40<span>+</span>
+              45<span>+</span>
             </strong>
             <p>Years of trust</p>
           </div>
@@ -2497,21 +2472,25 @@ function OwnershipPage({ page }) {
     {
       name: "Pal Stone Industries",
       sub: "Where it all began",
+      href: "/industries/pal-stone-industries",
       text: "Pal Stone Industries was Shri Suresh Pal's first venture, founded in 1982 as a supplier of stone and grit from a crushing unit in Haldwani. It grew to serve major clients, including Indian Railways and the Gokul Dam Project, and it remains the foundation that the rest of the group was built on.",
     },
     {
       name: "Pal Colonisers",
       sub: "Bringing organized living to Kumaon",
+      href: "/about#business-verticals",
       text: "As Haldwani grew, Shri Suresh Pal saw a need for well planned, modern housing in the region. That led to Pal Colonisers, which has since delivered residential projects including Pal Sumeera Residency and Palam City, built around the idea that people deserve organized, dependable living spaces, not just buildings.",
     },
     {
       name: "Car Dealerships",
       sub: "Bringing trusted brands to Haldwani",
+      href: "/industries/car-dealerships/pal-skoda-haldwani",
       text: "Shri Suresh Pal later expanded into the automotive sector, building a dealership network under Car Dealerships, including Pal Skoda Haldwani, Pal Nissan Haldwani, and Pal Ford Haldwani. The goal was simple: bring the same trust the group had earned in stone and real estate into car buying and after-sales service.",
     },
     {
       name: "Pal Frozen Foods",
       sub: "Supporting farmers and families",
+      href: "/industries/pal-frozen-foods/pal-fresh",
       text: "With Pal Frozen Foods, Shri Suresh Pal took the group into food, launching Pal Fresh frozen vegetables and Frozzo frozen snacks. This venture carries a community focus as well, supporting local farmers and sustainable agricultural practices so the group's growth benefits the wider region, not just its own bottom line.",
     },
   ];
@@ -2539,19 +2518,11 @@ function OwnershipPage({ page }) {
     { label: "Our full story", href: "/about" },
     { label: "The Pal Group", href: "/about/the-pal-group" },
     { label: "Board of Directors", href: "/about/board-of-directors" },
-    { label: "Meet the team", href: "/contact" },
-    { label: "Media & Awards", href: "/media" },
+    { label: "Contact our team", href: "/contact" },
+    { label: "Awards & Recognition", href: "/#awards" },
   ];
 
-  // Image tiles mapped to chairman photos in /public/assets/chairman-images/.
-  // The 4-col x 3-row grid has 12 cells. With 8 tiles we need exactly
-  // four size-2 (TALL or WIDE) and four size-1 (SQUARE) tiles:
-  //   1 WIDE landscape + 2 TALL portraits + 1 WIDE quote + 4 SQUARE (2 portraits + 1 landscape + stat)
-  // Source order is read left-to-right, top-to-bottom by CSS Grid auto-flow
-  // and produces this layout:
-  //   Row 1: [WIDE founder     ][TALL office ][TALL award            ]
-  //   Row 2: [                 ][            ][         ][SQ stat      ]
-  //   Row 3: [WIDE quote       ][SQ portrait][SQ portrait             ]
+  // Named areas keep the photographs and text tiles aligned at each breakpoint.
   const ownerMoments = [
     {
       // 7008x4672 landscape — founder in his office
@@ -2559,6 +2530,7 @@ function OwnershipPage({ page }) {
       src: "/assets/chairman-images/suresh pal - owner chairmen.webp",
       alt: "Shri Suresh Pal seated at his office desk, the founder of SM Pal Group",
       caption: "At the foundation of the group",
+      area: "founder",
       span: "wide",
     },
     {
@@ -2567,6 +2539,7 @@ function OwnershipPage({ page }) {
       src: "/assets/chairman-images/suresh pal - owner chairmen 4.webp",
       alt: "Shri Suresh Pal at his modern office desk",
       caption: "Where the work still happens",
+      area: "office",
       span: "tall",
     },
     {
@@ -2575,13 +2548,15 @@ function OwnershipPage({ page }) {
       src: "/assets/chairman-images/suresh pal - owner chairmen (2).webp",
       alt: "Shri Suresh Pal receiving an award on stage",
       caption: "Recognising industry leadership",
+      area: "award",
       span: "tall",
     },
     {
       type: "stat",
+      area: "stat",
       span: "square",
-      number: "45+ Years of Legacy",
-      label: "",
+      number: "45+",
+      label: "Years of Legacy",
       sub: "",
     },
     {
@@ -2590,11 +2565,13 @@ function OwnershipPage({ page }) {
       src: "/assets/chairman-images/suresh pal - owner chairmen 6.webp",
       alt: "Shri Suresh Pal in a formal suit, seated in an armchair",
       caption: "Four decades in the frame",
+      area: "formal",
       span: "square",
     },
     {
       // Founder's quote — given a WIDE cell so the full text fits without overflow
       type: "quote",
+      area: "quote",
       span: "wide",
       text: "I have never believed in building for myself. I have always believed in building for the people around me.",
       cite: "Shri Suresh Pal",
@@ -2605,6 +2582,7 @@ function OwnershipPage({ page }) {
       src: "/assets/chairman-images/suresh pal - owner chairmen 5.webp",
       alt: "Shri Suresh Pal addressing an audience on stage",
       caption: "Addressing the people he leads",
+      area: "stage",
       span: "square",
     },
     {
@@ -2613,22 +2591,25 @@ function OwnershipPage({ page }) {
       src: "/assets/chairman-images/suresh pal - owner chairmen 3.webp",
       alt: "Shri Suresh Pal in a suit, smiling in an armchair",
       caption: "With the people behind the work",
+      area: "portrait",
       span: "square",
     },
   ];
 
   return (
     <div className="route-page ownership-page">
+      <a className="skip-link" href="#ownership-main">Skip to content</a>
       <OwnershipSeo />
       <RouteHeader />
-      <main>
-        <section className="own-hero">
+      <main id="ownership-main">
+        <section className="own-hero mobile-photo-hero portrait-hero">
           <img src={page.image} alt="Shri Suresh Pal, Founder and Chairman of SM Pal Group" fetchPriority="high" />
           <div className="own-hero-shade" />
           <div className="container own-hero-copy">
             <p className="eyebrow">{page.eyebrow}</p>
-            <h1>{page.title}</h1>
+            <h1>Shri Suresh Pal, <em>owner and chairman of SM Pal Group</em></h1>
             <p className="own-hero-intro">{page.intro}</p>
+            <a className="text-link ownership-hero-link" href="#journey">Explore his journey <ArrowDownRight size={17} /></a>
           </div>
         </section>
 
@@ -2692,6 +2673,7 @@ function OwnershipPage({ page }) {
                   <p className="own-journey-sub">{chapter.sub}</p>
                   <h3>{chapter.name}</h3>
                   <p className="own-journey-text">{chapter.text}</p>
+                  <a className="text-link ownership-chapter-link" href={chapter.href}>Explore {chapter.name} <ArrowUpRight size={17} /></a>
                 </article>
               ))}
             </div>
@@ -2753,10 +2735,11 @@ function OwnershipPage({ page }) {
                   return (
                     <figure
                       className={`own-moment-tile own-moment-${moment.span} reveal`}
+                      data-moment={moment.area}
                       key={moment.caption}
-                      style={{ "--delay": `${index * 60}ms` }}
+                      style={{ "--delay": `${index * 60}ms`, "--moment-area": moment.area }}
                     >
-                      <img src={moment.src} alt={moment.alt} loading="lazy" />
+                      <img src={moment.src} alt={moment.alt} loading="lazy" decoding="async" />
                     </figure>
                   );
                 }
@@ -2765,7 +2748,7 @@ function OwnershipPage({ page }) {
                     <div
                       className={`own-moment-tile own-moment-stat own-moment-${moment.span} reveal`}
                       key={`stat-${moment.number}`}
-                      style={{ "--delay": `${index * 60}ms` }}
+                      style={{ "--delay": `${index * 60}ms`, "--moment-area": moment.area }}
                     >
                       <span className="own-moment-stat-number">{moment.number}</span>
                       {moment.label ? (
@@ -2781,7 +2764,7 @@ function OwnershipPage({ page }) {
                   <blockquote
                     className={`own-moment-tile own-moment-quote own-moment-${moment.span} reveal`}
                     key={`quote-${moment.cite}`}
-                    style={{ "--delay": `${index * 60}ms` }}
+                    style={{ "--delay": `${index * 60}ms`, "--moment-area": moment.area }}
                   >
                     <span className="own-moment-quote-mark" aria-hidden="true">"</span>
                     <p>{moment.text}</p>
@@ -2800,7 +2783,12 @@ function OwnershipPage({ page }) {
               <i />
               <span>A message from the next generation of SM Pal Group</span>
             </div>
-            <div className="own-next-gen-card reveal">
+            <div className="ownership-message-grid">
+            <div className="ownership-message-intro reveal">
+              <h2>A lasting legacy.<br /><em>A shared future.</em></h2>
+              <a className="text-link" href="/about/prateek-pal">Meet Prateek Pal <ArrowUpRight size={17} /></a>
+            </div>
+            <div className="own-next-gen-card">
               <div className="own-next-gen-mark" aria-hidden="true">"</div>
               <p>
                 For over four decades, SM Pal Group has stood as a pillar of trust and excellence, a legacy initiated by my father, Shri Suresh Pal, in 1982. I am honored to carry on his people-first vision and build on the solid foundation he laid, and I am committed to leading SM Pal Group to continued success.
@@ -2815,7 +2803,7 @@ function OwnershipPage({ page }) {
                 {progressAreas.map((area, index) => (
                   <div className="own-progress-card" key={area.title}>
                     <span>0{index + 1}</span>
-                    <h4>{area.title}</h4>
+                    <h3>{area.title}</h3>
                     <p>{area.text}</p>
                   </div>
                 ))}
@@ -2823,6 +2811,7 @@ function OwnershipPage({ page }) {
               <p>
                 Success, to me, is about more than milestones. It is about honoring the journey, the challenges, the triumphs, and most importantly, the people who make it all possible. Together, we are building a future that reflects our shared values and our shared aspirations.
               </p>
+            </div>
             </div>
             <div className="own-next-gen-cta reveal">
               <p>
@@ -3228,16 +3217,16 @@ function PrateekPage({ page }) {
 
   const prateekMilestones = [
     {
-      year: "2008",
+      year: "2019",
       title: "First steps into the business",
       text: "Joined SM Pal Group while still studying in Europe, beginning to apply what he was learning abroad to the family business back home.",
       image: "/assets/prateek-pal-images/prateek-pal-journey.webp",
       imageAlt: "Portrait of Prateek Pal",
-      imagePosition: "50% 8%",
+      imagePosition: "50% top",
       align: "left",
     },
     {
-      year: "2012",
+      year: "2013",
       title: "Convenience food, reimagined",
       text: "Studied the European food and beverage sector closely, then brought back the insight that became the foundation for Pal Fresh and Frozzo.",
       image: "/assets/prateek-pal-images/pal-fresh-journey.webp",
@@ -3245,7 +3234,7 @@ function PrateekPage({ page }) {
       align: "right",
     },
     {
-      year: "2017",
+      year: "2025",
       title: "Pal Colonisers goes vertical",
       text: "Led the move into apartment construction for the first time, opening a new kind of housing for buyers in the region.",
       image: "/assets/prateek-pal-images/palamview-connected-journey.webp",
@@ -3254,7 +3243,7 @@ function PrateekPage({ page }) {
       align: "left",
     },
     {
-      year: "2022",
+      year: "2025",
       title: "Crossing borders",
       text: "Took the frozen foods business international through Pal Fresh Global Trading LLC, expanding reach well beyond the home market.",
       image: "/assets/prateek-pal-images/ship-ocean-container.webp",
@@ -3270,7 +3259,7 @@ function PrateekPage({ page }) {
       <RouteHeader />
       <main id="prateek-main">
         {/* Hero */}
-        <section className="own-hero">
+        <section className="own-hero mobile-photo-hero portrait-hero">
           <img src={page.image} alt="Prateek Pal, Director at SM Pal Group" fetchPriority="high" />
           <div className="own-hero-shade" />
           <div className="container own-hero-copy">
@@ -3528,7 +3517,8 @@ function PalFreshGlobalPage() {
   const content = isArabic
     ? {
         eyebrow: "بال فريش جلوبال · دبي، الإمارات",
-        title: "بال فريش جلوبال، من مزارعنا إلى مُجمّدك",
+        title: "بال فريش جلوبال،",
+        titleAccent: "من مزارعنا إلى مُجمّدك",
         intro: "تقدم شركة بال فريش جلوبال للتجارة ذ.م.م الخضروات المجمدة الهندية للمنازل والشركات في الإمارات وخارجها، مدعومة بسلسلة توريد تبدأ من مزارع حقيقية وتنتهي في مُجمّدك.",
         aboutTitle: "عن شركة بال فريش جلوبال للتجارة",
         about: "بال فريش جلوبال هي الكيان الدولي المخصص لشركة بال فروزن فودز، ومقرها دبي، وقد تأسست لإدارة عمليات التصدير إلى أسواق الإمارات والأسواق العالمية. تحمل الشركة نفس الالتزام بالجودة والمذاق والابتكار على مستوى عالمي.",
@@ -3547,12 +3537,13 @@ function PalFreshGlobalPage() {
         hours: "من الإثنين إلى السبت، 9:00 صباحًا حتى 6:00 مساءً",
         faqTitle: "الأسئلة الشائعة",
         exploreTitle: "لمزيد من الاستكشاف",
-        explore: "لمعرفة المزيد عن مصادر مكوناتنا، تفضلوا بزيارة بال أجريكلتشر، أو تعرفوا على مشاركاتنا في المعارض، أو تابعوا آخر أخبارنا عبر المدونة.",
+        explore: "لمعرفة المزيد عن مصادر مكوناتنا، تفضلوا بزيارة بال أجريكلتشر، أو تعرفوا على مجلس الإدارة.",
         cta: "تواصل معنا",
       }
     : {
         eyebrow: "Pal Fresh Global · Dubai, UAE",
-        title: "PalFresh Global, from our farms to your freezer",
+        title: "Pal Fresh Global,",
+        titleAccent: "from our farms to your freezer",
         intro: "PalFresh Global Trading LLC brings India's frozen vegetables to households and businesses across the UAE and beyond, backed by a supply chain that starts on real farms and ends in your freezer.",
         aboutTitle: "About PalFresh Global Trading LLC",
         about: "PalFresh Global Trading LLC is the dedicated international entity for Pal Frozen Foods, based in Dubai, UAE, and built to manage export operations for the UAE and global markets. It carries forward the same promise of quality, taste, and innovation on a global scale.",
@@ -3571,7 +3562,7 @@ function PalFreshGlobalPage() {
         hours: "Monday to Saturday, 9:00 am to 6:00 pm",
         faqTitle: "Frequently asked questions",
         exploreTitle: "Explore more",
-        explore: "To learn more about our ingredients, visit Pal Agriculture, see our latest Exhibitions, meet our Board of Directors, or read the latest Blog updates.",
+        explore: "To learn more about our ingredients, visit Pal Agriculture, or meet our Board of Directors to learn about the people guiding the group.",
         cta: "Get in touch",
       };
   const products = (isArabic
@@ -3584,37 +3575,129 @@ function PalFreshGlobalPage() {
   const faqs = isArabic
     ? [["ما هي شركة بال فريش جلوبال؟", "هي الذراع الدولية لشركة بال فروزن فودز، ومقرها دبي، ومتخصصة في تصدير الخضروات المجمدة والوجبات الجاهزة."], ["أين يقع مقر بال فريش جلوبال؟", "تقع في مول بن شبيب على شارع بغداد في منطقة القصيص، دبي."], ["ما المنتجات التي تقدمها؟", "تقدم الخضروات المجمدة وعبوات التجزئة والفنادق والمطاعم للمشترين التجاريين."], ["ما الأسواق التي تخدمها؟", "تُصدّر إلى أسواق الشرق الأوسط وأمريكا الشمالية وآسيا."]]
     : [["What is PalFresh Global Trading LLC?", "PalFresh Global is the international arm of Pal Frozen Foods, based in Dubai and dedicated to exporting frozen vegetables and ready-to-eat snacks."], ["Where is PalFresh Global based?", "PalFresh Global is based at Bin Shabib Mall on Baghdad Street in Al Qusais, Dubai, UAE."], ["What products does PalFresh Global offer?", "It offers frozen vegetables and a dedicated Retail/HoReca pack for business buyers."], ["Which markets does PalFresh Global serve?", "It exports across the Middle East, North America, and Asia."]];
-  useEffect(() => {
-    document.documentElement.lang = language;
-    document.documentElement.dir = isArabic ? "rtl" : "ltr";
-    return () => {
-      document.documentElement.lang = "en";
-      document.documentElement.dir = "ltr";
-    };
-  }, [isArabic, language]);
+  const sectionLabel = (number, text) => (
+    <div className="pfg-section-label">
+      <span aria-hidden="true">{number}</span><i aria-hidden="true" /><span>{text}</span>
+    </div>
+  );
   return (
-    <div className={`route-page pfg-page ${isArabic ? "pfg-page-ar" : ""}`}>
+    <div className={`route-page industry-brand pfg-page ${isArabic ? "pfg-page-ar" : ""}`}>
+      <a className="skip-link" href="#pfg-main">{isArabic ? "انتقل إلى المحتوى" : "Skip to content"}</a>
       <RouteHeader showLanguageToggle language={language} onLanguageChange={setLanguage} />
       <PalFreshGlobalSeo />
-      <main lang={isArabic ? "ar" : "en"} dir={isArabic ? "rtl" : "ltr"}>
-        <section className="pfg-hero">
+      <main id="pfg-main" lang={isArabic ? "ar" : "en"} dir={isArabic ? "rtl" : "ltr"}>
+        <section className="pfg-hero mobile-photo-hero">
           <img src="/assets/pal-frozen.webp" alt="PalFresh Global frozen vegetables" fetchPriority="high" />
           <div className="pfg-hero-shade" />
           <div className="container pfg-hero-copy">
             <p className="eyebrow">{content.eyebrow}</p>
-            <h1>{content.title}</h1>
+            <h1>{content.title} <em>{content.titleAccent}</em></h1>
             <p>{content.intro}</p>
-            <a className="button button-brass" href="#pfg-products">{content.productsTitle} <ArrowDownRight size={17} /></a>
+            <div className="pfg-hero-actions">
+              <a className="button button-brass" href="#pfg-products">{content.productsTitle} <ArrowDownRight size={17} /></a>
+              <a className="button button-outline" href="#pfg-contact">{content.cta} <ArrowUpRight size={17} /></a>
+            </div>
           </div>
-          <div className="pfg-hero-mark"><strong>UAE</strong><span>GLOBAL EXPORTS</span></div>
+          <div className="pfg-hero-mark"><strong>{isArabic ? "الإمارات" : "UAE"}</strong><span>{isArabic ? "صادرات عالمية" : "Global exports"}</span></div>
         </section>
-        <section className="pfg-intro section-pad"><div className="container pfg-two-col"><div><p className="eyebrow eyebrow-dark">01 · {content.aboutTitle}</p><h2>{content.aboutTitle}</h2></div><div><p className="large-copy">{content.about}</p><p>{content.roots}</p><div className="pfg-inline-links"><a href="/about">{isArabic ? "من نحن" : "About Us"} <ArrowUpRight size={14} /></a><a href="/industries/pal-frozen-foods/pal-fresh">{isArabic ? "بال فروزن فودز (الهند)" : "Pal Frozen Foods (India)"} <ArrowUpRight size={14} /></a><a href="/about/the-pal-group">SM Pal Group <ArrowUpRight size={14} /></a></div></div></div></section>
-        <section className="pfg-products section-pad" id="pfg-products"><div className="container"><div className="pfg-section-heading"><p className="eyebrow eyebrow-dark">02 · {content.productsTitle}</p><h2>{content.productsTitle}</h2><p>{content.productsIntro}</p></div><div className="pfg-product-grid">{products.map((product, index) => <a className="pfg-product-card" href={product.href} key={product.label}><span>0{index + 1}</span><h3>{product.label}</h3><ArrowUpRight size={18} /></a>)}<a className="pfg-product-card pfg-product-card-featured" href="#pfg-contact"><span>10</span><h3>{isArabic ? "عبوة التجزئة والفنادق والمطاعم" : "Retail / HoReca Pack"}</h3><ArrowUpRight size={18} /></a></div></div></section>
-        <section className="pfg-reasons section-pad"><div className="container pfg-two-col"><div><p className="eyebrow">03 · {content.whyTitle}</p><h2>{content.whyTitle}</h2></div><div className="pfg-reason-list">{reasons.map((reason, index) => <div key={reason}><span>0{index + 1}</span><p>{reason}</p></div>)}</div></div></section>
-        <section className="pfg-reach section-pad"><div className="container pfg-two-col"><div><p className="eyebrow eyebrow-dark">04 · {content.reachTitle}</p><h2>{content.reachTitle}</h2></div><p className="large-copy">{content.reach}</p></div></section>
-        <section className="pfg-contact section-pad" id="pfg-contact"><div className="container pfg-contact-grid"><div><p className="eyebrow">05 · {content.contactTitle}</p><h2>{content.contactTitle}</h2><p>{isArabic ? "للحصول على كتيبات المنتجات أو للاستفسارات الخاصة، تفضلوا بزيارة فريقنا." : "For product brochures or specific inquiries, get in touch with our team."}</p></div><address><div><span>{content.addressLabel}</span><strong>{content.address}</strong></div><div><span>{content.phoneLabel}</span><a href="tel:+971505738300">+971 50 573 8300</a></div><div><span>{content.hoursLabel}</span><strong>{content.hours}</strong></div><a className="button button-brass" href="/contact">{content.cta} <ArrowUpRight size={17} /></a></address></div></section>
-        <section className="pfg-faq section-pad"><div className="container pfg-two-col"><div><p className="eyebrow eyebrow-dark">06 · {content.faqTitle}</p><h2>{content.faqTitle}</h2></div><div className="faq-list">{faqs.map(([question, answer]) => <details className="faq-item" key={question}><summary>{question}<ArrowDownRight size={18} /></summary><p>{answer}</p></details>)}</div></div></section>
-        <section className="pfg-explore section-pad"><div className="container pfg-two-col"><div><p className="eyebrow">07 · {content.exploreTitle}</p><h2>{content.exploreTitle}</h2></div><div><p className="large-copy">{content.explore}</p><div className="pfg-inline-links"><a href="/industries/pal-farms">{isArabic ? "بال أجريكلتشر" : "Pal Agriculture"} <ArrowUpRight size={14} /></a><a href="/media">{isArabic ? "المعارض" : "Exhibitions"} <ArrowUpRight size={14} /></a><a href="/about/board-of-directors">{isArabic ? "مجلس الإدارة" : "Board of Directors"} <ArrowUpRight size={14} /></a><a href="/media">{isArabic ? "المدونة" : "Blog"} <ArrowUpRight size={14} /></a></div></div></div></section>
+        <section className="pfg-intro section-pad">
+          <div className="container">
+            {sectionLabel("01", isArabic ? "من نحن" : "About the business")}
+            <div className="pfg-two-col">
+              <h2>{content.aboutTitle}</h2>
+              <div className="pfg-body-copy">
+                <p>{content.about}</p>
+                <h3>{content.rootsTitle}</h3>
+                <p>{content.roots}</p>
+                <div className="pfg-inline-links">
+                  <a href="/about">{isArabic ? "من نحن" : "About Us"} <ArrowUpRight size={14} /></a>
+                  <a href="/industries/pal-frozen-foods/pal-fresh">{isArabic ? "بال فروزن فودز (الهند)" : "Pal Frozen Foods (India)"} <ArrowUpRight size={14} /></a>
+                  <a href="/about/the-pal-group">SM Pal Group <ArrowUpRight size={14} /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="pfg-products section-pad" id="pfg-products">
+          <div className="container">
+            {sectionLabel("02", isArabic ? "منتجاتنا" : "Our products")}
+            <div className="pfg-section-heading">
+              <h2>{content.productsTitle}</h2><p>{content.productsIntro}</p>
+            </div>
+            <div className="pfg-product-grid">
+              {products.map((product, index) => (
+                <a className="pfg-product-card" href={product.href} key={product.label}>
+                  <span>0{index + 1}</span><h3>{product.label}</h3><ArrowUpRight size={18} />
+                </a>
+              ))}
+            </div>
+            <a className="pfg-product-card pfg-product-card-featured" href="#pfg-contact">
+              <span>{isArabic ? "خيارات التعبئة" : "Packaging options"}</span>
+              <h3>{isArabic ? "عبوة التجزئة والفنادق والمطاعم" : "Retail / HoReca Pack"}</h3>
+              <ArrowUpRight size={18} />
+            </a>
+          </div>
+        </section>
+        <section className="pfg-reasons section-pad">
+          <div className="container">
+            {sectionLabel("03", isArabic ? "الجودة والثقة" : "Quality and trust")}
+            <div className="pfg-two-col">
+              <h2>{content.whyTitle}</h2>
+              <div className="pfg-reason-list">
+                {reasons.map((reason, index) => <div key={reason}><span>0{index + 1}</span><p>{reason}</p></div>)}
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="pfg-reach section-pad">
+          <div className="container">
+            {sectionLabel("04", isArabic ? "حضورنا العالمي" : "Our global reach")}
+            <div className="pfg-two-col"><h2>{content.reachTitle}</h2><p>{content.reach}</p></div>
+          </div>
+        </section>
+        <section className="pfg-contact section-pad" id="pfg-contact">
+          <div className="container">
+            {sectionLabel("05", isArabic ? "تواصل معنا" : "Start a conversation")}
+            <div className="pfg-contact-grid">
+              <div className="pfg-body-copy">
+                <h2>{content.contactTitle}</h2>
+                <p>{isArabic ? "للحصول على كتيبات المنتجات أو للاستفسارات الخاصة، تفضلوا بزيارة فريقنا." : "For product brochures or specific inquiries, get in touch with our team."}</p>
+              </div>
+              <address>
+                <div><span>{content.addressLabel}</span><strong>{content.address}</strong></div>
+                <div><span>{content.phoneLabel}</span><a href="tel:+971505738300">+971 50 573 8300</a></div>
+                <div><span>{content.hoursLabel}</span><strong>{content.hours}</strong></div>
+                <a className="button button-brass" href="/contact">{content.cta} <ArrowUpRight size={17} /></a>
+              </address>
+            </div>
+          </div>
+        </section>
+        <section className="pfg-faq section-pad">
+          <div className="container">
+            {sectionLabel("06", isArabic ? "معلومات مفيدة" : "Good to know")}
+            <div className="pfg-two-col">
+              <h2>{content.faqTitle}</h2>
+              <div className="faq-list">
+                {faqs.map(([question, answer]) => <details className="faq-item" key={question}><summary>{question}<ArrowDownRight size={18} /></summary><p>{answer}</p></details>)}
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="pfg-explore section-pad">
+          <div className="container">
+            {sectionLabel("07", isArabic ? "مجموعة إس إم بال" : "Across SM Pal Group")}
+            <div className="pfg-two-col">
+              <h2>{content.exploreTitle}</h2>
+              <div className="pfg-body-copy">
+                <p>{content.explore}</p>
+                <div className="pfg-inline-links">
+                  <a href="/industries/pal-farms">{isArabic ? "بال أجريكلتشر" : "Pal Agriculture"} <ArrowUpRight size={14} /></a>
+                  <a href="/about/board-of-directors">{isArabic ? "مجلس الإدارة" : "Board of Directors"} <ArrowUpRight size={14} /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
@@ -3826,12 +3909,12 @@ function PalFreshPage({ page }) {
   ];
 
   return (
-    <div className="route-page pal-fresh-page">
+    <div className="route-page industry-brand pal-fresh-page">
       <PalFreshSeo />
       <RouteHeader />
       <main>
         {/* Hero */}
-        <section className="pf-hero">
+        <section className="pf-hero mobile-photo-hero">
           <img
             src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=2200&q=85"
             alt="Pal Fresh IQF frozen vegetables grown on partner farms in Uttarakhand"
@@ -4363,12 +4446,12 @@ function FrozzoPage({ page }) {
   ];
 
   return (
-    <div className="route-page frozzo-page ui-styling">
+    <div className="route-page industry-brand frozzo-page ui-styling">
       <FrozzoSeo />
       <RouteHeader />
       <main>
         {/* Hero */}
-        <section className="fz-hero">
+        <section className="fz-hero mobile-photo-hero">
           <img
             src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=2200&q=85"
             alt="Frozzo premium RTF and RTE frozen snacks"
@@ -4885,12 +4968,12 @@ function PalStoneIndustriesPage({ page }) {
   ];
 
   return (
-    <div className="route-page pal-stone-page">
+    <div className="route-page industry-brand pal-stone-page">
       <PalStoneSeo />
       <RouteHeader />
       <main>
         {/* Hero */}
-        <section className="ps-hero">
+        <section className="ps-hero mobile-photo-hero">
           <img
             src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=2200&q=85"
             alt="Pal Stone Industries premium stone and grit quarry"
@@ -5251,6 +5334,13 @@ function PalSkodaPage({ page }) {
       description: "A seven-seater SUV built for families who want Skoda's comfort and capability at scale, ready for highways and beyond.",
       image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=85",
     },
+    {
+      name: "Slavia",
+      tagline: "Elegance in every drive.",
+      description: "A midsize sedan that pairs distinctive styling with turbocharged performance and a comfortable cabin, bringing everyday ease to every journey.",
+      // Official model imagery: https://www.skoda-auto.co.in/models/slavia/slavia
+      image: "/assets/skoda-slavia.webp",
+    },
   ];
 
   const services = [
@@ -5290,7 +5380,7 @@ function PalSkodaPage({ page }) {
   const faqs = [
     [
       "What Skoda models does Pal Skoda Haldwani offer?",
-      "Pal Skoda Haldwani offers a range of Skoda models, including the Kushaq, Kylaq, and Kodiaq, giving buyers in Haldwani a genuine choice across performance and price points.",
+      "Pal Skoda Haldwani offers a range of Skoda models, including the Kushaq, Kylaq, Kodiaq, and Slavia, giving buyers in Haldwani a genuine choice across performance and price points.",
     ],
     [
       "When was Pal Skoda Haldwani established?",
@@ -5315,14 +5405,14 @@ function PalSkodaPage({ page }) {
   ];
 
   return (
-    <div className="route-page pal-skoda-page">
+    <div className="route-page industry-brand pal-skoda-page">
       <PalSkodaSeo />
       <RouteHeader />
       <main>
         {/* Hero */}
-        <section className="skoda-hero">
+        <section className="skoda-hero mobile-photo-hero">
           <img
-            src="/assets/pal-skoda-gradient.jpeg"
+            src="/assets/hero-gradient-images/pal-skoda-gradient.jpeg"
             alt="Pal Skoda Haldwani showroom featuring latest Skoda models"
           />
           <div className="skoda-hero-grid" aria-hidden="true">
@@ -5722,6 +5812,13 @@ function PalNissanPage({ page }) {
       description: "Gravite blends sophisticated design with class-leading efficiency, offering a refined driving experience that combines style with sustainability.",
       image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=85",
     },
+    {
+      name: "Magnite",
+      tagline: "Bold inside and out.",
+      description: "A compact SUV with bold styling, a comfortable cabin, and practical features, designed to bring confidence and convenience to everyday journeys.",
+      // Official model imagery: https://www.nissan.in/vehicles/new/nissan-magnite.html
+      image: "/assets/nissan-magnite.jpg",
+    },
   ];
 
   const services = [
@@ -5761,7 +5858,7 @@ function PalNissanPage({ page }) {
   const faqs = [
     [
       "What Nissan models does Pal Nissan Haldwani offer?",
-      "Pal Nissan Haldwani offers a range of Nissan models, including the Tekton and Gravite, giving buyers in Haldwani a genuine choice across performance and price points.",
+      "Pal Nissan Haldwani offers a range of Nissan models, including the Tekton, Gravite, and Magnite, giving buyers in Haldwani a genuine choice across performance and price points.",
     ],
     [
       "When was Pal Nissan Haldwani established?",
@@ -5786,12 +5883,12 @@ function PalNissanPage({ page }) {
   ];
 
   return (
-    <div className="route-page pal-nissan-page">
+    <div className="route-page industry-brand pal-nissan-page">
       <PalNissanSeo />
       <RouteHeader />
       <main>
         {/* Hero */}
-        <section className="nissan-hero">
+        <section className="nissan-hero mobile-photo-hero">
           <img
             src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=85"
             alt="Pal Nissan Haldwani showroom featuring latest Nissan models"
@@ -6254,14 +6351,14 @@ function PalFordPage({ page }) {
   ];
 
   return (
-    <div className="route-page pal-ford-page">
+    <div className="route-page industry-brand pal-ford-page">
       <PalFordSeo />
       <RouteHeader />
       <main>
         {/* Hero */}
-        <section className="ford-hero">
+        <section className="ford-hero mobile-photo-hero">
           <img
-            src="/assets/ford-opening-in-haldwani.webp"
+                  src="/assets/journeywall-images/pal-ford-opening-haldwani-ceremony.webp"
             alt="Pal Ford Haldwani service center and dealership"
           />
           <div className="ford-hero-grid" aria-hidden="true">
@@ -6685,7 +6782,6 @@ function PalFordPage({ page }) {
 
 function RoutePage({ page }) {
   const [sent, setSent] = useState(false);
-  const isMedia = page.type === "media";
   const isContact = page.type === "contact";
   const related =
     page.type === "project"
@@ -6694,10 +6790,10 @@ function RoutePage({ page }) {
         ? routeGroups.dealerships
         : routeGroups.industries;
   return (
-    <div className="route-page">
+    <div className={`route-page${page.type === "industry" || page.type === "project" ? " industry-overview" : ""}`}>
       <RouteHeader />
       <main>
-        <section className="route-hero">
+        <section className="route-hero mobile-photo-hero">
           <img src={page.image} alt="" fetchPriority="high" />
           <div className="route-hero-shade" />
           <div className="container route-hero-copy">
@@ -6733,9 +6829,7 @@ function RoutePage({ page }) {
             </aside>
             <div className="route-copy">
               <p className="eyebrow eyebrow-dark">
-                {isMedia
-                  ? "Stay close"
-                  : isContact
+                {isContact
                     ? "Start a conversation"
                     : page.type === "leadership"
                       ? "Our people"
@@ -6744,9 +6838,7 @@ function RoutePage({ page }) {
                       : "A closer look"}
               </p>
               <h2>
-                {isMedia
-                  ? "What’s moving forward."
-                  : isContact
+                {isContact
                     ? "Connect with the right team."
                     : page.type === "group"
                       ? "Built to move people forward."
@@ -6781,16 +6873,12 @@ function RoutePage({ page }) {
                 <a
                   className="button button-brass route-action"
                   href={
-                    isMedia
-                      ? "/#media"
-                      : page.type === "group"
+                    page.type === "group"
                         ? "/about#business-verticals"
                         : "/contact"
                   }
                 >
-                  {isMedia
-                    ? "Watch group stories"
-                    : page.type === "group"
+                  {page.type === "group"
                       ? "Explore our verticals"
                       : "Talk to our team"}{" "}
                   <ArrowRight size={17} />
@@ -6799,39 +6887,7 @@ function RoutePage({ page }) {
             </div>
           </div>
         </section>
-        {isMedia && (
-          <section className="route-list section-pad">
-            <div className="container">
-              <div className="section-heading">
-                <div>
-                  <p className="eyebrow eyebrow-dark">Latest at SM Pal Group</p>
-                  <h2>
-                    News and
-                    <br />
-                    <em>recognition.</em>
-                  </h2>
-                </div>
-              </div>
-              <div className="news-list">
-                {news.map((item, index) => (
-                  <a
-                    className={`news-item${index === 0 ? " news-item--latest" : ""}`}
-                    href="/contact"
-                    key={item}
-                  >
-                    <span>0{index + 1}</span>
-                    <h3>
-                      {item}
-                      {index === 0 && <span className="news-latest-badge">Latest</span>}
-                    </h3>
-                    <ArrowUpRight size={19} />
-                  </a>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-        {!isMedia && !isContact && (
+        {!isContact && (
           <section className="route-related section-pad">
             <div className="container">
               <div className="section-heading">
@@ -7170,7 +7226,7 @@ function SiteRouter() {
           </div>
         </section>
 
-        <section className="awards section-pad">
+        <section className="awards section-pad" id="awards">
           <div className="container">
             <div className="section-heading reveal">
               <div>
@@ -7205,15 +7261,11 @@ function SiteRouter() {
                 <p className="eyebrow eyebrow-dark">Latest at SM Pal Group</p>
                 <h2>Latest at SM Pal Group</h2>
               </div>
-              <a className="text-link" href="/media">
-                View all news <ArrowRight size={17} />
-              </a>
             </div>
             <div className="news-list">
               {news.map((item, index) => (
-                <a
+                <article
                   className={`news-item${index === 0 ? " news-item--latest" : ""}`}
-                  href="/media"
                   key={item}
                 >
                   <span>0{index + 1}</span>
@@ -7221,8 +7273,7 @@ function SiteRouter() {
                     {item}
                     {index === 0 && <span className="news-latest-badge">Latest</span>}
                   </h3>
-                  <ArrowUpRight size={19} />
-                </a>
+                </article>
               ))}
             </div>
           </div>

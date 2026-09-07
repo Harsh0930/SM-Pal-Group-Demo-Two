@@ -31,7 +31,6 @@ export const routeGroups = {
       label: "Paloma Greens",
       href: "/industries/pal-colonisers/paloma-greens",
     },
-    { label: "Ram Ji Vihar", href: "/industries/pal-colonisers/ram-ji-vihar" },
   ],
   dealerships: [
     {

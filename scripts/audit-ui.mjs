@@ -49,8 +49,17 @@ function ruleValue(selectors, property, width) {
   return winner?.value;
 }
 
-const widths = [320, 390, 640, 768, 900, 1000, 1001, 1200, 1280, 1440];
+const widths = [320, 360, 390, 414, 640, 768, 820, 900, 1000, 1001, 1024, 1200, 1280, 1440, 1920];
 for (const width of widths) {
+  const ownerAreas = ruleValue([".ownership-page main .own-moments-grid"], "grid-template-areas", width);
+  const ownerRows = [...ownerAreas.matchAll(/"([^"]+)"/g)].map((match) => match[1].split(/\s+/));
+  assert.equal(ownerRows[0].length, width <= 900 ? 2 : 4, `Ownership gallery columns at ${width}px`);
+  for (const name of ["founder", "office", "award", "stat", "formal", "quote", "stage", "portrait"]) {
+    const cells = ownerRows.flatMap((row, y) => row.flatMap((cell, x) => cell === name ? [{ x, y }] : []));
+    assert.ok(cells.length, `Ownership ${name} has a cell at ${width}px`);
+    const xs = cells.map((cell) => cell.x), ys = cells.map((cell) => cell.y);
+    assert.equal(cells.length, (Math.max(...xs) - Math.min(...xs) + 1) * (Math.max(...ys) - Math.min(...ys) + 1), `Ownership ${name} forms a rectangle`);
+  }
   const mosaicSelectors = [".legacy-wall .legacy-mosaic", ".about-page .legacy-wall .legacy-mosaic"];
   const areas = ruleValue(mosaicSelectors, "grid-template-areas", width);
   const rows = [...areas.matchAll(/"([^"]+)"/g)].map((match) => match[1].split(/\s+/));
@@ -78,6 +87,15 @@ for (const width of widths) {
   assert.equal(ruleValue([".prateek-page .prateek-timeline-row"], "grid-template-columns", width), width <= 640 ? "minmax(0, 1fr)" : "repeat(2, minmax(0, 1fr))", `Prateek timeline columns at ${width}px`);
   assert.equal(ruleValue([".prateek-page .prateek-timeline-row > *"], "grid-row", width), width <= 640 ? "auto" : "1", `Prateek timeline row alignment at ${width}px`);
   assert.equal(ruleValue([".prateek-recognition-grid"], "grid-template-columns", width), width <= 900 ? "minmax(0, 1fr)" : "minmax(0, .9fr) minmax(0, 1.1fr)", `Prateek recognition at ${width}px`);
+  if (width <= 640) {
+    assert.equal(ruleValue([".route-page main .mobile-photo-hero"], "min-height", width), "0", `Mobile heroes grow with their text at ${width}px`);
+    assert.equal(ruleValue([".route-hero > img", ".route-page main .mobile-photo-hero > img"], "position", width), "relative", `Mobile hero images occupy their own space at ${width}px`);
+    assert.equal(ruleValue(['.route-page main .mobile-photo-hero > [class$="-hero-mark"]'], "display", width), "none", `Hero badges cannot overlap mobile text at ${width}px`);
+    assert.equal(ruleValue([".hero .hero-actions .button", ".home-page .hero .hero-actions .button"], "font-size", width), "var(--text-label)", `Home buttons remain readable at ${width}px`);
+  }
+  if (width <= 900) {
+    assert.equal(ruleValue([".own-hero > img", ".route-page main .portrait-hero > img"], "object-position", width), "var(--hero-position)", `Leadership portraits retain their focal point at ${width}px`);
+  }
 }
 roots[0].walkRules((rule) => {
   if (rule.selectors.every((selector) => /(?:^|\s)h1$|^\.palam-hero-title-row$/.test(selector))) {
@@ -93,6 +111,7 @@ assert.ok(read("src/styles/global.css").includes('--serif: "Playfair Display", G
 console.log(`PASS: shared CSS rules at ${widths.join(", ")}px; heading scale, palette and font checks.`);
 
 const server = await createServer({ server: { middlewareMode: true }, appType: "custom" });
+const renderedPages = new Map();
 try {
   const { default: App } = await server.ssrLoadModule("/src/App.jsx");
   for (const path of paths) {
@@ -102,15 +121,29 @@ try {
       addEventListener() {}, removeEventListener() {},
     };
     const html = renderToStaticMarkup(React.createElement(App));
+    renderedPages.set(path, html);
     assert.equal((html.match(/<h1\b/g) || []).length, 1, `${path}: one page heading`);
     assert.equal((html.match(/<main\b/g) || []).length, 1, `${path}: one main landmark`);
     assert.equal((html.match(/class="route-header"/g) || []).length, 1, `${path}: shared header`);
     assert.equal((html.match(/class="site-footer"/g) || []).length, 1, `${path}: shared footer`);
+    for (const [, src] of html.matchAll(/<img\b[^>]*\bsrc="(\/assets\/[^"]+)"/g)) {
+      assert.ok(existsSync(new URL(`../public${src.split("?")[0]}`, import.meta.url)), `${path}: image exists: ${src}`);
+    }
+    if (!["/", "/about/the-pal-group", "/about/board-of-directors", "/industries/pal-colonisers/palam-view"].includes(path)) {
+      assert.ok(html.includes("mobile-photo-hero"), `${path}: responsive photographic hero`);
+    }
     if (path === "/about") {
       assert.equal((html.match(/<figure class="legacy-tile/g) || []).length, legacyMoments.length);
       assert.ok(html.includes('id="about-main"') && html.includes('href="#about-main"'));
       assert.ok(html.includes('id="legacy-heading"') && html.includes('aria-labelledby="legacy-heading"'));
       assert.ok(!html.includes('class="legacy-layout reveal"'), "Long mobile gallery does not depend on an intersection threshold");
+    }
+    if (path === "/about/ownership") {
+      assert.ok(html.includes('id="ownership-main"') && html.includes('href="#ownership-main"'));
+      assert.equal((html.match(/data-moment=/g) || []).length, 6, "Six ownership photographs retain explicit placement");
+      assert.equal((html.match(/class="text-link ownership-chapter-link"/g) || []).length, 4);
+      assert.ok(html.includes('class="ownership-message-grid"'));
+      assert.ok(!html.includes('class="own-next-gen-card reveal"'), "Long mobile message is not hidden behind an intersection threshold");
     }
     if (path === "/about/the-pal-group") {
       assert.ok(html.includes('/assets/hero-gradient-images/banner-gradient.webp'));
@@ -130,6 +163,21 @@ try {
     console.log(`PASS: ${path}`);
   }
   console.log(`PASS: all ${paths.length} routes render with the shared layout.`);
+  const brokenIndustryLinks = [];
+  for (const [path, html] of renderedPages) {
+    if (!path.startsWith("/industries/")) continue;
+    const main = html.match(/<main\b[\s\S]*?<\/main>/)?.[0] || "";
+    for (const [, href] of main.matchAll(/<a\b[^>]*href="([^\"]+)"/g)) {
+      if (!href.startsWith("/") && !href.startsWith("#")) continue;
+      const url = new URL(href.replaceAll("&amp;", "&"), `https://smpalgroup.com${path}`);
+      const target = renderedPages.get(url.pathname.replace(/\/$/, "") || "/");
+      if (!target || (url.hash && !target.includes(`id="${decodeURIComponent(url.hash.slice(1))}"`))) {
+        brokenIndustryLinks.push(`${path}: ${href}`);
+      }
+    }
+  }
+  assert.deepEqual(brokenIndustryLinks, [], "Industry links resolve to an existing page or section");
+  console.log(`PASS: internal links on all ${paths.filter((path) => path.startsWith("/industries/")).length} industry pages resolve.`);
 } finally {
   await server.close();
   delete globalThis.window;

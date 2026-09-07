@@ -3996,7 +3996,7 @@ h4 {
 .news-item {
   transition: padding 0.25s var(--ease);
 }
-.news-item:hover {
+a.news-item:hover {
   padding-left: 12px;
   padding-right: 12px;
   background: #fff;

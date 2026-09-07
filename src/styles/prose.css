@@ -1,0 +1,28 @@
+/* Shared paragraph alignment, loaded after page-specific styles. */
+#root main p,
+#root .site-footer p {
+  text-align: left;
+  text-align-last: auto;
+  text-indent: 0;
+  text-wrap: wrap;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  hyphens: none;
+}
+
+/* Consecutive editorial paragraphs share a right boundary. Hero copy keeps
+   its own width so that text stays clear of the banner's subject. */
+#root main :is(
+  [class*="-copy"], [class*="-intro"], [class*="-note"],
+  .own-next-gen-card
+):not([class*="-hero-copy"]):not(.hero-copy) > p:not(.eyebrow):not(.chairman-signature) {
+  width: 100%;
+  max-width: 660px;
+  margin-inline: 0;
+}
+
+/* Keep the translated trading page readable in its native direction. */
+#root main[dir="rtl"] p {
+  text-align: right;
+}

@@ -220,14 +220,11 @@ const ScrollCanvasHero = () => {
 
     const setupCanvas = () => {
       const dpr = window.devicePixelRatio || 1;
-      const displayWidth = window.innerWidth;
-      const displayHeight = window.innerHeight;
+      const { width: displayWidth, height: displayHeight } = canvas.parentElement.getBoundingClientRect();
 
       // Set canvas to full viewport with device pixel ratio for sharp rendering
       canvas.width = displayWidth * dpr;
       canvas.height = displayHeight * dpr;
-      canvas.style.width = displayWidth + 'px';
-      canvas.style.height = displayHeight + 'px';
 
       const ctx = canvas.getContext('2d');
       if (ctx) {
@@ -239,8 +236,13 @@ const ScrollCanvasHero = () => {
     };
 
     setupCanvas();
+    const resizeObserver = new ResizeObserver(setupCanvas);
+    resizeObserver.observe(canvas.parentElement);
     window.addEventListener('resize', setupCanvas);
-    return () => window.removeEventListener('resize', setupCanvas);
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener('resize', setupCanvas);
+    };
   }, [loaded]);
 
   // Render loop with easing
@@ -250,11 +252,12 @@ const ScrollCanvasHero = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
-    const dpr = window.devicePixelRatio || 1;
-    const displayWidth = window.innerWidth;
-    const displayHeight = window.innerHeight;
+    if (!ctx) return;
 
     const renderLoop = () => {
+      // Read the current CSS size after rotation or mobile browser chrome changes.
+      const displayWidth = canvas.clientWidth;
+      const displayHeight = canvas.clientHeight;
       const total = frameCountRef.current;
       // Lerp current → target. EASING stays small for a soft settle; GSAP's
       // scrub is what gives the per-pixel feel, and this just smooths the last

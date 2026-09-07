@@ -15,7 +15,7 @@ export default function PalSumeeraPage({ page }) {
   return (
     <>
       <main id="main" className="sumeera-page">
-        <section className="route-hero">
+        <section className="route-hero mobile-photo-hero">
           <img src={page.image} alt="" fetchPriority="high" />
           <div className="route-hero-shade" />
           <div className="container route-hero-copy">
@@ -106,7 +106,7 @@ export default function PalSumeeraPage({ page }) {
 
         <section className="route-related section-pad" aria-labelledby="sumeera-more-title">
           <div className="container">
-            <div className="section-heading"><div><p className="eyebrow eyebrow-dark">Explore more</p><h2 id="sumeera-more-title">Explore more about SM Pal Group's real estate projects</h2><p>To see the rest of Pal Colonisers' residential projects, explore Palam City, Pallazio, Eco Town, Paloma Greens, and Ram Ji Vihar. You can also explore <a className="inline-link" href={colonisersOverview}>Pal Colonisers in our business overview</a> for the real estate story, or read about <a className="inline-link" href="/about/the-pal-group">SM Pal Group itself</a>.</p></div></div>
+            <div className="section-heading"><div><p className="eyebrow eyebrow-dark">Explore more</p><h2 id="sumeera-more-title">Explore more about SM Pal Group's real estate projects</h2><p>To see the rest of Pal Colonisers' residential projects, explore Palam City, Pallazio, Eco Town, and Paloma Greens. You can also explore <a className="inline-link" href={colonisersOverview}>Pal Colonisers in our business overview</a> for the real estate story, or read about <a className="inline-link" href="/about/the-pal-group">SM Pal Group itself</a>.</p></div></div>
             <div className="route-related-grid">{routeGroups.colonisers.filter(item => item.href !== sumeeraSeo.path).map(item => <a className="route-related-card" href={item.href} key={item.href}><span>{item.label}</span><ArrowUpRight size={19} aria-hidden="true" /></a>)}</div>
           </div>
         </section>

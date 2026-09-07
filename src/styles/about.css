@@ -12,6 +12,15 @@
   gap: clamp(32px, 5vw, 72px);
 }
 
+.about-page .about-leadership-grid > img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+  object-position: center;
+}
+
 .about-page .about-direction-grid p {
   font-family: var(--sans);
   font-size: 16px;

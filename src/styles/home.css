@@ -115,8 +115,13 @@
     max-width: 360px;
   }
 
-  .home-page :is(.award-item, .news-item) {
+  .home-page .award-item {
     grid-template-columns: 24px minmax(0, 1fr) 20px;
     gap: 12px;
   }
+}
+
+.home-page article.news-item {
+  grid-template-columns: clamp(24px, 5vw, 70px) minmax(0, 1fr);
+  gap: clamp(12px, 2vw, 20px);
 }

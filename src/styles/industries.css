@@ -1,0 +1,271 @@
+/* Industry-specific refinements on top of the shared brand and mobile heroes. */
+.route-page.industry-brand main {
+  font-family: var(--sans);
+  color: var(--ink);
+}
+.route-page.industry-brand main p:not(.eyebrow) {
+  font-family: var(--sans);
+  font-size: var(--text-body);
+  line-height: 1.7;
+}
+.route-page.industry-brand main h3 {
+  font-family: var(--sans);
+  font-size: var(--text-h3);
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: normal;
+}
+.route-page.industry-brand main h2 {
+  font-family: var(--sans);
+  font-size: var(--text-h2);
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+.route-page.industry-brand main :is(h1, h2) em {
+  font-family: var(--serif);
+  font-style: normal;
+  font-weight: 500;
+}
+.route-page.industry-brand main small {
+  font-size: var(--text-small);
+  line-height: 1.65;
+}
+.route-page.industry-brand main [class$="-hero-mark"] :is(p, span) {
+  font-size: var(--text-label);
+  line-height: 1.5;
+  letter-spacing: .1em;
+}
+.route-page.industry-brand main :is(
+  .pf-about-note, .fz-about-note, .ps-about-note,
+  .skoda-about-note, .nissan-about-note, .ford-about-note
+) :is(span, a.inline-link) {
+  color: var(--soft);
+  font-size: var(--text-label);
+  line-height: 1.5;
+}
+.route-page.industry-brand main :is(
+  .pf-iqf-pillar, .fz-iqf-pillar, .pf-why-card, .fz-why-card,
+  .ps-why-card, .skoda-why-card, .nissan-why-card, .ford-why-card,
+  .ps-material-card, .fz-product-card
+) > span,
+.route-page.industry-brand main :is(.skoda-service-number, .nissan-service-number, .ford-service-number) {
+  color: var(--soft);
+  font-size: var(--text-label);
+  line-height: 1.5;
+}
+.route-page.industry-brand main :is(.pf-audience-card, .fz-audience-card) > span,
+.route-page.industry-brand main :is(.pfg-product-card, .pfg-reason-list > div) > span {
+  font-size: var(--text-label);
+  line-height: 1.5;
+}
+.route-page.industry-brand main .pfg-product-card:not(.pfg-product-card-featured):not(:hover):not(:focus-visible) > span {
+  color: var(--soft);
+}
+.route-page.industry-brand main .pfg-product-card h3 { color: inherit; }
+.route-page.industry-brand main .skoda-models-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.route-page.industry-brand main :is(.fz-backing, .pf-audience, .fz-audience) [class$="-section-label"] span:last-child {
+  color: rgba(255, 255, 255, .85);
+}
+.route-page.industry-brand main .pfg-contact .eyebrow { color: var(--soft); }
+.route-page.industry-brand main .pfg-contact address :is(strong, a:not(.button)) {
+  font-size: var(--text-body);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.route-page.industry-brand main :is(.ford-leadership-grid, .ford-promise-grid) {
+  gap: clamp(32px, 5vw, 72px);
+}
+.route-page.industry-brand main :is(.skoda-model-card, .nissan-model-card),
+.route-page.industry-brand main :is(.skoda-model-card, .nissan-model-card):hover {
+  box-shadow: none;
+  transform: none;
+}
+.route-page.industry-brand main :is(.skoda-model-image, .nissan-model-image) {
+  height: auto;
+  aspect-ratio: 16 / 10;
+  background: #fff;
+}
+.route-page.industry-brand main :is(.skoda-model-image, .nissan-model-image) img {
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+}
+.route-page.industry-brand main :is(.skoda-team-card, .nissan-team-card, .ford-sales-image, .ford-leadership-card) img {
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+.route-page.industry-brand main .ford-leadership-caption {
+  position: static;
+  background: var(--deep);
+}
+.route-page.industry-brand main .ford-leadership-caption span {
+  font-size: var(--text-label);
+  line-height: 1.5;
+}
+.route-page.industry-brand main :is(.pf-explore-label, .fz-explore-label, .ps-explore-label,
+  .skoda-explore-label, .nissan-explore-label, .ford-explore-label) {
+  font-family: var(--sans);
+  font-size: var(--text-h3);
+  font-weight: 700;
+  line-height: 1.3;
+}
+.route-page.industry-brand main :is(.skoda-explore-eyebrow, .nissan-explore-eyebrow, .ford-explore-eyebrow) { color: var(--soft); }
+.route-page.industry-brand main :is(.button, .text-link, .pfg-inline-links a) {
+  white-space: normal;
+  gap: 12px;
+}
+.route-page.industry-brand main :is(.button, .text-link, .pfg-inline-links a) svg { flex-shrink: 0; }
+
+/* Reserve a separate column for the desktop hero facts. */
+@media (min-width: 1001px) {
+  .route-page.industry-brand main [class$="-hero-copy"] h1 { max-width: min(800px, calc(100% - 260px)); }
+  .route-page.industry-brand main [class$="-hero-copy"] > p:not(.eyebrow) { max-width: min(620px, calc(100% - 260px)); }
+}
+
+/* Match card density across the food, materials and dealership pages. */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .route-page.industry-brand main :is(.pfg-product-grid, .pf-product-grid, .fz-product-grid,
+    .skoda-models-grid, .nissan-models-grid, .skoda-services-grid, .nissan-services-grid, .ford-service-grid) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+@media (max-width: 1024px) {
+  .route-page.industry-brand main :is(.pfg-two-col, .pfg-contact-grid, .pf-about-grid, .fz-about-grid,
+    .ps-about-grid, .pf-iqf-grid, .fz-iqf-grid, .pf-reach-grid, .fz-reach-grid) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .route-page.industry-brand main :is(.pf-about-note, .fz-about-note, .ps-about-note,
+    .skoda-about-note, .nissan-about-note, .ford-about-note) {
+    margin-top: 0;
+    padding: 24px 0 0;
+    border-left: 0;
+    border-top: 2px solid var(--brass);
+  }
+}
+@media (max-width: 640px) {
+  .route-page.industry-brand main .skoda-models-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .route-page.industry-brand main :is(.skoda-hero-actions, .nissan-hero-actions, .ford-hero-actions,
+    .pf-hero-actions, .fz-hero-actions, .ps-hero-actions) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .route-page.industry-brand main [class$="-hero-actions"] .button { width: 100%; justify-content: center; }
+  .route-page.industry-brand main :is(.pf-iqf-pillar, .fz-iqf-pillar, .skoda-service-card,
+    .nissan-service-card, .ford-service-card, .pfg-product-card) { padding: 26px 22px; }
+}
+
+.route-page main :is(.pf-section-intro, .fz-section-intro, .ps-section-intro,
+  .skoda-section-intro, .nissan-section-intro, .ford-section-intro, .pfg-section-heading) {
+  margin-bottom: 40px;
+}
+.route-page main :is(.pf-section-label, .fz-section-label, .ps-section-label,
+  .skoda-section-label, .nissan-section-label, .ford-section-label) { margin-bottom: 32px; }
+.route-page main :is(.pf-section-label, .fz-section-label, .ps-section-label,
+  .skoda-section-label, .nissan-section-label, .ford-section-label) span:last-child { text-transform: uppercase; }
+.route-page main :is(.ps-material-list li, .ps-materials-note, .pfg-reason-list p,
+  .ps-contact-fact p, .ps-contact-fact a, .skoda-visit-fact p, .skoda-visit-fact a,
+  .nissan-visit-fact p, .nissan-visit-fact a, .ford-visit-fact p, .ford-visit-fact a) {
+  font-size: var(--text-body);
+  line-height: 1.7;
+}
+.route-page main :is(.ps-contact-fact, .skoda-visit-fact, .nissan-visit-fact, .ford-visit-fact) a {
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.route-page main :is(.ps-contact-fact, .skoda-visit-fact, .nissan-visit-fact, .ford-visit-fact) a:hover { color: var(--soft); }
+.route-page main :is(.pf-product-card > span, .skoda-model-tagline, .nissan-model-tagline,
+  .skoda-visit-fact > span, .nissan-visit-fact > span, .ford-visit-fact > span,
+  .pfg-contact address span) {
+  color: var(--soft);
+  font-size: var(--text-label);
+  line-height: 1.5;
+  letter-spacing: .1em;
+}
+.route-page main :is(.pf-explore-eyebrow, .fz-explore-eyebrow, .ps-explore-eyebrow,
+  .skoda-explore-eyebrow, .nissan-explore-eyebrow, .ford-explore-eyebrow) {
+  font-size: var(--text-label);
+  line-height: 1.5;
+}
+.route-page main :is(.pf-about-grid, .pf-iqf-grid, .pf-reach-grid,
+  .fz-about-grid, .fz-iqf-grid, .fz-reach-grid, .ps-about-grid,
+  .ps-sustainable-grid, .ps-infrastructure-grid, .ps-contact-grid,
+  .skoda-about-grid, .skoda-team-grid, .skoda-promise-grid, .skoda-visit-grid,
+  .nissan-about-grid, .nissan-team-grid, .nissan-promise-grid, .nissan-visit-grid,
+  .ford-about-grid, .ford-sales-grid, .ford-regional-grid, .ford-visit-grid,
+  .pfg-two-col, .pfg-contact-grid) { gap: clamp(32px, 5vw, 72px); }
+.industry-overview .route-content-grid { gap: clamp(32px, 5vw, 72px); }
+.industry-overview .route-related-card { gap: 16px; min-height: 88px; }
+.industry-overview .route-facts strong { font-size: var(--text-body); line-height: 1.6; }
+
+/* Static information cards use the same flat treatment as the leadership pages. */
+.route-page main :is(.pf-product-card, .pf-why-card, .fz-product-card, .fz-why-card,
+  .ps-material-card, .ps-why-card, .skoda-service-card, .skoda-why-card,
+  .nissan-service-card, .nissan-why-card, .ford-service-card, .ford-why-card) {
+  box-shadow: none;
+  border-radius: 0;
+}
+.route-page main :is(.pf-product-card, .pf-why-card, .fz-product-card, .fz-why-card,
+  .ps-material-card, .ps-why-card, .skoda-service-card, .skoda-why-card,
+  .nissan-service-card, .nissan-why-card, .ford-service-card, .ford-why-card):hover {
+  transform: none;
+  box-shadow: none;
+}
+.route-page main :is(.pf-audience-link, .fz-audience-link) {
+  min-height: 44px;
+  max-width: 100%;
+  white-space: normal;
+}
+.route-page main :is(.pf-audience-link, .fz-audience-link) svg { flex-shrink: 0; }
+
+/* Trading cards accommodate long English and Arabic product names. */
+.route-page main .pfg-product-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20px;
+  align-content: space-between;
+  column-gap: 16px;
+  row-gap: 24px;
+}
+.route-page main .pfg-product-card > span { grid-column: 1 / -1; }
+.route-page main .pfg-product-card h3 {
+  margin: 0;
+  max-width: none;
+  font-size: var(--text-h3);
+  line-height: 1.3;
+}
+.route-page main .pfg-product-card svg { position: static; align-self: end; }
+.route-page main .pfg-explore { background: var(--ivory); }
+.route-page main .pfg-explore .eyebrow { color: var(--soft); }
+.route-page main .pfg-inline-links a { min-height: 44px; }
+.route-page main .pfg-inline-links a:is(:hover, :focus-visible) { color: var(--soft); border-color: currentColor; transform: none; }
+.route-page main .pfg-inline-links a:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+.route-page main :is(.pf-explore, .fz-explore, .ps-explore) { padding-block: var(--space-section); }
+
+@media (max-width: 900px) {
+  .route-page main :is(.pfg-two-col, .pfg-contact-grid) { grid-template-columns: minmax(0, 1fr); }
+  .industry-overview .route-content-grid { grid-template-columns: minmax(0, 1fr); }
+  .industry-overview .route-related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .industry-overview .route-related-grid { grid-template-columns: minmax(0, 1fr); }
+  .route-page main :is(.pf-bento-tile-1, .fz-bento-tile-1) { grid-row: span 1; }
+  .route-page main :is(.pf-about-note, .fz-about-note, .ps-about-note,
+    .skoda-about-note, .nissan-about-note, .ford-about-note) {
+    padding: 24px 0 0;
+    margin-top: 0;
+    border-left: 0;
+    border-top: 2px solid var(--brass);
+  }
+  .route-page main :is(.pf-audience-card, .fz-audience-card, .fz-backing-card) { padding: 28px 22px; }
+  .route-page main :is(.skoda-model-copy, .nissan-model-copy) { padding: 24px 22px; }
+  .route-page main .ps-contact-fact { grid-template-columns: 28px minmax(0, 1fr); gap: 8px 12px; }
+  .route-page main .pfg-reason-list > div { grid-template-columns: 28px minmax(0, 1fr); gap: 12px; }
+}

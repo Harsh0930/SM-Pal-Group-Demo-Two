@@ -1,0 +1,136 @@
+/* Ownership follows the same restrained treatment as the leadership pages. */
+.ownership-page .own-hero-copy h1 em {
+  display: block;
+  color: var(--brass);
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: inherit;
+}
+.ownership-page .own-hero-intro { margin-bottom: 28px; }
+.ownership-page .ownership-hero-link { color: var(--brass); }
+.ownership-page main .own-section-label { margin-bottom: 32px; }
+.ownership-page main .own-section-label span:last-child { text-transform: uppercase; }
+.ownership-page :is(.own-section-intro, .own-explore-intro) { margin-bottom: 40px; }
+.ownership-page :is(.own-who-grid, .own-vision-grid, .faq-grid) { gap: clamp(32px, 5vw, 72px); }
+.ownership-page .own-who-note {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 32px;
+  background: var(--ivory);
+  border: 0;
+  border-left: 3px solid var(--brass);
+  border-radius: 0;
+  box-shadow: none;
+}
+.ownership-page .own-who-note p { font-size: 20px; line-height: 1.5; }
+.ownership-page .own-who-note small { font-size: var(--text-small); line-height: 1.6; }
+.ownership-page .own-journey-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.ownership-page .own-journey-card { display: flex; flex-direction: column; padding: 32px; }
+.ownership-page .own-journey-sub { font-size: var(--text-label); line-height: 1.5; letter-spacing: .1em; }
+.ownership-page .own-journey-text { font-size: var(--text-body); line-height: 1.7; }
+.ownership-page .ownership-chapter-link { margin-top: auto; padding-top: 24px; font-size: var(--text-label); }
+.ownership-page .text-link { max-width: 100%; gap: 12px; white-space: normal; }
+.ownership-page .text-link svg { flex-shrink: 0; }
+.ownership-page :is(.own-journey-card, .own-moment-tile, .own-explore-card):hover {
+  transform: none;
+  box-shadow: none;
+}
+.ownership-page .own-vision-copy > p a { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Explicit placement avoids the gaps created by auto-placing mixed tile spans. */
+.ownership-page main .own-moments-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(240px, auto));
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "founder founder office award"
+    "stat formal office award"
+    "quote quote stage portrait";
+  gap: 16px;
+}
+.ownership-page main .own-moment-tile {
+  grid-area: var(--moment-area);
+  min-width: 0;
+  margin: 0;
+  border-radius: 0;
+  cursor: default;
+}
+.ownership-page main figure.own-moment-tile { background: var(--deep); }
+.ownership-page main .own-moment-tile img {
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+}
+.ownership-page main :is(.own-moment-stat, .own-moment-quote) { padding: 28px; overflow: visible; }
+.ownership-page .own-moment-stat-number { font-size: clamp(48px, 5vw, 64px); line-height: 1; letter-spacing: -.025em; }
+.ownership-page .own-moment-stat-label { font-size: var(--text-label); line-height: 1.5; letter-spacing: .1em; }
+.ownership-page .own-moment-quote p { font-size: 22px; line-height: 1.5; }
+.ownership-page .own-moment-quote cite { color: var(--soft); font-size: var(--text-label); letter-spacing: .08em; }
+.ownership-page .own-moments::after { content: none; }
+
+/* One editorial section instead of nested panels with shrinking text columns. */
+.ownership-page .own-next-gen { background: var(--ivory); }
+.ownership-page .own-next-gen > .container {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.ownership-message-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr);
+  align-items: start;
+  gap: clamp(32px, 5vw, 72px);
+}
+.ownership-message-intro h2 { color: var(--green); }
+.ownership-page .own-next-gen-card { margin: 0; padding: 0; background: transparent; }
+.ownership-page .own-next-gen-mark { display: none; }
+.ownership-page .own-progress-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin: 32px 0;
+}
+.ownership-page .own-progress-card { padding: 24px; }
+.ownership-page .own-next-gen-cta { margin-top: 40px; padding: 24px 0 0; background: transparent; border: 0; border-top: 1px solid var(--line); }
+.ownership-page .own-next-gen-cta p { font-size: var(--text-body); line-height: 1.7; }
+.ownership-page .own-faq { background: #fff; }
+.ownership-page .own-explore { background: var(--ivory); }
+.ownership-page .own-explore-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ownership-page .own-explore-card { flex-direction: row; align-items: center; gap: 16px; min-height: 88px; padding: 24px; background: #fff; }
+.ownership-page .own-explore-card span { font-size: var(--text-small); font-weight: 600; }
+.ownership-page .own-explore-card svg { flex-shrink: 0; }
+
+@media (max-width: 1100px) {
+  .ownership-message-grid { grid-template-columns: minmax(0, 1fr); }
+  .ownership-page .own-explore-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .ownership-page main .own-moments-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-template-areas:
+      "founder founder"
+      "office award"
+      "stat stat"
+      "formal formal"
+      "quote quote"
+      "stage portrait";
+  }
+  .ownership-page main figure.own-moment-tile { aspect-ratio: 2 / 3; }
+  .ownership-page main figure:is(.own-moment-wide, [data-moment="formal"]) { aspect-ratio: 3 / 2; }
+  .ownership-page main .own-moment-stat { align-items: flex-start; }
+}
+@media (max-width: 640px) {
+  .ownership-page .own-journey-grid,
+  .ownership-page .own-progress-grid,
+  .ownership-page .own-explore-grid { grid-template-columns: minmax(0, 1fr); }
+  .ownership-page :is(.own-who-note, .own-journey-card, .own-progress-card) { padding: 26px 22px; }
+  .ownership-page main :is(.own-moment-stat, .own-moment-quote) { padding: 24px; }
+  .ownership-page main .own-moments-grid { gap: 12px; }
+  .ownership-page .own-moment-quote p { font-size: 20px; }
+}
