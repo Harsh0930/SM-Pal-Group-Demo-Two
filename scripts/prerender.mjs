@@ -19,15 +19,33 @@ function pageStyles(name, seen = new Set()) {
   };
   return [...new Set(visit(key))];
 }
+pageFiles['palam-city'] = 'PalamCityPage';
+pageFiles.pallazio = 'PallazioPage';
+
+// Pages with exported metadata also receive complete SEO in the initial HTML.
+function withSeo(template, seo) {
+  if (!seo) return template;
+  const escape = value => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+  template = template.replace(/<title>[^<]*<\/title>/, `<title>${escape(seo.title)}</title>`);
+  const tags = [['name', 'description', seo.description], ['property', 'og:title', seo.title], ['property', 'og:description', seo.description], ['property', 'og:url', `https://smpalgroup.com${seo.path}`], ['property', 'og:image', seo.image], ['property', 'og:image:alt', seo.imageAlt], ['name', 'twitter:title', seo.title], ['name', 'twitter:description', seo.description], ['name', 'twitter:image', seo.image], ['name', 'twitter:image:alt', seo.imageAlt]];
+  for (const [attribute, key, value] of tags) {
+    const pattern = new RegExp(`<meta[^>]*${attribute}="${key}"[^>]*>`);
+    const tag = `<meta ${attribute}="${key}" content="${escape(value)}">`;
+    template = pattern.test(template) ? template.replace(pattern, tag) : template.replace('</head>', `${tag}</head>`);
+  }
+  template = template.replace(/<link[^>]*rel="canonical"[^>]*>/g, '');
+  return template.replace('</head>', `<link rel="canonical" href="https://smpalgroup.com${seo.path}"></head>`);
+}
 try {
   const { default: App } = await server.ssrLoadModule('/src/App.jsx');
   const { loadPage } = await server.ssrLoadModule('/src/pages/SiteRouter.jsx');
   for (const route of ['/', ...Object.keys(routePages)]) {
-    const { default: Page } = await loadPage(route);
+    const { default: Page, seo } = await loadPage(route);
     const markup = renderToString(React.createElement(App, { Page, path: route }));
     const file = `dist${route === '/' ? '' : route}/index.html`;
     let template;
     try { template = await readFile(file, 'utf8'); } catch { template = base; }
+    template = withSeo(template, seo);
     const preloads = [...markup.matchAll(/<link\b[^>]*rel="preload"[^>]*\/>/g)].map(m => m[0]);
     const css = pageStyles(route === '/' ? 'HomePage' : pageFiles[routePages[route]?.type] || 'RoutePage')
       .filter(file => !template.includes(file)).map(file => `<link rel="stylesheet" href="/${file}">`).join('');

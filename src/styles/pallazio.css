@@ -1,0 +1,22 @@
+/* Extend the Palam City real-estate composition without changing its rules. */
+.pz-page .pc-hero-photo img { object-position: 52% center; }
+.pz-page .pc-hero-photo figcaption small { display: block; margin-top: 6px; font-size: var(--text-label); color: #e1e8e2; }
+.pz-page .pc-living-photo img { object-position: center; }
+.pz-page .pc-section-nav a { flex: 0 0 auto; }
+.pz-location-link { margin-top: 26px; }
+.pz-distances dl { margin: 26px 0 0; }
+.pz-distances dl > div { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 18px 0; border-top: 1px solid #ffffff30; }
+.pz-distances dt { font-size: var(--text-small); }
+.pz-distances dd { margin: 0; font-size: var(--text-body); font-weight: 600; color: var(--brass); text-align: right; }
+.pz-page .pz-distance-note { font-size: var(--text-label); margin-top: 10px; }
+.pz-ecotown { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 32px; margin-top: 48px; border: 1px solid var(--line); border-left: 3px solid var(--brass); }
+.pz-ecotown > div { max-width: 690px; }
+.pz-ecotown .eyebrow { margin-bottom: 12px; }
+.pz-ecotown p:last-child { margin-top: 16px; color: var(--muted); }
+.pz-ecotown .button { flex-shrink: 0; }
+@media (max-width: 1000px) {
+  .pz-ecotown { align-items: start; flex-direction: column; }
+}
+@media (max-width: 600px) {
+  .pz-ecotown { padding: 24px; }
+}

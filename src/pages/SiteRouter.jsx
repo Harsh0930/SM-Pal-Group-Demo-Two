@@ -17,6 +17,8 @@ const loaders = {
   'pal-ford': () => import('./screens/PalFordPage.jsx'),
   'palam-view': () => import('./PalamViewPage.jsx'),
   'pal-sumeera': () => import('./PalSumeeraPage.jsx'),
+  'palam-city': () => import('./PalamCityPage.jsx'),
+  'pallazio': () => import('./PallazioPage.jsx'),
 };
 export function loadPage(path) {
   if (path === '/' || !routePages[path]) return import('./screens/HomePage.jsx');

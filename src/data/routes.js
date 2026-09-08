@@ -160,13 +160,13 @@ const routePages = {
     body: "Pal Sumeera Residency brings the Pal Colonisers approach to life: create places that feel dependable, welcoming and designed for the way people want to live.",
   },
   "/industries/pal-colonisers/palam-city": {
-    type: "project",
+    type: "palam-city",
     eyebrow: "Pal Colonisers · Residential",
     title: "Palam City.",
     intro:
       "A growing community in Haldwani, shaped with space for life, connection and the future.",
     image:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85",
+      "/assets/Palam City -1.jpg.webp",
     facts: ["Residential community", "Haldwani", "Built around shared life"],
     body: "Palam City is a long-term real estate vision rooted in the region. Its homes, spaces and community moments are planned to support the lives that grow there.",
   },
@@ -182,19 +182,19 @@ const routePages = {
     body: "Palam View represents the next chapter of Pal Colonisers' vision: a premium residential destination crafted with modern architecture, sustainable design, and thoughtful amenities for an elevated lifestyle.",
   },
   "/industries/pal-colonisers/pallazio": {
-    type: "project",
-    eyebrow: "Pal Colonisers · Commercial",
+    type: "pallazio",
+    eyebrow: "Pal Colonisers · Residential & Commercial Plots",
     title: "Pallazio.",
     intro:
-      "A contemporary commercial destination for business, retail and everyday discovery.",
+      "Gated residential and commercial plots near Pilikothi Chauraha, Haldwani, with the freedom to build a home of your own.",
     image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85",
+      "/assets/Gate Cam.webp",
     facts: [
-      "Commercial development",
-      "Purposeful planning",
-      "A place to connect",
+      "Residential & commercial plots",
+      "30–50 ft tree-lined roads",
+      "Gated community in Haldwani",
     ],
-    body: "Pallazio extends Pal Colonisers’ focus from homes to commercial spaces. It is conceived as an address where businesses and people can meet, grow and move forward.",
+    body: "Pallazio, formally Ecotown-Pallazio, brings together self-build plots, green landscaping and controlled access, adjacent to Eco Town Phase I and II.",
   },
   "/industries/pal-colonisers/eco-town": {
     type: "project",
