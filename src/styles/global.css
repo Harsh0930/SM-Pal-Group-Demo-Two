@@ -1,4 +1,3 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap");
 
 .route-page {
   min-height: 100vh;
@@ -14183,3 +14182,6 @@ body .site-footer {
     letter-spacing: -.03em;
   }
 }
+
+/* Above-the-fold copy is visible in the initial prerendered HTML. */
+main > section:first-of-type .reveal { opacity: 1; transform: none; }

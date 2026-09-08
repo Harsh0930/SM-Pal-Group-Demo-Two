@@ -1,0 +1,153 @@
+/* All cinematic styling is scoped to the Frozzo hero. */
+.frozzo-page main .fz-ice-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: min(900px, max(760px, 100svh));
+  overflow: hidden;
+  background: #061f1b;
+  color: white;
+  --ice-reveal: 1;
+}
+.fz-ice-light, .fz-ice-grain, .fz-ice-stage, .fz-ice-mist { position: absolute; inset: 0; pointer-events: none; }
+.fz-ice-light {
+  background: radial-gradient(ellipse at 76% 37%, #3d827773, transparent 39%), radial-gradient(ellipse at 60% 100%, #a8d6c628, transparent 52%), linear-gradient(115deg, #051c16, #0c3a30 68%, #102b2d);
+}
+.fz-ice-grain { opacity: .3; background-image: repeating-linear-gradient(115deg, #c9eee80b 0 1px, transparent 1px 5px); mask-image: linear-gradient(90deg, transparent 42%, #000); }
+.frozzo-page main .fz-ice-emblem { position: absolute; right: max(5%, calc((100% - 1260px) / 2)); top: 23%; width: 36%; max-width: 500px; aspect-ratio: 1.15; z-index: 1; display: grid; place-items: center; }
+.frozzo-page main .fz-ice-emblem > img { position: relative; inset: auto; width: 82%; height: auto; object-fit: contain; z-index: 1; filter: drop-shadow(0 10px 30px #03181588); }
+.fz-ice-halo { position: absolute; inset: -14%; border-radius: 50%; background: radial-gradient(ellipse, #b6fff526, #86e0d409 45%, transparent 70%); }
+.fz-ice-seal { position: absolute; inset: 4% 0; z-index: 2; border-radius: 37% 55% 40% 53%; opacity: 0; background: radial-gradient(ellipse at 43% 43%, #e1faf8e8, #b6e1dea6 45%, transparent 72%); filter: blur(8px); pointer-events: none; }
+.fz-ice-fractures { position: absolute; inset: 0; width: 100%; height: 100%; stroke: #e5ffff; stroke-width: .8; opacity: 0; z-index: 3; pointer-events: none; }
+.fz-ice-stage { z-index: 2; opacity: 0; transition: opacity .45s ease; }
+[data-ice-state="ready"] .fz-ice-stage { opacity: 1; }
+.fz-ice-stage canvas { display: block; width: 100%; height: 100%; }
+.frozzo-page main .fz-ice-copy { position: relative; z-index: 4; padding-top: clamp(165px, 24vh, 245px); padding-bottom: 160px; pointer-events: none; }
+.fz-ice-copy a { pointer-events: auto; }
+.frozzo-page main .fz-ice-copy h1 { max-width: 59%; }
+.frozzo-page main .fz-ice-copy h1,
+.frozzo-page main .fz-ice-copy > .fz-hero-intro,
+.fz-ice-copy .eyebrow {
+  text-shadow: 0 2px 5px rgba(3, 25, 28, .92), 0 0 18px rgba(3, 25, 28, .52);
+}
+.frozzo-page main .fz-ice-copy > .fz-hero-intro { max-width: 52%; color: #fff; }
+.fz-ice-copy .eyebrow { color: #fff; }
+.fz-ice-copy .button-outline { color: #fff; text-shadow: 0 1px 4px rgba(3, 25, 28, .9); }
+.fz-ice-mist { z-index: 3; overflow: hidden; opacity: .65; }
+.fz-ice-mist i { position: absolute; left: 25%; bottom: -18%; width: 80%; height: 42%; border-radius: 50%; background: radial-gradient(ellipse, #d5f5eb29, #afd9d20c 48%, transparent 70%); filter: blur(22px); transform: rotate(-12deg); }
+.fz-ice-mist i:nth-child(2) { left: 44%; bottom: 17%; width: 70%; height: 15%; opacity: .6; }
+.fz-ice-mist i:nth-child(3) { left: -18%; bottom: -28%; width: 95%; height: 45%; }
+.fz-ice-footer { position: absolute; inset: auto 0 36px; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.fz-ice-scroll { display: inline-flex; align-items: center; gap: 12px; color: #fff; font-size: var(--text-label); letter-spacing: .06em; text-shadow: 0 2px 5px rgba(3, 25, 28, .92); }
+.fz-ice-scroll-icon { width: 38px; height: 50px; display: grid; place-items: center; border: 1px solid rgba(255, 255, 255, .72); border-radius: 24px; }
+.fz-ice-origin { display: flex; align-items: center; gap: 18px; margin-left: auto; }
+.fz-ice-origin strong { color: var(--brass); font: 500 36px/1 var(--serif); }
+.fz-ice-origin span { max-width: 120px; color: #fff; font-size: var(--text-label); line-height: 1.5; text-transform: uppercase; letter-spacing: .08em; text-shadow: 0 2px 5px rgba(3, 25, 28, .92); }
+.fz-ice-pause { flex: 0 0 44px; width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border-radius: 50%; background: #143f35; color: #e3f6ed; border: 1px solid #bbdfd84d; cursor: pointer; }
+.fz-ice-pause:hover { background: #245949; }
+.fz-ice-hero :is(a, button):focus-visible { outline: 2px solid var(--brass); outline-offset: 5px; }
+/* Scroll-driven Frozzo frame sequence. */
+.frozzo-page main .fz-ice-hero {
+  position: relative;
+  isolation: isolate;
+  height: 360vh;
+  overflow: hidden;
+  background: #dce7eb;
+  color: white;
+}
+.fz-ice-sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; background: #dce7eb; }
+.fz-ice-canvas, .fz-ice-overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.fz-ice-canvas { display: block; }
+.fz-ice-overlay { background: transparent; }
+.fz-ice-edge-blend {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, #dce7eb 0%, transparent 11%, transparent 89%, #dce7eb 100%),
+    linear-gradient(180deg, #dce7eb 0%, transparent 8%, transparent 92%, #dce7eb 100%);
+}
+.frozzo-page main .fz-ice-copy { position: relative; z-index: 4; padding-top: clamp(165px, 24vh, 245px); padding-bottom: 160px; pointer-events: none; }
+.fz-ice-copy a { pointer-events: auto; }
+.frozzo-page main .fz-ice-copy h1 { max-width: 59%; }
+.frozzo-page main .fz-ice-copy > .fz-hero-intro { max-width: 52%; color: #e2ece8; }
+.fz-ice-copy .eyebrow { color: #c2d9ce; }
+.fz-ice-footer { position: absolute; inset: auto 0 36px; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.fz-ice-scroll { display: inline-flex; align-items: center; gap: 12px; color: #d5e7e0; font-size: var(--text-label); letter-spacing: .06em; }
+.fz-ice-scroll-icon { width: 38px; height: 50px; display: grid; place-items: center; border: 1px solid #bbdfd84d; border-radius: 24px; }
+.fz-ice-origin { display: flex; align-items: center; gap: 18px; margin-left: auto; }
+.fz-ice-origin strong { color: var(--brass); font: 500 36px/1 var(--serif); }
+.fz-ice-origin span { max-width: 120px; color: #c3d8d0; font-size: var(--text-label); line-height: 1.5; text-transform: uppercase; letter-spacing: .08em; }
+.frozzo-page .route-header.frozzo-nav-scrolled {
+  position: fixed;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: none;
+}
+.frozzo-page .route-header,
+.frozzo-page .route-header .route-nav {
+  background: transparent !important;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+@media (max-width: 1000px) {
+  .fz-ice-sticky { height: 100svh; }
+  .frozzo-page main .fz-ice-copy { padding-top: 32vh; padding-bottom: 130px; }
+  .frozzo-page main .fz-ice-copy h1,
+  .frozzo-page main .fz-ice-copy > .fz-hero-intro { max-width: 100%; }
+  .fz-ice-footer { bottom: 28px; }
+  .fz-ice-origin { gap: 10px; }
+  .fz-ice-origin strong { font-size: 28px; }
+}
+@media (max-width: 640px) {
+  .fz-ice-overlay { background: transparent; }
+  .frozzo-page main .fz-ice-copy { padding-top: 29vh; padding-bottom: 112px; }
+  .fz-ice-origin { display: none; }
+  .fz-ice-footer { gap: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fz-ice-hero *, .fz-ice-hero *::before, .fz-ice-hero *::after { animation: none !important; transition: none !important; }
+}
+@media (max-width: 1000px) {
+  .frozzo-page main .fz-ice-hero { min-height: 0; }
+  .frozzo-page main .fz-ice-emblem { top: 90px; right: 17%; width: 66%; max-width: none; height: 270px; aspect-ratio: auto; }
+  .frozzo-page main .fz-ice-emblem > img { width: auto; max-width: 85%; height: 85%; }
+  .frozzo-page main .fz-ice-copy { padding-top: 380px; padding-bottom: 130px; }
+  .frozzo-page main .fz-ice-copy h1, .frozzo-page main .fz-ice-copy > .fz-hero-intro { max-width: 100%; }
+  .fz-ice-stage { mask-image: linear-gradient(#000 0 340px, transparent 480px); }
+  .fz-ice-footer { bottom: 28px; }
+  .fz-ice-origin { gap: 10px; }
+  .fz-ice-origin strong { font-size: 28px; }
+}
+@media (max-width: 640px) {
+  .frozzo-page main .fz-ice-emblem { top: 90px; right: 10%; width: 80%; height: 250px; }
+  .frozzo-page main .fz-ice-copy { padding-top: 355px; padding-bottom: 112px; }
+  .fz-ice-origin { display: none; }
+  .fz-ice-footer { gap: 16px; }
+  .fz-ice-pause { margin-left: auto; }
+  .fz-ice-mist i { filter: blur(12px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fz-ice-stage, .fz-ice-seal, .fz-ice-fractures { display: none; }
+  .fz-ice-hero *, .fz-ice-hero *::before, .fz-ice-hero *::after { animation: none !important; transition: none !important; }
+}
+
+/* Keep the sticky stage attached to the page scroll, as in Palam View. */
+.frozzo-page main .fz-ice-hero {
+  height: 360vh;
+  min-height: 0;
+  overflow: visible;
+  background: #dce7eb;
+}
+.frozzo-page main .fz-ice-hero .fz-ice-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+@media (max-width: 1000px) {
+  .frozzo-page main .fz-ice-hero .fz-ice-sticky { height: 100svh; }
+}

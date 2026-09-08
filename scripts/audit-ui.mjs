@@ -8,7 +8,7 @@ import { createServer } from "vite";
 import postcss from "postcss";
 
 const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
-const source = read("src/pages/SiteRouter.jsx");
+const source = read("src/data/routes.js");
 const paths = ["/", ...new Set([...source.matchAll(/^  "(\/[^"\n]+)": \{/gm)].map((m) => m[1]))];
 const roots = [...read("src/main.jsx").matchAll(/import "\.\/(styles\/[^\"]+\.css)"/g)].map(([, file]) => postcss.parse(read(`src/${file}`), { from: `src/${file}` }));
 
@@ -114,13 +114,15 @@ const server = await createServer({ server: { middlewareMode: true }, appType: "
 const renderedPages = new Map();
 try {
   const { default: App } = await server.ssrLoadModule("/src/App.jsx");
+  const { loadPage } = await server.ssrLoadModule("/src/pages/SiteRouter.jsx");
   for (const path of paths) {
     globalThis.window = {
       location: { pathname: path }, innerWidth: 390,
       matchMedia: () => ({ matches: false, addEventListener() {}, removeEventListener() {}, addListener() {}, removeListener() {} }),
       addEventListener() {}, removeEventListener() {},
     };
-    const html = renderToStaticMarkup(React.createElement(App));
+    const { default: Page } = await loadPage(path);
+    const html = renderToStaticMarkup(React.createElement(App, { Page, path }));
     renderedPages.set(path, html);
     assert.equal((html.match(/<h1\b/g) || []).length, 1, `${path}: one page heading`);
     assert.equal((html.match(/<main\b/g) || []).length, 1, `${path}: one main landmark`);

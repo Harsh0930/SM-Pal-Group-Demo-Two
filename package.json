@@ -4,9 +4,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/optimize-assets.mjs",
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "node scripts/optimize-assets.mjs && vite build && node scripts/prerender.mjs",
+    "preview": "vite preview",
+    "audit:ui": "node scripts/audit-ui.mjs",
+    "audit:performance": "node scripts/performance-audit.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
@@ -15,6 +18,14 @@
     "lucide-react": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "three": "^0.185.1",
     "vite": "latest"
+  },
+  "devDependencies": {
+    "@fontsource-variable/montserrat": "^5.3.0",
+    "@fontsource-variable/playfair-display": "^5.3.0",
+    "lighthouse": "^13.4.1",
+    "playwright-core": "^1.63.0",
+    "sharp": "^0.35.4"
   }
 }

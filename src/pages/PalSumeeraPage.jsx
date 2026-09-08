@@ -1,3 +1,4 @@
+import ResponsiveImage from '../components/ResponsiveImage.jsx';
 import { ArrowDownRight, ArrowRight, ArrowUpRight, Users, Smile, Trees, Store, Landmark, MapPin, Phone, Mail } from "lucide-react";
 import Footer from "../components/Footer.jsx";
 import { usePageSeo, buildFaqSchema } from "../hooks/usePageSeo.js";
@@ -16,7 +17,7 @@ export default function PalSumeeraPage({ page }) {
     <>
       <main id="main" className="sumeera-page">
         <section className="route-hero mobile-photo-hero">
-          <img src={page.image} alt="" fetchPriority="high" />
+          <ResponsiveImage src={page.image} alt="" fetchPriority="high" />
           <div className="route-hero-shade" />
           <div className="container route-hero-copy">
             <nav className="sumeera-breadcrumb" aria-label="Breadcrumb">

@@ -1,7 +1,7 @@
 import SiteRouter from "./pages/SiteRouter.jsx";
 
-function App() {
-  return <SiteRouter />;
+function App(props) {
+  return <SiteRouter {...props} />;
 }
 
 export default App;

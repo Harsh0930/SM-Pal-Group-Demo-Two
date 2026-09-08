@@ -1,3 +1,4 @@
+import ResponsiveImage from '../components/ResponsiveImage.jsx';
 import React, { useEffect, useRef, useState, useMemo } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
@@ -36,7 +37,7 @@ import PalamGradientBars from "../components/PalamGradientBars.jsx";
 //   of the building). As they scroll down, the sequence walks BACKWARD through
 //   the frames back to frame 0. This is intentional and matches the editorial
 //   idea of "zooming in" on the building as the user commits to the project.
-//   Do not "fix" the reversal — the static <img> poster and the loader both
+//   Do not "fix" the reversal — the static <ResponsiveImage> poster and the loader both
 //   rely on the same convention.
 const ScrollCanvasHero = () => {
   // Register the ScrollTrigger plugin once. GSAP's plugin registration is
@@ -365,9 +366,9 @@ const ScrollCanvasHero = () => {
     <section ref={sectionRef} className="palam-canvas-section">
       {/* No-JS fallback: shows the "front" view of the building (frame 300)
           before the canvas takes over. Browsers with JS paint the canvas on
-          top of this <img> immediately, so there is no visible flash. */}
+          top of this <ResponsiveImage> immediately, so there is no visible flash. */}
       <noscript>
-        <img
+        <ResponsiveImage
           src={`${FRAME_PATH}${FRAME_PREFIX_DEFAULT}300${FRAME_EXT_DEFAULT}`}
           alt="Palam View exterior"
           className="palam-noscript-poster"
@@ -621,7 +622,7 @@ function FlipCard({ src, index, target, isFlipped, onToggle }) {
       >
         {/* Front Face */}
         <div className="flip-intro-face flip-intro-front">
-          <img src={src} alt={`palam-${index}`} className="flip-intro-img" />
+          <ResponsiveImage src={src} alt={`palam-${index}`} className="flip-intro-img" />
           <div className="flip-intro-img-shade" />
           <div className="flip-intro-card-index">{String(index + 1).padStart(2, "0")}</div>
         </div>
@@ -965,7 +966,7 @@ const VisionSection = () => {
               className="palam-vision-card"
             >
               <div className="palam-vision-image-wrap">
-                <img src={vision.image} alt={vision.title} className="palam-vision-image" loading="lazy" />
+                <ResponsiveImage src={vision.image} alt={vision.title} className="palam-vision-image" loading="lazy" />
                 <div className="palam-vision-shade" />
               </div>
               <div className="palam-vision-body">
@@ -1035,7 +1036,7 @@ const ExperienceSection = () => {
               className="palam-experience-card"
             >
               <div className="palam-experience-image-wrap">
-                <img src={exp.image} alt={exp.title} loading="lazy" />
+                <ResponsiveImage src={exp.image} alt={exp.title} loading="lazy" />
               </div>
               <div className="palam-experience-body">
                 <h3>{exp.title}</h3>
@@ -1222,7 +1223,7 @@ const GallerySection = () => {
               whileHover={{ scale: 1.03 }}
               className={`palam-gallery-item ${index === 0 ? "palam-gallery-featured" : ""}`}
             >
-              <img src={image} alt={`Gallery ${index + 1}`} loading="lazy" />
+              <ResponsiveImage src={image} alt={`Gallery ${index + 1}`} loading="lazy" />
             </motion.div>
           ))}
         </div>
