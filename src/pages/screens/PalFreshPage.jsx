@@ -343,28 +343,28 @@ function PalFreshPage({ page }) {
             <div className="pf-bento-grid reveal">
               <figure className="pf-bento-tile pf-bento-tile-1">
                 <ResponsiveImage
-                  src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1200&q=85"
+                  src="/assets/pal-fresh-images/broccoli-image.webp"
                   alt="Uttarakhand farmland where Pal Fresh vegetables are grown"
                   loading="lazy"
                 />
               </figure>
               <figure className="pf-bento-tile pf-bento-tile-2">
                 <ResponsiveImage
-                  src="https://images.unsplash.com/photo-1573246123716-6b1782bfc499?auto=format&fit=crop&w=900&q=85"
+                  src="/assets/pal-fresh-images/farmersowing-image.webp?auto=format&fit=crop&w=900&q=85"
                   alt="Fresh vegetables sorted and washed for processing"
                   loading="lazy"
                 />
               </figure>
               <figure className="pf-bento-tile pf-bento-tile-3">
                 <ResponsiveImage
-                  src="https://images.unsplash.com/photo-1601001815853-3835274403b3?auto=format&fit=crop&w=900&q=85"
+                  src="/assets/pal-fresh-images/greenpeas-image.webp?auto=format&fit=crop&w=900&q=85"
                   alt="Vegetables frozen with IQF technology"
                   loading="lazy"
                 />
               </figure>
               <figure className="pf-bento-tile pf-bento-tile-4">
                 <ResponsiveImage
-                  src="https://images.unsplash.com/photo-1605478371310-a9f1e96b4ff4?auto=format&fit=crop&w=900&q=85"
+                  src="/assets/pal-fresh-images/mixveg-image.webp?auto=format&fit=crop&w=900&q=85"
                   alt="Pal Fresh retail packs ready for distribution"
                   loading="lazy"
                 />
@@ -378,14 +378,14 @@ function PalFreshPage({ page }) {
               </figure>
               <figure className="pf-bento-tile pf-bento-tile-6">
                 <ResponsiveImage
-                  src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=900&q=85"
+                  src="/assets/pal-fresh-images/processing-line-image.webp?auto=format&fit=crop&w=900&q=85"
                   alt="Fresh vegetables being prepared for cooking"
                   loading="lazy"
                 />
               </figure>
               <figure className="pf-bento-tile pf-bento-tile-7">
                 <ResponsiveImage
-                  src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85"
+                  src="/assets/pal-fresh-images/processingline-image.webp?auto=format&fit=crop&w=900&q=85"
                   alt="Pal Fresh vegetable products on display"
                   loading="lazy"
                 />

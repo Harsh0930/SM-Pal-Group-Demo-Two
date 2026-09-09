@@ -42,26 +42,26 @@ function PalSkodaPage({ page }) {
       name: "Kushaq",
       tagline: "Built for the bold.",
       description: "A midsize SUV crafted for Indian roads, combining confident design with practical space and advanced safety features.",
-      image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=85",
+      image: "/assets/pal-skoda-images/kushaq-car-image.webp",
     },
     {
       name: "Kylaq",
       tagline: "Compact, capable.",
       description: "Skoda's compact SUV brings the brand's signature quality to a new segment, built for buyers who want practicality without compromise.",
-      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=85",
+      image: "/assets/pal-skoda-images/kylaq-car-image.webp",
     },
     {
       name: "Kodiaq",
       tagline: "Space for every journey.",
       description: "A seven-seater SUV built for families who want Skoda's comfort and capability at scale, ready for highways and beyond.",
-      image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=85",
+      image: "/assets/pal-skoda-images/kodiaq-car-images.webp",
     },
     {
       name: "Slavia",
       tagline: "Elegance in every drive.",
       description: "A midsize sedan that pairs distinctive styling with turbocharged performance and a comfortable cabin, bringing everyday ease to every journey.",
       // Official model imagery: https://www.skoda-auto.co.in/models/slavia/slavia
-      image: "/assets/skoda-slavia.webp",
+      image: "/assets/pal-skoda-images/slavia-car-image.webp",
     },
   ];
 
