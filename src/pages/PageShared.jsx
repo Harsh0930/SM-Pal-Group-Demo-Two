@@ -51,7 +51,7 @@ function RouteHeader({ showLanguageToggle = false, language, onLanguageChange })
       { label: "Frozzo", href: "/industries/pal-frozen-foods/frozzo" },
       {
         label: "Pal Frozen Farms",
-        href: "/industries/pal-frozen-farms",
+        href: "/industries/pal-farms",
       },
     ],
     "Pal Colonisers": routeGroups.colonisers,

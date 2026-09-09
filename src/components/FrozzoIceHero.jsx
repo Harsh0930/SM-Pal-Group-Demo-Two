@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ArrowDown, ArrowDownRight, ArrowUpRight } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
 import '../styles/frozzo-hero.css';
 
 export default function FrozzoIceHero({ eyebrow }) {
@@ -33,10 +33,10 @@ export default function FrozzoIceHero({ eyebrow }) {
         if (!image.complete || !image.naturalWidth) return;
         const width = canvas.current.clientWidth;
         const height = canvas.current.clientHeight;
-        const scale = Math.min(width / image.naturalWidth, height / image.naturalHeight);
+        const scale = Math.max(width / image.naturalWidth, height / image.naturalHeight);
         const drawnWidth = image.naturalWidth * scale;
         const drawnHeight = image.naturalHeight * scale;
-        context.fillStyle = '#dce7eb';
+        context.fillStyle = '#fff';
         context.fillRect(0, 0, width, height);
         context.drawImage(image, (width - drawnWidth) / 2, (height - drawnHeight) / 2, drawnWidth, drawnHeight);
       };
@@ -113,11 +113,13 @@ export default function FrozzoIceHero({ eyebrow }) {
     }, []);
 
     return (
-      <section ref={hero} className="fz-hero fz-ice-hero" aria-labelledby="frozzo-hero-title">
-        <div className="fz-ice-sticky">
-          <canvas ref={canvas} className="fz-ice-canvas" aria-label="Frozzo ice sequence animation" />
-          <div className="fz-ice-overlay" aria-hidden="true" />
-          <div className="fz-ice-edge-blend" aria-hidden="true" />
+      <>
+        <section ref={hero} className="fz-hero fz-ice-hero" aria-label="Frozzo product frames">
+          <div className="fz-ice-sticky">
+            <canvas ref={canvas} className="fz-ice-canvas" aria-label="Frozzo ice sequence animation" />
+          </div>
+        </section>
+        <section className="fz-hero-copy-section" aria-labelledby="frozzo-hero-title">
           <div className="container fz-hero-copy fz-ice-copy">
             <p className="eyebrow">{eyebrow}</p>
             <h1 id="frozzo-hero-title">Frozzo, from our farms<br /><em>to your freezer.</em></h1>
@@ -126,12 +128,11 @@ export default function FrozzoIceHero({ eyebrow }) {
               <a className="button button-brass" href="#fz-products">Explore our snacks <ArrowDownRight size={17} /></a>
               <a className="button button-outline" href="/contact">Talk to our team <ArrowUpRight size={17} /></a>
             </div>
+            <div className="fz-ice-footer">
+              <div className="fz-ice-origin"><strong>2021</strong><span>RTF &amp; RTE frozen snacks</span></div>
+            </div>
           </div>
-          <div className="container fz-ice-footer">
-            <a className="fz-ice-scroll" href="#fz-about"><span className="fz-ice-scroll-icon"><ArrowDown size={17} /></span><span>Scroll to break the ice</span></a>
-            <div className="fz-ice-origin"><strong>2021</strong><span>RTF &amp; RTE frozen snacks</span></div>
-          </div>
-        </div>
-      </section>
+        </section>
+      </>
     );
 }

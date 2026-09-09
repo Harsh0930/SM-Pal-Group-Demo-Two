@@ -1,7 +1,9 @@
 export const sumeeraSeo = {
   path: "/industries/pal-colonisers/pal-sumeera-residency",
   title: "Pal Sumeera Residency | Luxury Township in Kichha",
-  description: "Pal Sumeera Residency offers premium apartments and plots in Kichha with modern amenities and seamless connectivity to AIIMS and ISBT. Explore homes today.",
+  description: "Pal Sumeera Residency offers premium plots in Kichha with modern amenities and seamless connectivity to AIIMS and ISBT. Explore homes today.",
+  image: 'https://smpalgroup.com/assets/pal-sumeera/township.webp',
+  imageAlt: 'Architectural visualisation of the Pal Sumeera Residency entrance in Kichha',
 };
 
 export const sumeeraFaqs = [

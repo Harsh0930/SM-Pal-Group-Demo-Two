@@ -131,7 +131,9 @@ try {
     for (const [, src] of html.matchAll(/<img\b[^>]*\bsrc="(\/assets\/[^"]+)"/g)) {
       assert.ok(existsSync(new URL(`../public${src.split("?")[0]}`, import.meta.url)), `${path}: image exists: ${src}`);
     }
-    if (!["/", "/about/the-pal-group", "/about/board-of-directors", "/industries/pal-colonisers/palam-view"].includes(path)) {
+    if (path === "/industries/pal-frozen-foods/frozzo") {
+      assert.ok(html.includes("fz-ice-hero") && html.includes("fz-ice-canvas"), "Frozzo: cinematic hero and canvas");
+    } else if (!["/", "/about/the-pal-group", "/about/board-of-directors", "/industries/pal-colonisers/palam-view"].includes(path)) {
       assert.ok(html.includes("mobile-photo-hero"), `${path}: responsive photographic hero`);
     }
     if (path === "/about") {

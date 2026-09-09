@@ -1,0 +1,51 @@
+/* All additions are below the existing cinematic hero. */
+.pv-content { position: relative; z-index: 1; }
+.pv-content .pv-floor-section { background: #fff; }
+.pv-areas { display: grid; grid-template-columns: repeat(3,1fr); margin: 40px 0 14px; border-block: 1px solid var(--line); }
+.pv-areas > div { padding: 26px; }
+.pv-areas > div + div { border-left: 1px solid var(--line); }
+.pv-areas dt { font-size: var(--text-small); color: var(--muted); }
+.pv-areas dd { margin: 12px 0 0; font-size: var(--text-h2); font-weight: 650; color: var(--green); }
+.pv-areas dd span { margin-left: 10px; font-size: var(--text-small); font-weight: 400; }
+.pv-content .pv-small-note { font-size: var(--text-small); color: var(--muted); }
+.pv-plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px,5vw,70px); margin-top: 40px; align-items: start; }
+.pv-plan a { display: block; padding: 20px; border: 1px solid var(--line); background: var(--ivory); }
+.pv-plan img { display: block; width: 100%; max-height: 760px; height: auto; object-fit: contain; }
+.pv-plan a > span { display: flex; justify-content: center; gap: 10px; align-items: center; min-height: 44px; margin-top: 14px; color: var(--green); font-size: var(--text-small); }
+.pv-plan figcaption,.pv-location-map figcaption { padding-block: 16px; font-size: var(--text-small); line-height: 1.6; color: var(--muted); }
+.pv-room-schedule > .pv-small-note { margin: 16px 0 26px; }
+.pv-room-schedule .pc-detail summary h3 { font-size: var(--text-body); }
+.pv-table-wrap { padding-bottom: 22px; }
+.pv-table-wrap table { width: 100%; border-collapse: collapse; font-size: var(--text-small); text-align: left; }
+.pv-table-wrap caption { text-align: left; font-size: var(--text-label); margin-bottom: 12px; color: var(--muted); }
+.pv-table-wrap th,.pv-table-wrap td { padding: 12px 8px; border-bottom: 1px solid var(--line); }
+.pv-table-wrap th { font-weight: 500; }
+.pv-table-wrap thead th { background: var(--ivory); font-weight: 600; }
+.pv-table-wrap td { white-space: nowrap; }
+.pv-content .pc-living-photo img { height: 580px; object-position: center 65%; }
+.pv-content .pc-location h2 + p { margin-top: 24px; }
+.pv-content .pc-location .pc-explore { margin-top: 24px; }
+.pv-distances { margin: 28px 0 16px; }
+.pv-distances > div { display: flex; justify-content: space-between; gap: 24px; padding-block: 14px; border-bottom: 1px solid #ffffff30; font-size: var(--text-body); }
+.pv-distances dd { margin: 0; color: var(--brass); font-weight: 600; white-space: nowrap; }
+.pv-content .pc-location .pv-small-note,.pv-location-map figcaption { color: #d8e2db; }
+.pv-location-map a { display: block; background: var(--ivory); color: var(--green); }
+.pv-location-map img { display: block; width: 100%; height: auto; object-fit: contain; }
+.pv-location-map a > span { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px; font-size: var(--text-small); }
+.pv-content .pv-brochure-note { max-width: none; margin: 40px 0 0; padding-top: 24px; border-top: 1px solid var(--line); font-size: var(--text-label); color: var(--muted); }
+@media (max-width: 800px) {
+  .pv-plan-grid { grid-template-columns: 1fr; }
+  .pv-content .pc-living-photo img { height: auto; max-height: 560px; aspect-ratio: auto; }
+  .pv-areas > div { padding: 22px 12px; }
+  .pv-areas dd { font-size: 28px; }
+  .pv-areas dd span { display: block; margin: 5px 0 0; }
+}
+@media (max-width: 480px) {
+  .pv-areas { grid-template-columns: 1fr; }
+  .pv-areas > div { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 0; }
+  .pv-areas > div + div { border-left: 0; border-top: 1px solid var(--line); }
+  .pv-areas dd { margin: 0; flex-shrink: 0; }
+  .pv-areas dd span { display: inline; margin-left: 8px; }
+  .pv-plan a { padding: 10px; }
+  .pv-table-wrap th,.pv-table-wrap td { padding: 10px 4px; }
+}

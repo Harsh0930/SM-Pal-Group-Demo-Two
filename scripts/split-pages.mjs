@@ -2,6 +2,11 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 const file = 'src/pages/SiteRouter.jsx';
 const source = await readFile(file, 'utf8');
+// This migration is only valid for the original monolithic router.
+// Fail before writing anything when it has already been applied.
+for (const marker of ['// Data constants', 'const siteUrl =', 'function AboutPage(', '  const [storyIndex']) {
+  if (!source.includes(marker)) throw new Error('Page splitting migration already applied or source format changed; no files were written.');
+}
 const part = (a, b) => source.slice(source.indexOf(a), source.indexOf(b));
 await mkdir('src/pages/screens', { recursive: true });
 const imports = source.slice(0, source.indexOf('// Data constants')).replace(/^import PalamViewPage.*\r?\n/m, '').replace(/^import PalSumeeraPage.*\r?\n/m, '');

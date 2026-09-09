@@ -13802,6 +13802,10 @@ body .site-footer {
 .ford-hero-mark strong {
   text-shadow: 0 8px 24px rgba(0, 0, 0, 0.42), 0 0 26px rgba(217, 178, 4, 0.18);
 }
+.pal-fresh-page .pf-hero-mark strong,
+.pal-fresh-page .pf-hero-mark p {
+  text-shadow: none;
+}
 .board-hero-mark {
   width: auto;
   padding: 18px 0 12px 24px;

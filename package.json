@@ -9,17 +9,18 @@
     "build": "node scripts/optimize-assets.mjs && vite build && node scripts/prerender.mjs",
     "preview": "vite preview",
     "audit:ui": "node scripts/audit-ui.mjs",
-    "audit:performance": "node scripts/performance-audit.mjs"
+    "audit:performance": "node scripts/performance-audit.mjs",
+    "check:structure": "node scripts/check-structure.mjs"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "latest",
+    "@vitejs/plugin-react": "6.1.0",
     "framer-motion": "^13.1.1",
     "gsap": "^3.15.0",
-    "lucide-react": "latest",
-    "react": "latest",
-    "react-dom": "latest",
+    "lucide-react": "1.33.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
     "three": "^0.185.1",
-    "vite": "latest"
+    "vite": "8.2.2"
   },
   "devDependencies": {
     "@fontsource-variable/montserrat": "^5.3.0",

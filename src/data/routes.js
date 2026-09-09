@@ -151,7 +151,7 @@ const routePages = {
     intro:
       "A considered residential address designed around everyday comfort and a sense of belonging.",
     image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85",
+      "/assets/pal-sumeera/township.webp",
     facts: [
       "Residential development",
       "Kichha",
@@ -175,11 +175,11 @@ const routePages = {
     eyebrow: "Pal Colonisers · Residential",
     title: "Palam View.",
     intro:
-      "Haldwani's most prestigious residential address — where premium living meets breathtaking views and world-class amenities.",
+      "Premium 4 BHK residences with a study and exclusive private floors within Palam City, Haldwani.",
     image:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075",
-    facts: ["Premium residential", "Haldwani", "World-class amenities"],
-    body: "Palam View represents the next chapter of Pal Colonisers' vision: a premium residential destination crafted with modern architecture, sustainable design, and thoughtful amenities for an elevated lifestyle.",
+      "/assets/palam-view.webp",
+    facts: ["4 BHK with study", "Palam City, Haldwani", "Exclusive private floors"],
+    body: "Palam View combines contemporary design, panoramic balcony views and private-floor living within the established Palam City community.",
   },
   "/industries/pal-colonisers/pallazio": {
     type: "pallazio",
@@ -197,13 +197,13 @@ const routePages = {
     body: "Pallazio, formally Ecotown-Pallazio, brings together self-build plots, green landscaping and controlled access, adjacent to Eco Town Phase I and II.",
   },
   "/industries/pal-colonisers/eco-town": {
-    type: "project",
+    type: "eco-town",
     eyebrow: "Pal Colonisers · Community",
-    title: "Eco Town.",
+    title: "Eco Town, your dream home plot in the heart of Haldwani",
     intro:
-      "A forward-looking community that brings a lighter footprint and better everyday living together.",
+      "Eco Town gives you a plot in the heart of Haldwani and lets you build the home that fits how you actually want to live.",
     image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85",
+      "/assets/Ecotown 1 (2).webp",
     facts: [
       "Community development",
       "Responsible design",
@@ -212,13 +212,13 @@ const routePages = {
     body: "Eco Town reflects the belief that growth and responsibility can share the same address. The project is shaped around practical comfort, connected spaces and a more considered future.",
   },
   "/industries/pal-colonisers/paloma-greens": {
-    type: "project",
+    type: "paloma-greens",
     eyebrow: "Pal Colonisers · Residential",
-    title: "Paloma Greens.",
+    title: "Paloma Greens, luxury living surrounded by nature in Haldwani",
     intro:
-      "A greener residential setting made for calm, connection and a fuller sense of home.",
+      "Paloma Greens brings together luxury, nature, and modern living in one Haldwani community.",
     image:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85",
+      "/assets/Palam City -1.jpg.webp",
     facts: [
       "Residential development",
       "Green open spaces",
