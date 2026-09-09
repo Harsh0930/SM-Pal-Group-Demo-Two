@@ -97,7 +97,7 @@ function PrateekPage({ page }) {
       align: "left",
     },
     {
-      year: "2013",
+      year: "2021",
       title: "Convenience food, reimagined",
       text: "Studied the European food and beverage sector closely, then brought back the insight that became the foundation for Pal Fresh and Frozzo.",
       image: "/assets/prateek-pal-images/pal-fresh-journey.webp",
